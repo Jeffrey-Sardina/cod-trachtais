@@ -6,7 +6,7 @@ public class Go_NT
 {
     public static void main(String[] args) 
     {
-        Dataset dataset = RDFDataMgr.loadDataset("triail.nq");
+        Dataset dataset = RDFDataMgr.loadDataset(args[0]);
         RDFDataMgr.write(System.out, dataset, Lang.NTRIPLES);
     }
 }

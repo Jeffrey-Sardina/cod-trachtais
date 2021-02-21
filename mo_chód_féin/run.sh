@@ -3,5 +3,5 @@ export CLASSPATH=/mnt/e/Tráchtas/apache-jena-3.17.0/lib/*:.
 echo 'compiling'
 javac Go_NT.java
 echo 'running'
-java Go_NT
+java Go_NT $1
 echo 'done'
