@@ -1,0 +1,103 @@
+------------------
+
+Graif Eolais
+    Uniprot Gene Ontology Annotations
+        https://www.uniprot.org/core/
+        https://sparql.uniprot.org/sparql/
+        measúnachtaí, saghais idirghníomhaithe, orgánaidí, srl
+        eolas ginearálta den chuid is mó
+
+    Gene Ontology
+        http://geneontology.org/docs/GO-term-elements
+        próitéiní, comhdhúile, orgánaidí, sel
+        mionshonraí den chuid is mó
+
+    NCI Thesaurus / NCI Metathesaurus
+        https://evs.nci.nih.gov/evs-download/thesaurus-downloads
+        https://evs.nci.nih.gov/evs-download/metathesaurus-downloads
+
+    Bio2RDF
+        https://bio2rdf.org/
+        https://bio2rdf.org/fct/
+        Fórmáid: http://bio2rdf.org/<namespace>:<identifier>
+        Ceanglaíonn sé eolas ó:
+            MGI, HGNC, Kegg, Entrez Gene, OMIM, GO, OBO, PDB and ChEBI, UniProt, UniRef, UniParc, RefSeq, PubMed, Newt, PubChem, Prosite, Reactome, srl
+            le chéile.
+        Nóta: is codanna den UniProt Consortium iad UniProt, UniRef, UniParc, srl
+        Áit mhaith le honteolaícohtaí a lorg ar dtús
+        Léiríonn an t-alt stuctúr 7 úsáid Bio2RDF, ach ba chóir an-táithí a bheith agam air
+
+    BioOpener (Eolas Nasctha)
+        http://bioopenerproject.insight-centre.org/dataset
+        Eolais ó roinnt tionscadail ó TCGA, léiriú éagsúla na géine, srl
+
+    Linked TCGA (The Cancer Genome Atlas)
+        http://tcga.deri.ie/
+        Tá sé ar an idirlíon, ach cuma ann nach bhfuil a chríochphointí ann a thuilleadh.
+        Bhí roinnt is gach rud ó TCGA ann (tosaithe i 2013), ach anois níl an suíomh ag obair mar a bhí.
+        Déanta ag Insight ag NUI Gailimh
+
+Eolas eile:
+    Entrez Gene ID
+        https://www.wikidata.org/wiki/Property:P351
+        gan doicméid RDF
+
+    Open Biological Ontologies
+        http://www.obofoundry.org/
+        Tá ointeolaíochtaí le haghaidh beagnach gach chuile rud isteach ann (nóta--tá a leagan féin den NCI Thesaurus aige)
+
+    Eagarthóir Protégé
+        https://protege.stanford.edu/
+
+    Liosta Ceíochphointí atá beo:
+        https://www.w3.org/wiki/SparqlEndpoints
+
+    Natasha Noy
+        ó Stanford
+        chruthaigh sí Protégé chun cabhrú le heolas leighis
+
+------------------
+
+(as dáta; feic ar an ranóg i ndiaidh seo)
+A úsáidfidh mé
+    geneontology.org (feic ar: http://geneontology.org/docs/GO-term-elements)
+        - An ceann is minice ar NCBI
+        - Úsáisdeann sé CA (comhartha aitheantais) géine Entrez (eolas: https://    www.wikidata.org/wiki/Property:P351) agus nascann sé é go nótaí RDF ar geneontology.org.
+
+Sonraí
+    Éagsúlacht Núicléitíd Shimplí
+        Géinte -- trí aitheantas géine Entrez
+            RDF: http://purl.uniprot.org/geneid/$1
+                ó https://www.wikidata.org/wiki/Property:P351
+
+    Ar Phóifiliú Trascríbhinn-eom
+        Tascsríbhinn -- trí aitheantas Ensembl
+            buneolas: https://www.ebi.ac.uk/rdf/documentation/ensembl/
+                https://www.ebi.ac.uk/rdf//2017/07/10/first-post/
+            RDF: http://rdf.ebi.ac.uk/resource/ensembl/$1
+                ó https://www.wikidata.org/wiki/Property:P704
+                cuma ann nach bhfuil nmórán eolas ar an leathanach RDF, faraor
+        Aitheantas mi-ARN
+
+Suimiúil ach gan RDF? Aistriú?
+    https://reactome.org/download-data
+
+------------------
+
+RDF cruthaithe ar son sonraí:
+    Éagsúlacht Núicléitíd Shimplí
+        Géinte -- trí aitheantas géine Entrez
+            https://sparql.uniprot.org/sparql/
+            sampla: (le cód Entrez 63827)
+                PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+                PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+                PREFIX uni: <http://purl.uniprot.org/geneid/>
+                SELECT * WHERE {
+                uni:63827 ?pred ?obj .
+                } LIMIT 100
+    Ar Phóifiliú Trascríbhinn-eom
+        Tascsríbhinn -- trí aitheantas Ensembl
+            https://www.ebi.ac.uk/rdf/services/sparql/
+                críochpointe SPARQL agus eolas  
+        Aitheantas mi-ARN
+            Is ID miRBase é "hsa-let-7a-1". Ach níl cuma go bhfuiln RDF air faraor (miRBase: http://mirbase.org/)

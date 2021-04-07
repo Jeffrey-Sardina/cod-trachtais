@@ -1,0 +1,18 @@
+Tionscadal: TCGA-PAAD
+    mar thábla (.tsv, .csv, srl)
+        éagsúlacht in  uimhreacha cóipeanna
+        meitiliú ADN
+        éagsúlacht núicléitídí simplí
+        próifiliú trascríbhinneom
+        eolas cliniciúil
+    eolas príobháideach
+        seichimh ADN
+
+Aistriú go RDF
+    Éasca go leor trí eolas isteach ins na táblaí (tá gach fíríc scríofa i dtábla, ar an dea-uair)
+
+API
+    Trí GDC (Genomic Data Commons) (ceadúnas iarrtha)
+
+Eolas príobháideach
+    Níl gach rud ar fáil go póiblí. Caithfeadh mé iarratas a dhéanamh trí dbGaP (https://dbgap.ncbi.nlm.nih.gov/aa/wga.cgi?login=&page=login) le bheith in ann an t-eolas sin a úsáid. Ach níl cead ach ag "Senior Investigators" iarratas a dhéanamh, agus mar sin ní bheidh mé in an an t-eolas sin a úsáid.
