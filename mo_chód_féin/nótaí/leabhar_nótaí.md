@@ -35,3 +35,8 @@ Feic ar:
     - an áit ina bhfuil eolas léite as comhad
 - https://numpy.org/devdocs/reference/generated/numpy.loadtxt.html
     - an tslí a oibríonn np.loadtxt
+
+## 07-04-2021
+Bhíos in ann an fhadhb cuimhne a dheisiú trí córas comhbhrúite (feic ar comhbhrú.py). Tá sé in ann méid ana-mhaith spás a shábháil gan torthnaí an chóras leabaithe a athrú. Móide sin, scríobh mé cód chun an píblíne a uathoibrigh, agus na torthaí deirneacha a dhíchomhbrú.
+
+Amach anseo, beidh mé ag iarraidh níos mó eolas chur tríb an bpíblíne, agus samhlacha éagsúla a thriail.

@@ -1,5 +1,17 @@
+if [[ $3 -eq "1" ]]
+then
+    echo 'ag scriosadh seanchomhad'
+    rm $1/*.tsv
+else
+    echo 'rabhadh: má tá eolas TSV ann cheana fhéinig, caithfear é a scriosadh sular féidir an cód seo a rith'
+    if [[ -r *.tsv ]]
+    then
+        echo 'tá comhaid TSV ann cheana fhéinig, ní féidir leanúint ar aghaidh'
+        exit 1
+    fi
+fi
+
 echo 'ag aistriú gach comhaid ó NQ go TSV'
-echo 'rabhadh: má tá eolas TSV ann cheana fhéinig, caithfear é a scriosadh sular féidir an cód seo a rith'
 for comhaid_nq in $1/*.nq;
 do
     #Níl cead agam iad a léamh i gcónaí--deisigh é sin

@@ -19,6 +19,7 @@ def cruthaigh_tábla_comhbhrúite(comhad_ionchurtha):
     áireamh = {}
     with open(comhad_ionchurtha, 'r') as ionchur:
         for líne in ionchur:
+            print(líne)
             ainmní, faisnéis, cúspóir = [teaghrán.strip() for teaghrán in líne.split('\t', 2)]
 
             tábla.add(ainmní)
