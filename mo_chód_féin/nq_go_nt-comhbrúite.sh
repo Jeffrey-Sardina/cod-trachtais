@@ -1,3 +1,5 @@
+#!/bin/bash
+
 if [[ $3 -eq "1" ]]
 then
     echo 'ag scriosadh seanchomhad'

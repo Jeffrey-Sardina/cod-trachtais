@@ -17,9 +17,8 @@ def comhbhrú(comhad_ionchurtha, comhad_aschurtha, comhad_tábla):
 def cruthaigh_tábla_comhbhrúite(comhad_ionchurtha):
     tábla = OrderedSet()
     áireamh = {}
-    with open(comhad_ionchurtha, 'r') as ionchur:
+    with open(comhad_ionchurtha, 'r', encoding='utf-8', errors='ignore') as ionchur:
         for líne in ionchur:
-            print(líne)
             ainmní, faisnéis, cúspóir = [teaghrán.strip() for teaghrán in líne.split('\t', 2)]
 
             tábla.add(ainmní)
@@ -45,7 +44,7 @@ def scríobh_tábla(tábla, comhad_tábla):
 
 def scríobh_comhad_comhbhrúite(tábla, comhad_ionchurtha, comhad_aschurtha):
     with open(comhad_aschurtha, 'w') as aschur:
-        with open(comhad_ionchurtha, 'r') as ionchur:
+        with open(comhad_ionchurtha, 'r', encoding='utf-8', errors='ignore') as ionchur:
             for líne in ionchur:
                 ainmní, faisnéis, cúspóir = [go_bonn_94(tábla.index(teaghrán.strip())) for teaghrán in líne.split('\t', 2)]
                 print(ainmní, faisnéis, cúspóir, sep='\t', file=aschur)

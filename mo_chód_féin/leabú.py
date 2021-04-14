@@ -2,6 +2,7 @@ from pykeen.triples import TriplesFactory
 from pykeen.pipeline import pipeline
 import resource
 import sys
+import os
 
 # Cuir bac ar an méid cuimhne is m ó atá sé ceadaithe a úsáid
 # go dtí gur féidir liom rudaí a dhéanamh ar mo ríomhaire fós
@@ -19,6 +20,7 @@ aschur = sys.argv[3]
 
 tf = TriplesFactory.from_path(comhad_ionchurtha)
 traenáil, tástáil = tf.split()
+#Comhadlann cúltacuithe: /home/siothrun/.data/pykeen/checkpoints/
 result = pipeline(
     training=traenáil,
     testing=tástáil,
@@ -26,6 +28,8 @@ result = pipeline(
     random_seed=42,
     training_kwargs=dict(
         num_epochs=1000,
+        checkpoint_name=os.path.join(os.path.basename(aschur) + '-' + samhail + '-cúltacú.pt'),
+        checkpoint_frequency=0,
     ),
 )
 result.save_to_directory(aschur)
