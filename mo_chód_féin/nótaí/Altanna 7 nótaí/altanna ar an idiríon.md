@@ -108,11 +108,20 @@ https://pubmed.ncbi.nlm.nih.gov/31852427/
 <br>
 https://ieeexplore.ieee.org/abstract/document/7358050 (7 mar pdf anseo)
 
+24. Canonical Tensor Decomposition for Knowledge Base Completion
+<br>
+https://mlsys.org/Conferences/2019/doc/2019/71.pdf (7 mar pdf anseo)
+
+25. PYTORCH-BIGGRAPH: A LARGE-SCALE GRAPHE MBEDDING SYSTEM
+<br>
+https://arxiv.org/abs/1806.07297 (7 mar pdf anseo)
+
+
 
 ## Eile
-### Chun Léamhs
+### Chun Léamh
 
-### ML, Nach raibh ar fáil dom:
+#### ML, Nach raibh ar fáil dom:
 24. BioKG: A Knowledge Graph for Relational Learning On Biological Data
 <br>
 https://dl.acm.org/doi/abs/10.1145/3340531.3412776
@@ -122,7 +131,7 @@ https://dl.acm.org/doi/abs/10.1145/3340531.3412776
 https://dl.acm.org/doi/abs/10.1145/3307339.3342161
 
 
-### A Bhaineann le BIOOPENER
+#### A Bhaineann le BIOOPENER
 13. TopFed: TCGA tailored federated query processing and linking to LOD
 https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4417511/
 

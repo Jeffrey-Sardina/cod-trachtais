@@ -27,7 +27,7 @@ result = pipeline(
     model=samhail,
     random_seed=42,
     training_kwargs=dict(
-        num_epochs=1000,
+        num_epochs=100,
         checkpoint_name=os.path.join(os.path.basename(aschur) + '-' + samhail + '-cúltacú.pt'),
         checkpoint_frequency=0,
     ),

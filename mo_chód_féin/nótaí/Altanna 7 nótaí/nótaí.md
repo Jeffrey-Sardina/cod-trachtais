@@ -250,3 +250,13 @@ Graif spleáchais
 - is minic a úsáidtear graif neamhdhírithe (chun spleáchais cioglacha a sheachaint); "Markov Random Fields / MRFs" (Réimsí Randamacha Markov; RRM-anna) is ainm dóibh súid
 - De gnáth, níl an t-algartam seo ró-inscálaithe
 
+
+## Altanna fé Leabú Graif Eolais
+
+### Canonical Tensor Decomposition for Knowledge Base Completion
+Nasc: https://mlsys.org/Conferences/2019/doc/2019/71.pdf (7 mar pdf anseo)
+
+
+### PYTORCH-BIGGRAPH: A LARGE-SCALE GRAPHE MBEDDING SYSTEM
+Nasc: https://arxiv.org/abs/1806.07297 (7 mar pdf anseo)
+
