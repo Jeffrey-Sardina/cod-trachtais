@@ -19,10 +19,11 @@ do
     #Níl cead agam iad a léamh i gcónaí--deisigh é sin
     chmod a+r $comhaid_nq
 
-    #Beidh orm an URLK a athrú gach uair eile
+    #Beidh orm an URL a athrú gach uair eile
     cat $comhaid_nq | \
         sed -e 's| '$2' \.||g' | \
         sed -e 's| <http|	<http|g' | \
+        sed -e 's| <ftp|	<ftp|g' | \
         sed -e 's| "|	"|g' \
         > $comhaid_nq.nt.tsv
 done

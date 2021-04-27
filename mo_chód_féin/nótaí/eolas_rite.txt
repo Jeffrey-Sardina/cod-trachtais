@@ -1,0 +1,29 @@
+pbg_ar_lap ($ time torchbiggraph_example_fb15k)
+    2021-04-26 16:48:40,475   [Evaluator] Starting edge path 1 / 1 (data/FB15k/freebase_mtr100_mte100-test_partitioned)
+    2021-04-26 16:48:56,419   [Evaluator] ( 0 , 0 ): Processed 59071 edges in 16 s (0.0037M/sec); load time: 0.0076 s
+    2021-04-26 16:48:56,419   [Evaluator] Stats for edge path 1 / 1, bucket ( 0 , 0 ): pos_rank:  51.7201 , mrr:  0.789549 , r1:  0.733422 , r10:  0.882015 , r50:  0.933284 , auc:  0.990494 , count:  59071
+    2021-04-26 16:48:56,419   [Evaluator] 
+    2021-04-26 16:48:56,420   [Evaluator] Stats for edge path 1 / 1: pos_rank:  51.7201 , mrr:  0.789549 , r1:  0.733422 , r10:  0.882015 , r50:  0.933284 , auc:  0.990494 , count:  59071
+    2021-04-26 16:48:56,420   [Evaluator] 
+    2021-04-26 16:48:56,420   [Evaluator] 
+    2021-04-26 16:48:56,420   [Evaluator] Stats: pos_rank:  51.7201 , mrr:  0.789549 , r1:  0.733422 , r10:  0.882015 , r50:  0.933284 , auc:  0.990494 , count:  59071
+    2021-04-26 16:48:56,420   [Evaluator] 
+
+    real    101m10.351s
+    user    534m59.543s
+    sys     181m37.573s
+
+pbg_ar_gpu ($ time torchbiggraph_example_fb15k)
+    2021-04-26 18:09:47,380   [Evaluator] Starting edge path 1 / 1 (data/FB15k/freebase_mtr100_mte100-test_partitioned)
+    2021-04-26 18:10:06,916   [Evaluator] ( 0 , 0 ): Processed 59071 edges in 20 s (0.003M/sec); load time: 0.022 s
+    2021-04-26 18:10:06,916   [Evaluator] Stats for edge path 1 / 1, bucket ( 0 , 0 ): loss:  4.33252 , pos_rank:  45.1655 , mrr:  0.794419 , r1:  0.72864 , r10:  0.894077 , r50:  0.94025 , auc:  0.995903 , count:  59071
+    2021-04-26 18:10:06,917   [Evaluator] 
+    2021-04-26 18:10:06,917   [Evaluator] Stats for edge path 1 / 1: loss:  4.33252 , pos_rank:  45.1655 , mrr:  0.794419 , r1:  0.72864 , r10:  0.894077 , r50:  0.94025 , auc:  0.995903 , count:  59071
+    2021-04-26 18:10:06,917   [Evaluator] 
+    2021-04-26 18:10:06,917   [Evaluator] 
+    2021-04-26 18:10:06,917   [Evaluator] Stats: loss:  4.33252 , pos_rank:  45.1655 , mrr:  0.794419 , r1:  0.72864 , r10:  0.894077 , r50:  0.94025 , auc:  0.995903 , count:  59071
+    2021-04-26 18:10:06,917   [Evaluator] 
+
+    real    8m3.338s
+    user    10m4.482s
+    sys     0m39.858s

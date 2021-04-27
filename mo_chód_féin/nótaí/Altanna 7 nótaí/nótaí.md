@@ -257,6 +257,15 @@ Graif spleáchais
 Nasc: https://mlsys.org/Conferences/2019/doc/2019/71.pdf (7 mar pdf anseo)
 
 
-### PYTORCH-BIGGRAPH: A LARGE-SCALE GRAPHE MBEDDING SYSTEM
+### PYTORCH-BIGGRAPH: A LARGE-SCALE GRAPH EMBEDDING SYSTEM
 Nasc: https://arxiv.org/abs/1806.07297 (7 mar pdf anseo)
 
+Aidhm: Leabú graif a dhéanamh ar graif i bhad níos mó ná mar atáthar in ann a déanamh trí córais traidisiúnta. Tá sé beagnach chomh cruinn agus na córais traidisiúnta, agus is féidir é a rith ar méid cuimhne i bhaf níos lú.
+
+Algartam:
+- Baineann siad úsáid as buicéid (codanna den Ghraif), agus tá gach ceann acu traenáilte go neamhspleách 9Den chuid is mó) ó na cinn eile. Bíonn méid na mbuicéad níos lú ná an mhéid cuimhne atá ag an ríomhaire (agus eolas sa bhreis curtha ar an diosca). Tá P buicéad ar fad ann.
+- Is féidir P / 2 a thraenáil go neamhspleách ag an am céanna
+- Tá pointe aischurtha crithaithe ag an gcóras
+- Níl na paraiméadar deighilte, toice go gcaithfidh go bhfuil suad mar an gcéanna i ngach buicéad (srl).
+- Úsáideann siad baisceanna samplaí diúltacha chun cuimhne 7 am a shábháil
+- Deir siad nach bhfuil ComplEx go hiomlán iontaofa ('instability' ann ar roinnt eolais)
