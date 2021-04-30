@@ -5,10 +5,12 @@
 # $3 => scrios seancomhaid (1) nó ná scrios (0)
 # $4 => áit tosaithe
     # 1 : comhbhrú
-    # 2 : réamh-phroiseái
+    # 2 : réamh-phroiseáil
     # 3 : leabú
     # 4 : díchomhbhrú
+# $5 : comhad cumraíochta
 
+source pytorch-biggraph-gpu/bin/activate
 AM_TOSACH="$(date +%s)"
 
 if [[ $4 -lt 2 ]]
@@ -27,13 +29,20 @@ if [[ $4 -lt 3 ]]
 then
     echo 'Ag réamh-phróiseáil na sonraí'
     mkdir ../cóipeanna/$1/scoilt_pbg/
-    python3 roimh_pbg.py ../cóipeanna/$1/uile_comhbhrúite.tsv ../cóipeanna/$1/scoilt_pbg/
+    torchbiggraph_import_from_tsv \
+        --lhs-col=0 --rel-col=1 --rhs-col=2 \
+        $5 \
+        ../cóipeanna/$1/scoilt_pbg/sonraí_traenála.tsv \
+        ../cóipeanna/$1/scoilt_pbg/sonraí_tástála.tsv \
+        ../cóipeanna/$1/scoilt_pbg/sonraí_deimhnithe.tsv
 fi
 
 if [[ $4 -lt 4 ]]
 then
     echo 'ag rith algartaim leabaithe'
-    
+    torchbiggraph_train \
+        $5 \
+        -p edge_paths=../cóipeanna/$1/scoilt_pbg/próiseáilte/sonraí_traenála_próiseáilte
 fi
 
 AGA_REATHA=$[ $(date +%s) - ${AM_TOSACH} ]

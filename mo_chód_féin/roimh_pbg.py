@@ -89,3 +89,4 @@ if __name__ == '__main__':
         scoilt_randamach(comhaid_ionchuir, comhadlann_aschuir, comhréir_tástála, comhréir_deimhnithe)
     else:
         scoilt_cinnteachaíoch(comhaid_ionchuir, comhadlann_aschuir, comhréir_tástála, comhréir_deimhnithe)
+ 
