@@ -40,3 +40,75 @@ Feic ar:
 Bhíos in ann an fhadhb cuimhne a dheisiú trí córas comhbhrúite (feic ar comhbhrú.py). Tá sé in ann méid ana-mhaith spás a shábháil gan torthnaí an chóras leabaithe a athrú. Móide sin, scríobh mé cód chun an píblíne a uathoibrigh, agus na torthaí deirneacha a dhíchomhbrú.
 
 Amach anseo, beidh mé ag iarraidh níos mó eolas chur tríb an bpíblíne, agus samhlacha éagsúla a thriail.
+
+## 18-05-2021
+Ritheas PBG leis an gcomhad seo a leanas:
+```
+#!/usr/bin/env python3
+
+def load_params():
+    import os
+
+    params = {}
+    for key, val in os.environ.items():
+        if key == "NUM_PARTITIONS":
+            params[key] = int(val)
+        if key == "DATA":
+            params[key] = val
+    
+    return params
+
+def get_torchbiggraph_config():
+    params = load_params()
+
+    print("backup_points/" + params['DATA'])
+
+    config = dict(
+        # I/O data
+        entity_path= "../copies/" + params['DATA'] + "/pbg_split",
+        edge_paths=[
+            "../copies/" + params['DATA'] + "/pbg_split/imported/training_data",
+            "../copies/" + params['DATA'] + "/pbg_split/imported/testing_data",
+            "../copies/" + params['DATA'] + "/pbg_split/imported/validation_data",
+        ],
+        checkpoint_path="backup_points/" + params['DATA'],
+
+        # Graph structure
+        # Ba cheart go mbeadh méid_graif_eolais / num_partitions < 8GB (cuimhne CUDA)
+        entities={"all": {"num_partitions": params["NUM_PARTITIONS"]}},
+        relations=[
+            {
+                "name": "all_edges",
+                "lhs": "all",
+                "rhs": "all",
+                "operator": "complex_diagonal",
+            }
+        ],
+        dynamic_relations=True,
+
+        # Scoring model
+        dimension=100,
+        global_emb=False,
+        comparator="dot",
+
+        # Training
+        num_epochs=50,
+        batch_size=5000,
+        num_uniform_negs=1000,
+        loss_fn="softmax",
+        lr=0.1,
+        regularization_coef=1e-3,
+
+        # Evaluation during training
+        eval_fraction=0,
+
+        # GPU
+        num_gpus=1,
+    )
+
+    return config
+```
+
+Thóg sé 71322 soicind. Ar dtús, bhí ró-mhéid cuimhne á húsáid aige, agus mar sin bhí orm níos mó deighiltí a chruthú, agus "dimensions" a chur ar laghad insan gcomhad seo thuas (bhí sé ag 200 ar dtús).
+
+Bhí all.tsv (seachas all_compressed.tsv) curtha isteach mar ionchur ann.

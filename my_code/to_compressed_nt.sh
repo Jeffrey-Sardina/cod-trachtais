@@ -14,22 +14,20 @@ else
 fi
 
 echo 'ag aistriú gach comhaid ó NQ go TSV'
-for comhaid_nq in $1/*.nq;
+for nq_file in $1/*.nq;
 do
     #Níl cead agam iad a léamh i gcónaí--deisigh é sin
-    chmod a+r $comhaid_nq
-
-    #Beidh orm an URL a athrú gach uair eile
-    cat $comhaid_nq | \
+    chmod a+r $nq_file
+    cat $nq_file | \
         sed -e 's| '$2' \.||g' | \
         sed -e 's| <http|	<http|g' | \
         sed -e 's| <ftp|	<ftp|g' | \
         sed -e 's| "|	"|g' \
-        > $comhaid_nq.nt.tsv
+        > $nq_file.nt.tsv
 done
 
-echo 'ag cur an t-eolas uile isteach in "uile.tsv"'
-cat $1/*.tsv > $1/uile.tsv
+echo 'ag cur an t-eolas uile isteach in "all.tsv"'
+cat $1/*.tsv > $1/all.tsv
 
 echo 'á chomhbhrú'
-python3 comhbhrú.py $1/uile.tsv $1/uile_comhbhrúite.tsv $1/uile_tábla.tsv
+python3 compress.py $1/all.tsv $1/all_compressed.tsv $1/all_table.tsv
