@@ -13,7 +13,7 @@ def load_params():
         if key == "UUID":
             params[key] = val
         if key == "SEARCH_ITERATION":
-            search_iteration = val
+            search_iteration = int(val)
     
     return params, search_iteration
 
