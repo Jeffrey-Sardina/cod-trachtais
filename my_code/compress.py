@@ -17,24 +17,30 @@ def compress(input_file, output_file, table_file):
 def create_compression_table(input_file):
     table = OrderedSet()
     counts = {}
+    num_errors = 0
     with open(input_file, 'r', encoding='utf-8', errors='ignore') as inp:
         for line in inp:
             x = [test.strip() for test in line.split('\t', 2)]
-            subject, predicate, object = x
+            try:
+                subject, predicate, object = x
 
-            table.add(subject)
-            table.add(predicate)
-            table.add(object)
+                table.add(subject)
+                table.add(predicate)
+                table.add(object)
 
-            if not subject in counts:
-                counts[subject] = 0
-            if not predicate in counts:
-                counts[predicate] = 0
-            if not object in counts:
-                counts[object] = 0
-            counts[subject] += 1
-            counts[predicate] += 1
-            counts[object] += 1
+                if not subject in counts:
+                    counts[subject] = 0
+                if not predicate in counts:
+                    counts[predicate] = 0
+                if not object in counts:
+                    counts[object] = 0
+                counts[subject] += 1
+                counts[predicate] += 1
+                counts[object] += 1
+            except:
+                num_errors += 1
+                print('Bad format; ignored ' + str(x))
+                print('Total of ' + str(num_errors) + ' errors so far')
             
     return OrderedSet(sorted(table, key=lambda x : counts[x], reverse=True))
 

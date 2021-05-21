@@ -27,7 +27,7 @@ def get_torchbiggraph_config():
         ],
         checkpoint_path="backup_points/" + params['DATA'] + "_" + params['UUID'],
 
-        # Graph structure
+        # Structúr an Ghraif
         # Ba cheart go mbeadh méid_graif_eolais / num_partitions < 8GB (cuimhne CUDA)
         entities={"all": {"num_partitions": params["NUM_PARTITIONS"]}},
         relations=[

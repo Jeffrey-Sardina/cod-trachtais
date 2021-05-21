@@ -33,37 +33,37 @@ then
     exit 1
 fi
 
-#Céim 1
-if [[ $START -lt 2 ]] 
-then
-    echo 'ag fáil an IRI ab ceart a bhaint amach'
-    info=$(cat ../copies/$DATA/bio2rdf-$DATA.nq | head -n 1)
-    iri=$(python3 get_iri.py "$info")
-    echo 'ag baint amach an iri:' $iri
+# #Céim 1
+# if [[ $START -lt 2 ]] 
+# then
+#     echo 'ag fáil an IRI ab ceart a bhaint amach'
+#     info=$(cat ../copies/$DATA/bio2rdf-$DATA.nq | head -n 1)
+#     iri=$(python3 get_iri.py "$info")
+#     echo 'ag baint amach an iri:' $iri
 
-    echo 'ag lódáil sonraí'
-    ./to_compressed_nt.sh ../copies/$DATA/ "$iri" $DEL_OLD_TSV
-fi
+#     echo 'ag lódáil sonraí'
+#     ./to_compressed_nt.sh ../copies/$DATA/ "$iri" $DEL_OLD_TSV
+# fi
 
-#Céim 2
-if [[ $START -lt 3 ]]
-then
-    echo 'Ag réamh-phróiseáil na sonraí'
-    if [[ $DEL_OLD_TSV -eq "1" ]]
-    then
-        echo 'ag scriosadh seaneolas i pbg_split agus pbg_out'
-        rm -rf ../copies/$DATA/pbg_split/
-        rm -rf ../copies/$DATA/pbg_out/
-    fi
-    mkdir ../copies/$DATA/pbg_split/
-    python pre_pbg_import.py ../copies/$DATA/all_compressed.tsv ../copies/$DATA/pbg_split/ 0
-    torchbiggraph_import_from_tsv \
-        --lhs-col=0 --rel-col=1 --rhs-col=2 \
-        $CONFIG \
-        ../copies/$DATA/pbg_split/training_data.tsv \
-        ../copies/$DATA/pbg_split/validation_data.tsv \
-        ../copies/$DATA/pbg_split/testing_data.tsv
-fi
+# #Céim 2
+# if [[ $START -lt 3 ]]
+# then
+#     echo 'Ag réamh-phróiseáil na sonraí'
+#     if [[ $DEL_OLD_TSV -eq "1" ]]
+#     then
+#         echo 'ag scriosadh seaneolas i pbg_split agus pbg_out'
+#         rm -rf ../copies/$DATA/pbg_split/
+#         rm -rf ../copies/$DATA/pbg_out/
+#     fi
+#     mkdir ../copies/$DATA/pbg_split/
+#     python pre_pbg_import.py ../copies/$DATA/all_compressed.tsv ../copies/$DATA/pbg_split/ 0
+#     torchbiggraph_import_from_tsv \
+#         --lhs-col=0 --rel-col=1 --rhs-col=2 \
+#         $CONFIG \
+#         ../copies/$DATA/pbg_split/training_data.tsv \
+#         ../copies/$DATA/pbg_split/validation_data.tsv \
+#         ../copies/$DATA/pbg_split/testing_data.tsv
+# fi
 
 #Céim 3
 if [[ $START -lt 4 ]]
