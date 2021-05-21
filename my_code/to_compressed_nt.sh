@@ -29,7 +29,7 @@ done
 echo 'ag cur an t-eolas uile isteach in "all.tsv"'
 cat $1/*.tsv > $1/all.tsv
 
-#echo 'á chomhbhrú'
-#python3 compress.py $1/all.tsv $1/all_compressed.tsv $1/all_table.tsv
+echo 'á chomhbhrú'
+python3 compress.py $1/all.tsv $1/all_compressed.tsv $1/all_table.tsv
 
 exit $?

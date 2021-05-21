@@ -5,7 +5,7 @@ import string
 caractair = string.printable.strip()
 
 def compress(input_file, output_file, table_file):
-    print('ag cruthú an táble')
+    print('ag cruthú an tábla')
     table = create_compression_table(input_file)
     write_table(table, table_file)
     print('táble scríofa (' + str(len(table)) + ' line)')
