@@ -31,5 +31,10 @@ cat $1/*.tsv > $1/all.tsv
 
 echo 'á chomhbhrú'
 python3 compress.py $1/all.tsv $1/all_compressed.tsv $1/all_table.tsv
+if [[ $? -ne "0" ]]
+then
+    echo 'compress.py error: stopping script'
+    exit 1
+fi
 
-exit $?
+exit 0

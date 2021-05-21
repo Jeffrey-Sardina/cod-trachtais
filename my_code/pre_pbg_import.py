@@ -92,3 +92,5 @@ if __name__ == '__main__':
         random_split(input_file, output_dir, test_prop, validation_prop)
     else:
         deterministic_split(input_file, output_dir, test_prop, validation_prop)
+    
+    exit(0)

@@ -32,3 +32,4 @@ for grúpa in grúpaí:
     time.sleep(180) #3 nóiméad chun gach grúpa a íoslódáil
 
 #driver.quit()
+exit(0)

@@ -7,3 +7,4 @@ if __name__ == '__main__':
     text = sys.argv[1]
     iri = get_iri(text)
     print(iri)
+    exit(0)

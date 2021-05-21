@@ -74,3 +74,4 @@ if __name__ == '__main__':
     output_file = sys.argv[2]
     table_file = sys.argv[3]
     compress(input_file, output_file, table_file)
+    exit(0)

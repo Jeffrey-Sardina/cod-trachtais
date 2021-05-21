@@ -22,3 +22,5 @@ then
     mv ../copies/$DATA/all_compressed.save ../copies/$DATA/all_compressed.tsv
     mv ../copies/$DATA/all_table.save ../copies/$DATA/all_table.tsv
 fi
+
+exit 0

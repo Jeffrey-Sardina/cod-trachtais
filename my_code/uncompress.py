@@ -21,3 +21,4 @@ if __name__ == '__main__':
     compression_table = sys.argv[2]
     output = sys.argv[3]
     uncompress(predictions_file, compression_table, output)
+    exit(0)

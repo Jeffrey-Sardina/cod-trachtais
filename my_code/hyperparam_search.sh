@@ -23,10 +23,24 @@ do
 
     # #Réamh-phróiseáil
     uuid=${NUM_PARTITIONS}_${SEARCH_ITERATION}
-    echo $uuid
-    # ./pbg_preprocess.sh $DATA $DEL_OLD $CONFIG $NUM_PARTITIONS $uuid
+    ./pbg_preprocess.sh $DATA $DEL_OLD $CONFIG $NUM_PARTITIONS $uuid
     
+    if [[ $? -ne "0" ]]
+    then
+        echo 'pbg_preprocess.sh error: stopping script'
+        echo "Was at $SEARCH_ITERATION"
+        exit 1
+    fi
+
     # #Traenáil 7 Fíorú
-    # $start=4
-    # ./pbg_pipeline.sh $DATA $uuid $DEL_OLD $start $CONFIG $NUM_PARTITIONS
+    $start=4
+    ./pbg_pipeline.sh $DATA $uuid $DEL_OLD $start $CONFIG $NUM_PARTITIONS
+    if [[ $? -ne "0" ]]
+    then
+        echo 'pbg_pipeline.sh error: stopping script'
+        echo "Was at $SEARCH_ITERATION"
+        exit 1
+    fi
 done
+
+exit 0
