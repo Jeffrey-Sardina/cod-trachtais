@@ -68,15 +68,6 @@ do
         echo 'output_training_results_search.sh.sh error: stopping script'
         exit 1
     fi
-
-    # $start=4
-    # ./pbg_pipeline.sh $DATA $uuid $DEL_OLD $start $CONFIG $NUM_PARTITIONS
-    # if [[ $? -ne "0" ]]
-    # then
-    #     echo 'pbg_pipeline.sh error: stopping script'
-    #     echo "Was at $SEARCH_ITERATION"
-    #     exit 1
-    # fi
 done
 
 exit 0

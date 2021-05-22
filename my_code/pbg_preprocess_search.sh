@@ -31,7 +31,7 @@ torchbiggraph_import_from_tsv \
     $CONFIG \
     ../copies/$DATA/pbg_split/training_data.tsv \
     ../copies/$DATA/pbg_split/validation_data.tsv \
-    ../copies/$DATA/pbg_split/testing_data.tsv > "../models/${DATA}.importlog"
+    ../copies/$DATA/pbg_split/testing_data.tsv > "../models/${DATA}/pre.importlog"
 if [[ $? -ne "0" ]]
 then
     echo 'torchbiggraph_import_from_tsv error: stopping script'
