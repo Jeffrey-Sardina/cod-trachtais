@@ -10,6 +10,7 @@ DEL_OLD=$2
 NUM_PARTITIONS=$3
 NUM_OPTIONS=$4 #Must be manually calcualted from number of options in the search config file
 CONFIG=$5
+TRIPLES_TO_KEEP=$6 #if 0, keep all
 
 export DATA=$1
 export NUM_PARTITIONS=$3
@@ -18,6 +19,16 @@ export NUM_PARTITIONS=$3
 # do
 #     data=$(basename $dir)
 # done
+
+if [[ $TRIPLES_TO_KEEP -gt 0 ]]
+then
+    echo 'ag cruthú fothacair eolais go randamach'
+    mkdir ../copies/${DATA}_randsub_${TRIPLES_TO_KEEP}/
+    DATA_OLD=$DATA
+    DATA=${DATA}_randsub_${TRIPLES_TO_KEEP}
+    cp ../copies/$DATA_OLD/all_table.tsv ../copies/$DATA/
+    python create_random_subset.py ../copies/$DATA_OLD/ ../copies/$DATA/ $TRIPLES_TO_KEEP
+fi
 
 #Réamh-phróiseáil
 mkdir ../models/$DATA/
