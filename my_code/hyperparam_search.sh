@@ -28,6 +28,11 @@ then
     DATA=${DATA}_randsub_${TRIPLES_TO_KEEP}
     cp ../copies/$DATA_OLD/all_table.tsv ../copies/$DATA/
     python create_random_subset.py ../copies/$DATA_OLD/ ../copies/$DATA/ $TRIPLES_TO_KEEP
+    if [[ $? -ne "0" ]]
+    then
+        echo 'create_random_subset.py error: stopping script'
+        exit 1
+    fi
 fi
 
 #Réamh-phróiseáil
@@ -76,7 +81,7 @@ do
     ./output_training_results_search.sh $DATA $CONFIG
     if [[ $? -ne "0" ]]
     then
-        echo 'output_training_results_search.sh.sh error: stopping script'
+        echo 'output_training_results_search.sh error: stopping script'
         exit 1
     fi
 done

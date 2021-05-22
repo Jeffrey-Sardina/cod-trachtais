@@ -9,7 +9,9 @@ def uncompress(predictions_file, compression_table, output):
     table = {}
     with open(compression_table, 'r') as inp:
         for line in inp:
-            idx, val = line.strip().split('\t')
+            data = line.strip().split('\t')
+            idx = data[0]
+            val = data[1:]
             table[idx] = val
 
     #Decompress and output
