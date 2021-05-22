@@ -10,7 +10,6 @@ export DATA=$1
 export NUM_PARTITIONS=$4
 export UUID="Ignore"
 
-#Céim 2
 echo 'Ag réamh-phróiseáil na sonraí'
 if [[ $DEL_OLD_TSV -eq "1" ]]
 then
