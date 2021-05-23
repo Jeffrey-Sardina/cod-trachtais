@@ -18,4 +18,8 @@ if __name__ == '__main__':
     #Verify that expected numcols = actuals numcols
     file = sys.argv[1]
     expected = int(sys.argv[2])
-    print(get_num_cols(file, expected))
+    cols = get_num_cols(file, expected)
+    print(cols)
+    if len(cols) > 1 or cols.pop() != expected:
+        raise ValueError('Tá ar a laghad ró amháin ann leis an uimhir mícheart colúin aige')
+    exit(0)

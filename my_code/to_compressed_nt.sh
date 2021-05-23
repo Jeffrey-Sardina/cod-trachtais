@@ -37,11 +37,33 @@ done
 echo 'ag cur an t-eolas uile isteach in "all.tsv"'
 cat $FILES_LOC/*.tsv > $FILES_LOC/all.tsv
 
+echo 'ag fíordheimhniú all.tsv'
+python numcols.py $FILES_LOC/all.tsv 3
+if [[ $? -ne "0" ]]
+then
+    echo 'nq=>tsv error detected by numcols.py: stopping script'
+    exit 1
+fi
+
 echo 'á chomhbhrú'
 python3 compress.py $FILES_LOC/all.tsv $FILES_LOC/all_compressed.tsv $FILES_LOC/all_table.tsv
 if [[ $? -ne "0" ]]
 then
     echo 'compress.py error: stopping script'
+    exit 1
+fi
+
+echo 'ag fíordheimhniú na gcomhad combhrúite'
+python numcols.py $FILES_LOC/all_compressed.tsv 3
+if [[ $? -ne "0" ]]
+then
+    echo 'compression file error detected by numcols.py: stopping script'
+    exit 1
+fi
+python numcols.py $FILES_LOC/all_table.tsv 3
+if [[ $? -ne "0" ]]
+then
+    echo 'compression table error detected by numcols.py: stopping script'
     exit 1
 fi
 
