@@ -17,11 +17,6 @@ START_DATE="$(date)"
 export DATA=$1
 export NUM_PARTITIONS=$3
 
-# for dir in ../copies/*/
-# do
-#     data=$(basename $dir)
-# done
-
 if [[ $TRIPLES_TO_KEEP -gt 0 ]]
 then
     echo 'ag cruthú fothacair eolais go randamach'

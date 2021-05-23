@@ -19,7 +19,11 @@ if __name__ == '__main__':
     file = sys.argv[1]
     expected = int(sys.argv[2])
     cols = get_num_cols(file, expected)
-    print(cols)
     if len(cols) > 1 or cols.pop() != expected:
+        print('Dump: numcols params')
+        print(cols)
+        print(file)
+        print(expected)
+        print()
         raise ValueError('Tá ar a laghad ró amháin ann leis an uimhir mícheart colúin aige')
     exit(0)
