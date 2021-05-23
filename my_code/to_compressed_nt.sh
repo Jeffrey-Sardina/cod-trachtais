@@ -1,7 +1,6 @@
 #!/bin/bash
 
 FILES_LOC=$1
-IRI=$2
 DEL_OLD=$3
 
 if [[ $DEL_OLD -eq "1" ]]
@@ -22,12 +21,19 @@ for nq_file in $FILES_LOC/*.nq;
 do
     #Níl cead agam iad a léamh i gcónaí--deisigh é sin
     chmod a+r $nq_file
+
+    #Is féidir nach bhfuil an IRI mar an gcéanna i gcónaí!
+    info=$(cat $nq_file | head -n 1)
+    IRI=$(python3 get_iri.py "$info")
+    echo 'ag baint amach an iri:' $IRI
+
     # cat $nq_file | \
     #     sed -e 's| '$IRI' \.||g' | \
     #     sed -e 's| <http|	<http|g' | \
     #     sed -e 's| <ftp|	<ftp|g' | \
     #     sed -e 's| "|	"|g' \
     #     > $nq_file.nt.tsv
+    
     cat $nq_file | \
         sed -e 's| '$IRI' \.||g' | \
         sed -e 's|> |>	|g' \

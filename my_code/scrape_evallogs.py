@@ -53,9 +53,5 @@ if __name__ == '__main__':
     folder = sys.argv[1]
     output = sys.argv[2]
     files = glob.glob(os.path.join(folder,'*.evallog'))
-
-    print(get_val_for_iteration(0))
-    print(get_val_for_iteration(1))
-
-    #all_data, keys = process_files(files)
-    #write_as_csv(all_data, keys, output)
+    all_data, keys = process_files(files)
+    write_as_csv(all_data, keys, output)
