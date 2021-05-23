@@ -52,6 +52,13 @@ do
     export UUID=$UUID
     rm -rf ../copies/$DATA/$UUID/pbg_out/
 
+    #Rabhaí agus earráidí
+    if [[ -d "backup_points/${DATA}_${UUID}" && $START -lt 4 ]]
+    then
+        echo "ERROR: UUID úsáidte cheana, roghnaigh ceann eile"
+        exit 1
+    fi
+
     #Traenáil
     echo 'ag rith algartaim leabaithe'
     torchbiggraph_train \
