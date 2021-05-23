@@ -11,6 +11,8 @@ NUM_PARTITIONS=$3
 NUM_OPTIONS=$4 #Must be manually calcualted from number of options in the search config file
 CONFIG=$5
 TRIPLES_TO_KEEP=$6 #if 0, keep all
+START_TIME="$(date +%s)"
+START_DATE="$(date)"
 
 export DATA=$1
 export NUM_PARTITIONS=$3
@@ -92,5 +94,21 @@ do
         exit 1
     fi
 done
+
+RUNNING_TIME=$[ $(date +%s) - ${START_TIME} ]
+END_DATE="$(date)"
+
+echo "eolas deiridh"
+echo DATA $DATA
+echo DEL_OLD $DEL_OLD
+echo NUM_PARTITIONS $NUM_PARTITIONS
+echo NUM_OPTIONS $NUM_OPTIONS
+echo CONFIG $CONFIG
+echo TRIPLES_TO_KEEP $TRIPLES_TO_KEEP
+echo START_TIME $START_TIME
+echo RUNNING_TIME $RUNNING_TIME
+echo START_DATE $START_DATE
+echo END_DATE $END_DATE
+echo 'críochnathe tar éis' $RUNNING_TIME 'soicind'
 
 exit 0

@@ -20,7 +20,8 @@ def create_compression_table(input_file):
     num_errors = 0
     with open(input_file, 'r', encoding='utf-8', errors='ignore') as inp:
         for line in inp:
-            x = [test.strip() for test in line.split('\t', 2)]
+            #X should have len 3; if not, bad data was given to the script
+            x = [test.strip() for test in line.split('\t')]
             try:
                 subject, predicate, object = x
 

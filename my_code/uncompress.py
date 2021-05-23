@@ -9,14 +9,14 @@ def uncompress(predictions_file, compression_table, output):
     table = {}
     with open(compression_table, 'r') as inp:
         for line in inp:
-            data = line.strip().split('\t')
-            idx = data[0]
-            val = data[1:]
+            #Má tá níos mó na sin ann, tá earráid sa tábla féin
+            idx, val = line.strip().split('\t')
             table[idx] = val
 
     #Decompress and output
-    predictions[0] = predictions[0].apply(lambda x : table[x])
-    predictions.to_csv(output, header=False, index=False, sep='\t')
+    print(predictions[0])
+    #predictions[0] = predictions[0].apply(lambda x : table[x])
+    #predictions.to_csv(output, header=False, index=False, sep='\t')
 
 if __name__ == '__main__':
     predictions_file = sys.argv[1]
