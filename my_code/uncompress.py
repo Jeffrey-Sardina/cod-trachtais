@@ -15,8 +15,8 @@ def uncompress(predictions_file, compression_table, output):
 
     #Decompress and output
     print(predictions[0])
-    #predictions[0] = predictions[0].apply(lambda x : table[x])
-    #predictions.to_csv(output, header=False, index=False, sep='\t')
+    predictions[0] = predictions[0].apply(lambda x : table[x])
+    predictions.to_csv(output, header=False, index=False, sep='\t')
 
 if __name__ == '__main__':
     predictions_file = sys.argv[1]

@@ -117,3 +117,11 @@ Bhí all.tsv (seachas all_compressed.tsv) curtha isteach mar ionchur ann.
 Táim tréis ana-mhéid rudaí a chur chun cinn, agus hyperparam_search.sh a scríobh. Séard atá i gceist ann na roinnt paraiméadair a fháil nach bhfuil go dona ar tacar sonraí.
 
 Tá orm amach ansan na cinn is fearr a roghnú. Tá ana-mhéid ama ag baint leis (féach ar hyperparamsearch/times.csv) fiú ar tacair sonraí fíor-bheag. Mar sin, beidh orm samplaí ana-bheaga ar fad a úsáid chun fíordheimhniú hípearpharaiméadar a chur i gcrích.
+
+Tá níos mó na IRI amháin sa chuid is mó de na foinsí eolais; mar cin, caithfidh mé a bheith cinnte go bhfuil sé cgl a aistriú go NT mar atá mé. Níl sé sin déanta agam go fóill.
+
+Cheartaigh mé roinnt earráidí móra:
+- nach raibh IRI-anna éagsúla san áireamh
+- nach raibh ach tacar hipearpharaiméadar amháin in úsáid ag an gcuardach hipearpharaiméadar
+
+Mar sin, tá orm gach rud a ath-dhéanamh arís, tpoisc nach raibh an bhuid eile bailí. Sula leanaim ar aghadih, caithfigh mé chuile rud a fhíordheimhniú mar sin!

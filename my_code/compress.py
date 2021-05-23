@@ -22,27 +22,22 @@ def create_compression_table(input_file):
         for line in inp:
             #X should have len 3; if not, bad data was given to the script
             x = [test.strip() for test in line.split('\t')]
-            try:
-                subject, predicate, object = x
+            subject, predicate, object = x
 
-                table.add(subject)
-                table.add(predicate)
-                table.add(object)
+            table.add(subject)
+            table.add(predicate)
+            table.add(object)
 
-                if not subject in counts:
-                    counts[subject] = 0
-                if not predicate in counts:
-                    counts[predicate] = 0
-                if not object in counts:
-                    counts[object] = 0
-                counts[subject] += 1
-                counts[predicate] += 1
-                counts[object] += 1
-            except:
-                num_errors += 1
-                print('Bad format; ignored ' + str(x))
-                print('Total of ' + str(num_errors) + ' errors so far')
-            
+            if not subject in counts:
+                counts[subject] = 0
+            if not predicate in counts:
+                counts[predicate] = 0
+            if not object in counts:
+                counts[object] = 0
+            counts[subject] += 1
+            counts[predicate] += 1
+            counts[object] += 1
+
     return OrderedSet(sorted(table, key=lambda x : counts[x], reverse=True))
 
 def write_table(table, table_file):
