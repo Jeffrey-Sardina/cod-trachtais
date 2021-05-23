@@ -21,27 +21,25 @@ def get_val_for_iteration(search_iteration):
     '''
     This should be the only hard-coded part
     '''
+    import itertools
+
     lr_options = [1e-2, 1e-3, 1e-4]
     regularization_coef_options = [1e-1, 1e-3, 1e-5]
     loss_fn_options = ['ranking', 'softmax']
     operator_options = ['translation', 'affine', 'diagonal']
     comparator_options = ['dot', 'l2']
 
-    permutation = None
-    i = 0
-    for lr in lr_options:
-        for regularization_coef in regularization_coef_options:
-            for loss_fn in loss_fn_options:
-                for operator in operator_options:
-                    for comparator in comparator_options:
-                        if i == search_iteration:
-                            permutation = [lr, regularization_coef, loss_fn, operator, comparator]
-                            break
-                        i += 1
+    permutations = itertools.product(lr_options,
+        regularization_coef_options,
+        loss_fn_options,
+        operator_options,
+        comparator_options)
 
-    if not permutation:
-        raise ValueError('invalid search_iteration value. Note: it must start at 0')
-    return permutation
+    for i, permutation in enumerate(permutations):
+        if i == search_iteration:
+            return permutation
+    
+    raise ValueError('invalid search_iteration value. Note: it must start at 0')
 
 def get_torchbiggraph_config():
     params, i = load_params()

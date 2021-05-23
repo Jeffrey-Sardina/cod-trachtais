@@ -1,0 +1,10 @@
+Hipearpharaiméadair úsáidte:
+lr_options = [1e-2, 1e-3, 1e-4]
+regularization_coef_options = [1e-1, 1e-3, 1e-5]
+loss_fn_options = ['ranking', 'softmax']
+operator_options = ['translation', 'affine', 'diagonal']
+comparator_options = ['dot', 'l2']
+
+Sonraí
+foinse eolais,am tógtha (ón gcéaed evallog go dtí an ceann deireanach) (nóiméid)
+orphanet,79

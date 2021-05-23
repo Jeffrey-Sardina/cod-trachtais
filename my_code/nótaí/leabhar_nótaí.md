@@ -112,3 +112,8 @@ def get_torchbiggraph_config():
 Thóg sé 71322 soicind. Ar dtús, bhí ró-mhéid cuimhne á húsáid aige, agus mar sin bhí orm níos mó deighiltí a chruthú, agus "dimensions" a chur ar laghad insan gcomhad seo thuas (bhí sé ag 200 ar dtús).
 
 Bhí all.tsv (seachas all_compressed.tsv) curtha isteach mar ionchur ann.
+
+## 23-05-2021
+Táim tréis ana-mhéid rudaí a chur chun cinn, agus hyperparam_search.sh a scríobh. Séard atá i gceist ann na roinnt paraiméadair a fháil nach bhfuil go dona ar tacar sonraí.
+
+Tá orm amach ansan na cinn is fearr a roghnú. Tá ana-mhéid ama ag baint leis (féach ar hyperparamsearch/times.csv) fiú ar tacair sonraí fíor-bheag. Mar sin, beidh orm samplaí ana-bheaga ar fad a úsáid chun fíordheimhniú hípearpharaiméadar a chur i gcrích.
