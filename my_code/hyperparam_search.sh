@@ -96,6 +96,8 @@ do
     fi
 done
 
+python scrape_evallogs.py ../models/$DATA ../models/$DATA/evals.csv
+
 RUNNING_TIME=$[ $(date +%s) - ${START_TIME} ]
 END_DATE="$(date)"
 

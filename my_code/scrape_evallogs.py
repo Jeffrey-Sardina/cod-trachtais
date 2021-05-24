@@ -5,6 +5,7 @@ from config.search.general import get_val_for_iteration
 
 def process_files(files):
     all_data = []
+    keys = []
     for file in files:
         keys, vals = process_file(file)
         all_data.append(vals)
@@ -15,7 +16,8 @@ def process_file(file):
         for line in inp:
             if "Stats: " in line:
                 csv_data = line.split("Stats: ")[1:][0]
-                return extract_csv_data(csv_data)
+                keys, vals = extract_csv_data(csv_data)
+                return keys, vals
 
 def get_hyperparam_map():
     num_to_vals = {}
@@ -41,9 +43,8 @@ def extract_csv_data(csv_data):
 
 def write_as_csv(all_data, header_keys, output):
     num_to_vals = get_hyperparam_map()
-    print(num_to_vals)
     with open(output, 'w') as out:
-        print('lr,reg,loss_fn,operator,comparator', end=',',file=out)
+        print('lr,reg,loss_fn,operator,comparator', end=',', file=out)
         print(','.join(header_keys), file=out)
         for i, vals in enumerate(all_data):
             print(num_to_vals[i], end=',',file=out)
@@ -55,3 +56,4 @@ if __name__ == '__main__':
     files = glob.glob(os.path.join(folder,'*.evallog'))
     all_data, keys = process_files(files)
     write_as_csv(all_data, keys, output)
+    exit(0)
