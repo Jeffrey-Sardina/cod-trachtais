@@ -3,7 +3,7 @@ import pandas as pd
 
 def uncompress(predictions_file, compression_table, output):
     #Load data
-    predictions = pd.read_csv(predictions_file, sep='\t', header=None)
+    predictions = pd.read_csv(predictions_file, sep='\t', header=None, quotechar=None)
     
     #Load compression table
     table = {}

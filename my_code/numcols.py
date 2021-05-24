@@ -7,9 +7,7 @@ def get_num_cols(file, expected):
         for line in inp:
             line_cols = len(line.strip().split('\t'))
             if line_cols != expected:
-                print(line.strip().split('\t'))
                 print(i)
-                print()
             cols.add(line_cols)
             i += 1
     return cols

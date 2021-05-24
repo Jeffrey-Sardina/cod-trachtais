@@ -1,7 +1,7 @@
 #!/bin/bash
 
 DATA=$1 
-DEL_OLD_TSV=$2
+DEL_OLD=$2
 CONFIG=$3
 NUM_PARTITIONS=$4
 UUID="Ignore"
@@ -11,7 +11,7 @@ export NUM_PARTITIONS=$4
 export UUID="Ignore"
 
 echo 'Ag réamh-phróiseáil na sonraí'
-if [[ $DEL_OLD_TSV -eq "1" ]]
+if [[ $DEL_OLD -eq "1" ]]
 then
     echo 'ag scriosadh seaneolas i pbg_split agus pbg_out'
     rm -rf ../copies/$DATA/pbg_split/

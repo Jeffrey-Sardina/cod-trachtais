@@ -73,7 +73,7 @@ then
     echo 'compression file error detected by numcols.py: stopping script'
     exit 1
 fi
-python numcols.py $FILES_LOC/all_table.tsv 3
+python numcols.py $FILES_LOC/all_table.tsv 2
 if [[ $? -ne "0" ]]
 then
     echo 'compression table error detected by numcols.py: stopping script'

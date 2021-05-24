@@ -21,7 +21,7 @@ def get_items(line):
     start = line.find('<')
     end = line.find('>')
     predicate = line[start : end+1]
-    object = line[end+1: ].strip()
+    object = line[end+1: ].strip().replace('\t', ' ')
 
     return subject, predicate, object
 
@@ -35,3 +35,4 @@ if __name__ == '__main__':
 
     iri_extended = ' ' + iri_to_rm + ' .'
     convert_file(nq_file, iri_extended, out_file)
+    exit(0)
