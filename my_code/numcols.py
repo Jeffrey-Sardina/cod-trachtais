@@ -1,7 +1,7 @@
 import sys
 
 def get_num_cols(file, expected):
-    with open(file, 'r') as inp:
+    with open(file, 'r', encoding='utf-8', errors='ignore') as inp:
         cols = set()
         i = 0
         for line in inp:

@@ -1,7 +1,7 @@
 #!/bin/bash
 
 FILES_LOC=$1
-DEL_OLD=$3
+DEL_OLD=$2
 
 if [[ $DEL_OLD -eq "1" ]]
 then
@@ -33,23 +33,30 @@ do
     #     sed -e 's| <ftp|	<ftp|g' | \
     #     sed -e 's| "|	"|g' \
     #     > $nq_file.nt.tsv
+
+    python nq_to_tsv.py $nq_file $IRI $nq_file.nt.tsv
+    if [[ $? -ne "0" ]]
+    then
+        echo 'nq_to_tsv.py error: stopping script'
+        exit 1
+    fi
     
-    cat $nq_file | \
-        sed -e 's| '$IRI' \.||g' | \
-        sed -e 's|> |>	|g' \
-        > $nq_file.nt.tsv
+    # cat $nq_file | \
+    #     sed -e 's| '$IRI' \.||g' | \
+    #     sed -e 's|> |>	|g' \
+    #     > $nq_file.nt.tsv
+
+    echo 'ag fíordheimhniú an .tsv'
+    python numcols.py $nq_file.nt.tsv 3
+    if [[ $? -ne "0" ]]
+    then
+        echo 'nq=>tsv error detected by numcols.py: stopping script'
+        exit 1
+    fi
 done
 
 echo 'ag cur an t-eolas uile isteach in "all.tsv"'
 cat $FILES_LOC/*.tsv > $FILES_LOC/all.tsv
-
-echo 'ag fíordheimhniú all.tsv'
-python numcols.py $FILES_LOC/all.tsv 3
-if [[ $? -ne "0" ]]
-then
-    echo 'nq=>tsv error detected by numcols.py: stopping script'
-    exit 1
-fi
 
 echo 'á chomhbhrú'
 python3 compress.py $FILES_LOC/all.tsv $FILES_LOC/all_compressed.tsv $FILES_LOC/all_table.tsv
