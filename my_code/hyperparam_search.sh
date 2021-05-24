@@ -11,37 +11,43 @@ NUM_PARTITIONS=$3
 NUM_OPTIONS=$4 #Must be manually calcualted from number of options in the search config file
 CONFIG=$5
 TRIPLES_TO_KEEP=$6 #if 0, keep all
+START_SEARCH_ITERATION=$7
 START_TIME="$(date +%s)"
 START_DATE="$(date)"
 
 export DATA=$1
 export NUM_PARTITIONS=$3
 
-if [[ $TRIPLES_TO_KEEP -gt 0 ]]
+if [[ $START_SEARCH_ITERATION -eq 0 ]]
 then
-    echo 'ag cruthú fothacair eolais go randamach'
-    mkdir ../copies/${DATA}_randsub_${TRIPLES_TO_KEEP}/
-    DATA_OLD=$DATA
-    DATA=${DATA}_randsub_${TRIPLES_TO_KEEP}
-    cp ../copies/$DATA_OLD/all_table.tsv ../copies/$DATA/
-    python create_random_subset.py ../copies/$DATA_OLD/ ../copies/$DATA/ $TRIPLES_TO_KEEP
+    if [[ $TRIPLES_TO_KEEP -gt 0 ]]
+    then
+        echo 'ag cruthú fothacair eolais go randamach'
+        mkdir ../copies/${DATA}_randsub_${TRIPLES_TO_KEEP}/
+        DATA_OLD=$DATA
+        DATA=${DATA}_randsub_${TRIPLES_TO_KEEP}
+        cp ../copies/$DATA_OLD/all_table.tsv ../copies/$DATA/
+        python create_random_subset.py ../copies/$DATA_OLD/ ../copies/$DATA/ $TRIPLES_TO_KEEP
+        if [[ $? -ne "0" ]]
+        then
+            echo 'create_random_subset.py error: stopping script'
+            exit 1
+        fi
+    fi
+
+    #Réamh-phróiseáil
+    mkdir ../models/$DATA/
+    ./pbg_preprocess_search.sh $DATA $DEL_OLD $CONFIG $NUM_PARTITIONS
     if [[ $? -ne "0" ]]
     then
-        echo 'create_random_subset.py error: stopping script'
+        echo 'pbg_preprocess_search.sh error: stopping script'
         exit 1
     fi
 fi
 
-#Réamh-phróiseáil
-mkdir ../models/$DATA/
-./pbg_preprocess_search.sh $DATA $DEL_OLD $CONFIG $NUM_PARTITIONS
-if [[ $? -ne "0" ]]
-then
-    echo 'pbg_preprocess_search.sh error: stopping script'
-    exit 1
-fi
-
-for i in $( seq 1 $NUM_OPTIONS )
+let START=$START_SEARCH_ITERATION+1
+let STOPPING_POINT=$NUM_OPTIONS-1
+for i in $( seq $START $STOPPING_POINT )
 do
     let SEARCH_ITERATION=$i-1
     export SEARCH_ITERATION=$SEARCH_ITERATION
@@ -85,8 +91,8 @@ do
     ./output_training_results_search.sh $DATA $CONFIG
     if [[ $? -ne "0" ]]
     then
-        echo 'output_training_results_search.sh error: stopping script'
-        exit 1
+        echo 'output_training_results_search.sh error: allowing continuation'
+        #exit 1
     fi
 done
 

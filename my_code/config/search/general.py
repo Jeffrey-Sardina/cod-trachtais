@@ -23,17 +23,38 @@ def get_val_for_iteration(search_iteration):
     '''
     import itertools
 
+    # lr_options = [1e-2, 1e-3, 1e-4]
+    # regularization_coef_options = [1e-1, 1e-3, 1e-5]
+    # loss_fn_options = ['ranking', 'softmax']
+    # operator_options = ['translation', 'affine', 'diagonal']
+    # comparator_options = ['dot', 'l2']
+
     lr_options = [1e-2, 1e-3, 1e-4]
     regularization_coef_options = [1e-1, 1e-3, 1e-5]
     loss_fn_options = ['ranking', 'softmax']
-    operator_options = ['translation', 'affine', 'diagonal']
+    operator_options = ['translation', 'diagonal']
     comparator_options = ['dot', 'l2']
-
-    permutations = itertools.product(lr_options,
+    permutations_1 = itertools.product(lr_options,
         regularization_coef_options,
         loss_fn_options,
         operator_options,
         comparator_options)
+    permutations_1 = [x for x in permutations_1]
+
+    #Linear, affine operators do not use regularization
+    lr_options = [1e-2, 1e-3, 1e-4]
+    regularization_coef_options = [None]
+    loss_fn_options = ['ranking', 'softmax']
+    operator_options = ['affine']
+    comparator_options = ['dot', 'l2']
+    permutations_2 = itertools.product(lr_options,
+        regularization_coef_options,
+        loss_fn_options,
+        operator_options,
+        comparator_options)
+    permutations_2 = [x for x in permutations_2]
+
+    permutations = permutations_1 + permutations_2
 
     for i, permutation in enumerate(permutations):
         if i == search_iteration:
@@ -88,5 +109,8 @@ def get_torchbiggraph_config():
         # GPU
         num_gpus=1,
     )
+
+    if regularization_coef_i == None:
+        del config['regularization_coef']
 
     return config
