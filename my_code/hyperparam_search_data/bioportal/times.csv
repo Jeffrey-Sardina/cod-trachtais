@@ -1,0 +1,18 @@
+#Hipearpharaiméadair úsáidte:
+#        lr_options = [1e-2, 1e-3, 1e-4]
+#        regularization_coef_options = [1e-1, 1e-3, 1e-5]
+#        loss_fn_options = ['ranking', 'softmax']
+#        operator_options = ['translation', 'diagonal']
+#        comparator_options = ['dot', 'l2']
+#    Unioned with
+#        lr_options = [1e-2, 1e-3, 1e-4]
+#        regularization_coef_options = [None]
+#        loss_fn_options = ['ranking', 'softmax']
+#        operator_options = ['affine']
+#        comparator_options = ['dot', 'l2']
+
+foinse eolais,am tógtha (ón gcéad evallog go dtí an ceann deireanach) (nóiméid)
+bioportal_randsub_200,111
+bioportal_randsub_2000,136
+bioportal_randsub_4000,193
+bioportal_randsub_8000,258
