@@ -27,24 +27,12 @@ do
     IRI=$(python3 get_iri.py "$info")
     echo 'ag baint amach an iri:' $IRI
 
-    # cat $nq_file | \
-    #     sed -e 's| '$IRI' \.||g' | \
-    #     sed -e 's| <http|	<http|g' | \
-    #     sed -e 's| <ftp|	<ftp|g' | \
-    #     sed -e 's| "|	"|g' \
-    #     > $nq_file.nt.tsv
-
     python nq_to_tsv.py $nq_file $IRI $nq_file.nt.tsv
     if [[ $? -ne "0" ]]
     then
         echo 'nq_to_tsv.py error: stopping script'
         exit 1
     fi
-    
-    # cat $nq_file | \
-    #     sed -e 's| '$IRI' \.||g' | \
-    #     sed -e 's|> |>	|g' \
-    #     > $nq_file.nt.tsv
 
     echo 'ag fíordheimhniú an .tsv'
     python numcols.py $nq_file.nt.tsv 3
@@ -58,12 +46,28 @@ done
 echo 'ag cur an t-eolas uile isteach in "all.tsv"'
 cat $FILES_LOC/*.tsv > $FILES_LOC/all.tsv
 
-echo 'á chomhbhrú'
-python3 compress.py $FILES_LOC/all.tsv $FILES_LOC/all_compressed.tsv $FILES_LOC/all_table.tsv
-if [[ $? -ne "0" ]]
+echo 'ag fáil amach an gá an comhad a scoilt sula gcomhbhrúfar é...'
+ALL_TRIPLES_SIZE=$(wc -c < $FILES_LOC/all.tsv)
+MAX_SIZE=13000000000
+#max is 13 GB
+if [[ $ALL_TRIPLES_SIZE -gt $MAX_SIZE ]]
 then
-    echo 'compress.py error: stopping script'
-    exit 1
+    let NUM_SHARDS=1+$ALL_TRIPLES_SIZE/$MAX_SIZE
+    echo 'á chomhbhrú le ' $NUM_SHARDS ' scoilt'
+    python3 shard_compress.py $FILES_LOC/all.tsv $FILES_LOC/all_compressed.tsv $FILES_LOC/all_table.tsv $NUM_SHARDS
+    if [[ $? -ne "0" ]]
+    then
+        echo 'shard_compress.py error: stopping script'
+        exit 1
+    fi
+else
+    echo 'á chomhbhrú gan scoilt'
+    python3 compress.py $FILES_LOC/all.tsv $FILES_LOC/all_compressed.tsv $FILES_LOC/all_table.tsv
+    if [[ $? -ne "0" ]]
+    then
+        echo 'compress.py error: stopping script'
+        exit 1
+    fi
 fi
 
 echo 'ag fíordheimhniú na gcomhad combhrúite'
