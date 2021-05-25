@@ -125,3 +125,10 @@ Cheartaigh mé roinnt earráidí móra:
 - nach raibh ach tacar hipearpharaiméadar amháin in úsáid ag an gcuardach hipearpharaiméadar
 
 Mar sin, tá orm gach rud a ath-dhéanamh arís, tpoisc nach raibh an bhuid eile bailí. Sula leanaim ar aghadih, caithfigh mé chuile rud a fhíordheimhniú mar sin!
+
+## 25-05-2021
+Tá ana-mhéid eolais ó bioportal tar éis teacht isteach. Thug mé fé ndeara cúpla rudaí:
+- caithfidh mé num_XXX_negs (sampláil diúltach) agus dimension (=toise) a úsáid mar hipearpharaiméadair, ach níl siad insan áireamh anois. Ach nílim chun iad a chur leis ach an oiread, toisc go mbeadh ró-mhéid ama ag baint leis sin (combinatoriual explosion). Mar sin, tréis na hipearpharaiméadair traenála a shocrú, táim chun na cinn a bhaineann le sampláil diúltach agus le toise a dhéanamh i ndiaidh sin.
+- Táim chun meastachán amanta reatha (in aghaidh #triaracha) a thabhairt ar eolas bioportal, agus sin a úsáid amach ansin--bheadh ró-am ag baint leis sin a dhéanamh ar gach tacar eolais.
+
+Anailísíocht ar eolas bioportal a dheineas:
