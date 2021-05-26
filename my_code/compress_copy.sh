@@ -1,21 +1,17 @@
 #!/bin/bash
 
+source pytorch-biggraph-gpu/bin/activate
+
 DATA=$1 
 DEL_OLD_TSV=$2
 DEL_UNCOMPRESSED=$3
+MAKE_TSVS=$4
 
 START_TIME="$(date +%s)"
 START_DATE="$(date)"
 
-# echo 'ag fáil an IRI ab ceart a bhaint amach'
-# files=( ../copies/$DATA/*.nq )
-# file_to_use="${files[0]}"
-# info=$(cat $file_to_use | head -n 1)
-# iri=$(python3 get_iri.py "$info")
-# echo 'ag baint amach an iri:' $iri
-
 echo 'ag lódáil sonraí' #Gan / i ndiaidh $DATA
-./to_compressed_nt.sh ../copies/$DATA 1
+./to_compressed_nt.sh ../copies/$DATA 1 $MAKE_TSVS
 if [[ $? -ne "0" ]]
 then
     echo 'to_compressed_nt.sh error: stopping script'
