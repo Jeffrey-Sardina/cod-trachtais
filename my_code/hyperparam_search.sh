@@ -45,18 +45,17 @@ then
     fi
 fi
 
-let START=$START_SEARCH_ITERATION+1
 let STOPPING_POINT=$NUM_OPTIONS-1
-for i in $( seq $START $STOPPING_POINT )
+for SEARCH_ITERATION in $( seq $START_SEARCH_ITERATION $STOPPING_POINT )
 do
-    let SEARCH_ITERATION=$i-1
+    #let SEARCH_ITERATION=$i-1
     export SEARCH_ITERATION=$SEARCH_ITERATION
     UUID=${NUM_PARTITIONS}_${SEARCH_ITERATION}
     export UUID=$UUID
     rm -rf ../copies/$DATA/$UUID/pbg_out/
 
     #Rabhaí agus earráidí
-    if [[ -d "backup_points/${DATA}_${UUID}" && $START -lt 4 ]]
+    if [[ -d "backup_points/${DATA}_${UUID}" ]]
     then
         echo "ERROR: UUID úsáidte cheana, roghnaigh ceann eile"
         exit 1

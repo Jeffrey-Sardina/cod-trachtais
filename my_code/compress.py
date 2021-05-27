@@ -3,6 +3,7 @@ import sys
 import string
 
 caractair = string.printable.strip()
+char_vals = {ch:val for val,ch in enumerate(caractair)}
 
 def compress(input_file, output_file, table_file):
     print('ag cruthú an tábla')
@@ -20,11 +21,15 @@ def create_compression_table(input_file):
 
 def count(input_file):
     counts = {}
+    check = set()
     with open(input_file, 'r', encoding='utf-8', errors='ignore') as inp:
         for line in inp:
             #X should have len 3; if not, bad data was given to the script
             x = [test.strip() for test in line.split('\t')]
             subject, predicate, obj = x
+
+            if len(obj) < 3 or len(subject) < 3 or len(predicate) < 3:
+                check.add((subject,predicate,obj))
 
             if not subject in counts:
                 counts[subject] = 0
@@ -35,6 +40,14 @@ def count(input_file):
             counts[subject] += 1
             counts[predicate] += 1
             counts[obj] += 1
+
+    for s,p,o in check:
+        print('=======================================')
+        print(s)
+        print(p)
+        print(o)
+        print()
+        
     return counts
 
 def write_table(table, table_file):
@@ -52,15 +65,23 @@ def write_compressed_file(table, input_file, output_file):
 def to_base_94(num):
     #94, mar go bhfuil 94 caractar inphriontáilte ASCII (beart amháin)
     bonn = 94
-    toradh = ''
+    result = ''
     while True:
-        toradh = caractair[num % bonn] + toradh
+        result = caractair[num % bonn] + result
         num //= bonn
         if num == 0:
             break
-    if toradh == '':
+    if result == '':
         return '0'
-    return toradh
+    return result
+
+def base_94_to_10(num):
+    result = 0
+    position = 0
+    for ch in num:
+        val = char_vals[ch]
+        result += (94 ** position) * val
+    return result
 
 if __name__ == '__main__':
     input_file = sys.argv[1]

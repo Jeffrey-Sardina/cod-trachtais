@@ -5,42 +5,12 @@ import compress
 import pandas as pd
 import glob
 
-# def get_file_len(input_file):
-#     i = 0
-#     with open(input_file, 'r') as inp:
-#         for _ in inp:
-#             i += 1
-#     return i
-
-# def shard(input_file, output_files):
-#     print('ag cruthú scoilteanna')
-#     num_shards = len(output_files)
-#     total_len = get_file_len(input_file)
-#     shard_size = total_len / num_shards
-#     try:
-#         outs = []
-#         for i, output_file in enumerate(output_files):
-#             outs.append(open(output_file, 'w'))
-#         with open(input_file, 'r') as inp:
-#             i = 0
-#             curr_shard = 0
-#             for line in inp:
-#                 if i > (curr_shard+1) * shard_size:
-#                     curr_shard += 1
-#                 print(line, file=outs[curr_shard], end='')
-#                 i += 1
-#     except:
-#         raise
-#     finally:
-#         for out in outs:
-#             out.close()
-
 def sort_file(file, by_count=False):
     df = pd.read_csv(file, header=None, sep='\t', quotechar=None, quoting=3)
     if by_count:
-        df = df.sort_values(by=0, ascending=False)
+        df.sort_values(by=0, ascending=False, inplace=True)
     else:
-        df = df.sort_values(by=1, ascending=False)
+        df.sort_values(by=1, ascending=False, inplace=True)
     os.remove(file)
     df.to_csv(file, sep='\t', header=None, index=False, quotechar=None, quoting=3)
 
@@ -141,16 +111,16 @@ def create_counts_file(shard_dir, num_shards):
 
 def compress_counts_file(counts_file, input_file, output_file, table_file):
     #This file should still be sorted, since all components were!
-    print('ag comhbhrú anois')
-    table = []
+    print('ag cruthú an tábla')
+    table = OrderedSet()
     with open(counts_file, 'r') as inp:
         for line in inp:
             line = line.strip()
             if len(line) == 0:
                 continue
-            table.append(line.split('\t')[1])
-    table = OrderedSet(table)
+            table.add(line.split('\t')[1])
 
+    print('ag scríobh an tábla')
     compress.write_table(table, table_file)
     print('tábla scríofa (' + str(len(table)) + ' line)')
     
@@ -159,6 +129,12 @@ def compress_counts_file(counts_file, input_file, output_file, table_file):
     print('comhaid comhbhrúite scríofa')
 
 if __name__ == '__main__':
+    # input_file = sys.argv[1]
+    # output_file = sys.argv[2]
+    # table_file = sys.argv[3]
+    # counts_file = sys.argv[4]
+    # compress_counts_file(counts_file, input_file, output_file, table_file)
+
     input_file = sys.argv[1]
     output_file = sys.argv[2]
     table_file = sys.argv[3]

@@ -29,7 +29,6 @@ then
         info=$(cat $nq_file | head -n 1)
         IRI=$(python3 get_iri.py "$info")
         echo 'ag baint amach an iri:' $IRI
-
         python nq_to_tsv.py $nq_file $IRI $nq_file.nt.tsv
         if [[ $? -ne "0" ]]
         then
@@ -52,7 +51,7 @@ fi
 
 echo 'ag fáil amach an gá an comhad a scoilt sula gcomhbhrúfar é...'
 ALL_TRIPLES_SIZE=$(wc -c < $FILES_LOC/all.tsv)
-MAX_SIZE=13000000000 #max is 13 GB
+MAX_SIZE=5000000000 #13000000000 #max is 13 GB
 if [[ $ALL_TRIPLES_SIZE -gt $MAX_SIZE ]]
 then
     let NUM_SHARDS=1+$ALL_TRIPLES_SIZE/$MAX_SIZE
