@@ -131,4 +131,436 @@ Tá ana-mhéid eolais ó bioportal tar éis teacht isteach. Thug mé fé ndeara 
 - caithfidh mé num_XXX_negs (sampláil diúltach) agus dimension (=toise) a úsáid mar hipearpharaiméadair, ach níl siad insan áireamh anois. Ach nílim chun iad a chur leis ach an oiread, toisc go mbeadh ró-mhéid ama ag baint leis sin (combinatoriual explosion). Mar sin, tréis na hipearpharaiméadair traenála a shocrú, táim chun na cinn a bhaineann le sampláil diúltach agus le toise a dhéanamh i ndiaidh sin.
 - Táim chun meastachán amanta reatha (in aghaidh #triaracha) a thabhairt ar eolas bioportal, agus sin a úsáid amach ansin--bheadh ró-am ag baint leis sin a dhéanamh ar gach tacar eolais.
 
-Anailísíocht ar eolas bioportal a dheineas:
+## 29-05-2021
+Anailísíocht ar hipearpharaiméadair a dheineas: 
+- Próiséas: féach ar hyperparam_analysis.R
+- Úsáid graif as an gcód sin freisin
+
+bioportal (randsum 4000)
+- Affine, ranking, dot, lr=1e-4 => AUC=0.78
+
+Cód nótáilte:
+```
+#Fix all factors and exame lr and reg
+#Trans
+# 0.7 ranking, l2
+by_auc = order_by_metric('auc')
+by_auc = by_auc[by_auc$operator=='translation', ]
+by_auc = by_auc[by_auc$loss_fn=='ranking', ]
+by_auc = by_auc[by_auc$comparator=='l2', ]
+by_auc
+plot(by_auc$lr, by_auc$auc, log='x') #1e-4
+plot(by_auc$reg, by_auc$auc, log='x') #1e-1
+
+# No good options (AUC<0.5) ranking, dot
+by_auc = order_by_metric('auc')
+by_auc = by_auc[by_auc$operator=='translation', ]
+by_auc = by_auc[by_auc$loss_fn=='ranking', ]
+by_auc = by_auc[by_auc$comparator=='dot', ]
+by_auc
+plot(by_auc$lr, by_auc$auc, log='x') #1e-2
+plot(by_auc$reg, by_auc$auc, log='x') #none good
+
+# 0.697541 softmax, l2
+by_auc = order_by_metric('auc')
+by_auc = by_auc[by_auc$operator=='translation', ]
+by_auc = by_auc[by_auc$loss_fn=='softmax', ]
+by_auc = by_auc[by_auc$comparator=='l2', ]
+by_auc
+plot(by_auc$lr, by_auc$auc, log='x') #1e-4
+plot(by_auc$reg, by_auc$auc, log='x') #1e-3
+
+# 0.702 softmax, dot
+by_auc = order_by_metric('auc')
+by_auc = by_auc[by_auc$operator=='translation', ]
+by_auc = by_auc[by_auc$loss_fn=='softmax', ]
+by_auc = by_auc[by_auc$comparator=='dot', ]
+by_auc
+plot(by_auc$lr, by_auc$auc, log='x') #1e-2
+plot(by_auc$reg, by_auc$auc, log='x') #1e-5
+
+#Affine
+# 0.75 ranking, l2
+by_auc = order_by_metric('auc')
+by_auc = by_auc[by_auc$operator=='affine', ]
+by_auc = by_auc[by_auc$loss_fn=='ranking', ]
+by_auc = by_auc[by_auc$comparator=='l2', ]
+by_auc
+plot(by_auc$lr, by_auc$auc, log='x') #1e-4
+
+# 0.78 ranking, dot
+by_auc = order_by_metric('auc')
+by_auc = by_auc[by_auc$operator=='affine', ]
+by_auc = by_auc[by_auc$loss_fn=='ranking', ]
+by_auc = by_auc[by_auc$comparator=='dot', ]
+by_auc
+plot(by_auc$lr, by_auc$auc, log='x') #1e-3
+
+# 0.716 softmax, l2
+by_auc = order_by_metric('auc')
+by_auc = by_auc[by_auc$operator=='affine', ]
+by_auc = by_auc[by_auc$loss_fn=='softmax', ]
+by_auc = by_auc[by_auc$comparator=='l2', ]
+by_auc
+plot(by_auc$lr, by_auc$auc, log='x') #1e-3
+
+# 0.71 softmax, dot
+by_auc = order_by_metric('auc')
+by_auc = by_auc[by_auc$operator=='affine', ]
+by_auc = by_auc[by_auc$loss_fn=='softmax', ]
+by_auc = by_auc[by_auc$comparator=='dot', ]
+by_auc
+plot(by_auc$lr, by_auc$auc, log='x') #1e-2
+
+#Diagonal
+# All under 0.72; not worth using since Affine beats it
+by_auc = order_by_metric('auc')
+by_auc = by_auc[by_auc$operator=='diagonal', ]
+by_auc = by_auc[by_auc$loss_fn=='ranking', ]
+by_auc = by_auc[by_auc$comparator=='l2', ]
+by_auc
+plot(by_auc$lr, by_auc$auc, log='x')
+plot(by_auc$reg, by_auc$auc, log='x')
+```
+
+dbsnp (randsub 4000)
+- Affine, ranking, dot, lr=1e-4 => AUC=0.70
+- Trans, ranking, l2, reg=1e-3, lr=1e-3 => AUC=0.75
+
+Cód nótáilte:
+```
+#Fix all factors and exame lr and reg
+#Trans
+# 0.75 ranking, l2
+by_auc = order_by_metric(df, 'auc')
+by_auc = by_auc[by_auc$operator=='translation', ]
+by_auc = by_auc[by_auc$loss_fn=='ranking', ]
+by_auc = by_auc[by_auc$comparator=='l2', ]
+by_auc
+plot(by_auc$lr, by_auc$auc, log='x') #1e-3
+plot(by_auc$reg, by_auc$auc, log='x') #1e-3
+plot3d(by_auc$lr, by_auc$reg, by_auc$auc)
+
+# all <=0.7, not cosidering
+by_auc = order_by_metric(df, 'auc')
+by_auc = by_auc[by_auc$operator=='translation', ]
+by_auc = by_auc[by_auc$loss_fn=='ranking', ]
+by_auc = by_auc[by_auc$comparator=='dot', ]
+by_auc
+plot(by_auc$lr, by_auc$auc, log='x')
+plot(by_auc$reg, by_auc$auc, log='x')
+plot3d(by_auc$lr, by_auc$reg, by_auc$auc)
+
+# 0.70 softmax, l2
+by_auc = order_by_metric(df, 'auc')
+by_auc = by_auc[by_auc$operator=='translation', ]
+by_auc = by_auc[by_auc$loss_fn=='softmax', ]
+by_auc = by_auc[by_auc$comparator=='l2', ]
+by_auc
+plot(by_auc$lr, by_auc$auc, log='x') #1e-2
+plot(by_auc$reg, by_auc$auc, log='x') #1e-3
+
+# 0.714 softmax, dot
+by_auc = order_by_metric(df, 'auc')
+by_auc = by_auc[by_auc$operator=='translation', ]
+by_auc = by_auc[by_auc$loss_fn=='softmax', ]
+by_auc = by_auc[by_auc$comparator=='dot', ]
+by_auc
+plot(by_auc$lr, by_auc$auc, log='x') #1e-2
+plot(by_auc$reg, by_auc$auc, log='x') #1e-5
+
+#Affine
+# 0.66 ranking, l2
+by_auc = order_by_metric(df, 'auc')
+by_auc = by_auc[by_auc$operator=='affine', ]
+by_auc = by_auc[by_auc$loss_fn=='ranking', ]
+by_auc = by_auc[by_auc$comparator=='l2', ]
+by_auc
+plot(by_auc$lr, by_auc$auc, log='x') #1e-4
+
+# 0.7 ranking, dot
+by_auc = order_by_metric(df, 'auc')
+by_auc = by_auc[by_auc$operator=='affine', ]
+by_auc = by_auc[by_auc$loss_fn=='ranking', ]
+by_auc = by_auc[by_auc$comparator=='dot', ]
+by_auc
+plot(by_auc$lr, by_auc$auc, log='x') #1e-3
+
+# 0.65 softmax, l2
+by_auc = order_by_metric(df, 'auc')
+by_auc = by_auc[by_auc$operator=='affine', ]
+by_auc = by_auc[by_auc$loss_fn=='softmax', ]
+by_auc = by_auc[by_auc$comparator=='l2', ]
+by_auc
+plot(by_auc$lr, by_auc$auc, log='x') #1e-3
+
+# 0.70 softmax, dot
+by_auc = order_by_metric(df, 'auc')
+by_auc = by_auc[by_auc$operator=='affine', ]
+by_auc = by_auc[by_auc$loss_fn=='softmax', ]
+by_auc = by_auc[by_auc$comparator=='dot', ]
+by_auc
+plot(by_auc$lr, by_auc$auc, log='x') #1e-2
+
+#Diagonal
+# All very low
+by_auc = order_by_metric(df, 'auc')
+by_auc = by_auc[by_auc$operator=='diagonal', ]
+by_auc = by_auc[by_auc$loss_fn=='ranking', ]
+by_auc = by_auc[by_auc$comparator=='l2', ]
+by_auc
+plot(by_auc$lr, by_auc$auc, log='x')
+plot(by_auc$reg, by_auc$auc, log='x')
+```
+
+drugbank (randsub 4000)
+- Affine, ranking, dot, lr=1e-4 => AUC=0.68
+- Trans, ranking, l2, reg=1e-1, lr=1e-4 => AUC=0.72
+
+Cód nótáilte:
+```
+#Fix all factors and exame lr and reg
+#Trans
+# 0.72 ranking, l2
+by_auc = order_by_metric(df, 'auc')
+by_auc = by_auc[by_auc$operator=='translation', ]
+by_auc = by_auc[by_auc$loss_fn=='ranking', ]
+by_auc = by_auc[by_auc$comparator=='l2', ]
+by_auc
+plot(by_auc$lr, by_auc$auc, log='x') #1e-4
+plot(by_auc$reg, by_auc$auc, log='x') #1e-1
+
+# All terrible, ná bac ranking, dot
+by_auc = order_by_metric(df, 'auc')
+by_auc = by_auc[by_auc$operator=='translation', ]
+by_auc = by_auc[by_auc$loss_fn=='ranking', ]
+by_auc = by_auc[by_auc$comparator=='dot', ]
+by_auc
+plot(by_auc$lr, by_auc$auc, log='x') #
+plot(by_auc$reg, by_auc$auc, log='x') #
+
+# 0.71 softmax, l2
+by_auc = order_by_metric(df, 'auc')
+by_auc = by_auc[by_auc$operator=='translation', ]
+by_auc = by_auc[by_auc$loss_fn=='softmax', ]
+by_auc = by_auc[by_auc$comparator=='l2', ]
+by_auc
+plot(by_auc$lr, by_auc$auc, log='x') #1e-4
+plot(by_auc$reg, by_auc$auc, log='x') #1e-1
+
+# 0.68 softmax, dot
+by_auc = order_by_metric(df, 'auc')
+by_auc = by_auc[by_auc$operator=='translation', ]
+by_auc = by_auc[by_auc$loss_fn=='softmax', ]
+by_auc = by_auc[by_auc$comparator=='dot', ]
+by_auc
+plot(by_auc$lr, by_auc$auc, log='x') #1e-3
+plot(by_auc$reg, by_auc$auc, log='x') #1e-5
+
+#Affine
+# 0.67 ranking, l2
+by_auc = order_by_metric(df, 'auc')
+by_auc = by_auc[by_auc$operator=='affine', ]
+by_auc = by_auc[by_auc$loss_fn=='ranking', ]
+by_auc = by_auc[by_auc$comparator=='l2', ]
+by_auc
+plot(by_auc$lr, by_auc$auc, log='x') #1e-4
+
+# 0.68 ranking, dot
+by_auc = order_by_metric(df, 'auc')
+by_auc = by_auc[by_auc$operator=='affine', ]
+by_auc = by_auc[by_auc$loss_fn=='ranking', ]
+by_auc = by_auc[by_auc$comparator=='dot', ]
+by_auc
+plot(by_auc$lr, by_auc$auc, log='x') #1e-3
+
+# 0.71 softmax, l2
+by_auc = order_by_metric(df, 'auc')
+by_auc = by_auc[by_auc$operator=='affine', ]
+by_auc = by_auc[by_auc$loss_fn=='softmax', ]
+by_auc = by_auc[by_auc$comparator=='l2', ]
+by_auc
+plot(by_auc$lr, by_auc$auc, log='x') #1e-3
+
+# 0.68 softmax, dot
+by_auc = order_by_metric(df, 'auc')
+by_auc = by_auc[by_auc$operator=='affine', ]
+by_auc = by_auc[by_auc$loss_fn=='softmax', ]
+by_auc = by_auc[by_auc$comparator=='dot', ]
+by_auc
+plot(by_auc$lr, by_auc$auc, log='x') #1e-2
+
+#Diagonal
+# No combos beat what was seen before
+by_auc = order_by_metric(df, 'auc')
+by_auc = by_auc[by_auc$operator=='diagonal', ]
+by_auc
+```
+
+omim (randsub 4000)
+- Affine, ranking, dot, lr=1e-4 => AUC=0.68
+- Trans, ranking, l2, reg=1e-3, lr=1e-3 => AUC=0.77 or 0.68
+
+Cód nótáilte:
+```
+#Fix all factors and exame lr and reg
+#Trans
+# 0.77 ranking, l2 (not confident in this, may be overfitting. Maybe 0.68)
+by_auc = order_by_metric(df, 'auc')
+by_auc = by_auc[by_auc$operator=='translation', ]
+by_auc = by_auc[by_auc$loss_fn=='ranking', ]
+by_auc = by_auc[by_auc$comparator=='l2', ]
+by_auc
+plot(by_auc$lr, by_auc$auc, log='x') #1e-3
+plot(by_auc$reg, by_auc$auc, log='x') #1e-3
+
+# all under 0.77 ranking, dot
+by_auc = order_by_metric(df, 'auc')
+by_auc = by_auc[by_auc$operator=='translation', ]
+by_auc = by_auc[by_auc$loss_fn=='ranking', ]
+by_auc = by_auc[by_auc$comparator=='dot', ]
+by_auc
+plot(by_auc$lr, by_auc$auc, log='x') #
+plot(by_auc$reg, by_auc$auc, log='x') #
+
+# all under 0.77 softmax, l2
+by_auc = order_by_metric(df, 'auc')
+by_auc = by_auc[by_auc$operator=='translation', ]
+by_auc = by_auc[by_auc$loss_fn=='softmax', ]
+by_auc = by_auc[by_auc$comparator=='l2', ]
+by_auc
+plot(by_auc$lr, by_auc$auc, log='x') #
+plot(by_auc$reg, by_auc$auc, log='x') #
+
+# all under 0.77 softmax, dot
+by_auc = order_by_metric(df, 'auc')
+by_auc = by_auc[by_auc$operator=='translation', ]
+by_auc = by_auc[by_auc$loss_fn=='softmax', ]
+by_auc = by_auc[by_auc$comparator=='dot', ]
+by_auc
+plot(by_auc$lr, by_auc$auc, log='x') #
+plot(by_auc$reg, by_auc$auc, log='x') #
+
+#Affine
+# 0.57 ranking, l2
+by_auc = order_by_metric(df, 'auc')
+by_auc = by_auc[by_auc$operator=='affine', ]
+by_auc = by_auc[by_auc$loss_fn=='ranking', ]
+by_auc = by_auc[by_auc$comparator=='l2', ]
+by_auc
+plot(by_auc$lr, by_auc$auc, log='x') #1e-4
+
+# 0.68 ranking, dot
+by_auc = order_by_metric(df, 'auc')
+by_auc = by_auc[by_auc$operator=='affine', ]
+by_auc = by_auc[by_auc$loss_fn=='ranking', ]
+by_auc = by_auc[by_auc$comparator=='dot', ]
+by_auc
+plot(by_auc$lr, by_auc$auc, log='x') #
+
+# all <0.68 softmax, l2
+by_auc = order_by_metric(df, 'auc')
+by_auc = by_auc[by_auc$operator=='affine', ]
+by_auc = by_auc[by_auc$loss_fn=='softmax', ]
+by_auc = by_auc[by_auc$comparator=='l2', ]
+by_auc
+plot(by_auc$lr, by_auc$auc, log='x') #
+
+# all <0.68 softmax, dot
+by_auc = order_by_metric(df, 'auc')
+by_auc = by_auc[by_auc$operator=='affine', ]
+by_auc = by_auc[by_auc$loss_fn=='softmax', ]
+by_auc = by_auc[by_auc$comparator=='dot', ]
+by_auc
+plot(by_auc$lr, by_auc$auc, log='x') #
+
+#Diagonal
+# No combos beat what was seen before
+by_auc = order_by_metric(df, 'auc')
+by_auc = by_auc[by_auc$operator=='diagonal', ]
+by_auc
+
+```
+
+pharmgkb (randsub 4000)
+- Affine, ranking, dot, lr=1e-3 => AUC=0.72
+
+Cód nótáilte:
+```
+#Fix all factors and exame lr and reg
+#Trans
+# 0.68 ranking, l2 (not confident in this, may be overfitting. Maybe 0.68)
+by_auc = order_by_metric(df, 'auc')
+by_auc = by_auc[by_auc$operator=='translation', ]
+by_auc = by_auc[by_auc$loss_fn=='ranking', ]
+by_auc = by_auc[by_auc$comparator=='l2', ]
+by_auc
+plot(by_auc$lr, by_auc$auc, log='x') #1e-3 
+plot(by_auc$reg, by_auc$auc, log='x') #1e-1
+
+# Few good, none beat 0.68 ranking, dot
+by_auc = order_by_metric(df, 'auc')
+by_auc = by_auc[by_auc$operator=='translation', ]
+by_auc = by_auc[by_auc$loss_fn=='ranking', ]
+by_auc = by_auc[by_auc$comparator=='dot', ]
+by_auc
+plot(by_auc$lr, by_auc$auc, log='x') #
+plot(by_auc$reg, by_auc$auc, log='x') #
+
+# 0.71, likely by chance, softmax, l2
+by_auc = order_by_metric(df, 'auc')
+by_auc = by_auc[by_auc$operator=='translation', ]
+by_auc = by_auc[by_auc$loss_fn=='softmax', ]
+by_auc = by_auc[by_auc$comparator=='l2', ]
+by_auc
+plot(by_auc$lr, by_auc$auc, log='x') #1e-2
+plot(by_auc$reg, by_auc$auc, log='x') #1e-3
+
+# 0.68, likely by chance, softmax, dot
+by_auc = order_by_metric(df, 'auc')
+by_auc = by_auc[by_auc$operator=='translation', ]
+by_auc = by_auc[by_auc$loss_fn=='softmax', ]
+by_auc = by_auc[by_auc$comparator=='dot', ]
+by_auc
+plot(by_auc$lr, by_auc$auc, log='x') #1e-2
+plot(by_auc$reg, by_auc$auc, log='x') #1e-5
+
+#Affine
+# 0.70 ranking, l2
+by_auc = order_by_metric(df, 'auc')
+by_auc = by_auc[by_auc$operator=='affine', ]
+by_auc = by_auc[by_auc$loss_fn=='ranking', ]
+by_auc = by_auc[by_auc$comparator=='l2', ]
+by_auc
+plot(by_auc$lr, by_auc$auc, log='x') #1e-4
+
+# 0.72 ranking, dot
+by_auc = order_by_metric(df, 'auc')
+by_auc = by_auc[by_auc$operator=='affine', ]
+by_auc = by_auc[by_auc$loss_fn=='ranking', ]
+by_auc = by_auc[by_auc$comparator=='dot', ]
+by_auc
+plot(by_auc$lr, by_auc$auc, log='x') #1e-3
+
+# all under 0.72 softmax, l2
+by_auc = order_by_metric(df, 'auc')
+by_auc = by_auc[by_auc$operator=='affine', ]
+by_auc = by_auc[by_auc$loss_fn=='softmax', ]
+by_auc = by_auc[by_auc$comparator=='l2', ]
+by_auc
+plot(by_auc$lr, by_auc$auc, log='x') #
+
+# All under 0.72 softmax, dot
+by_auc = order_by_metric(df, 'auc')
+by_auc = by_auc[by_auc$operator=='affine', ]
+by_auc = by_auc[by_auc$loss_fn=='softmax', ]
+by_auc = by_auc[by_auc$comparator=='dot', ]
+by_auc
+plot(by_auc$lr, by_auc$auc, log='x') #
+
+#Diagonal
+# No combos beat what was seen before
+by_auc = order_by_metric(df, 'auc')
+by_auc = by_auc[by_auc$operator=='diagonal', ]
+by_auc
+```
