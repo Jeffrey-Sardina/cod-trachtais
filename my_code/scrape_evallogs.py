@@ -1,7 +1,14 @@
 import sys
 import glob
 import os
-from config.search.general import get_val_for_iteration
+
+config_to_use = sys.argv[3].strip()
+if len(config_to_use) == 0 or int(config_to_use) == 0:
+    from config.search.general import get_val_for_iteration
+elif int(config_to_use) == 1:
+    from config.search.batches_2 import get_val_for_iteration
+elif  int(config_to_use) == 2:
+    from config.search.epochs_3 import get_val_for_iteration
 
 def process_files(files):
     all_data = []

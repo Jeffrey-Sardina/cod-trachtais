@@ -95,7 +95,13 @@ do
     fi
 done
 
-python scrape_evallogs.py ../models/$DATA ../models/$DATA/evals.csv
+config_base=$( basename $CONFIG )
+if [[ config_base -eq "general.py"]]
+    python scrape_evallogs.py ../models/$DATA ../models/$DATA/evals.csv 0
+if [[ config_base -eq "batches_2.py"]]
+    python scrape_evallogs.py ../models/$DATA ../models/$DATA/evals.csv 1
+if [[ config_base -eq "epochs_3.py"]]
+    python scrape_evallogs.py ../models/$DATA ../models/$DATA/evals.csv 0
 
 RUNNING_TIME=$[ $(date +%s) - ${START_TIME} ]
 END_DATE="$(date)"

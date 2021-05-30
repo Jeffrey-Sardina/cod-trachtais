@@ -5,19 +5,19 @@
 START_TIME="$(date +%s)"
 START_DATE="$(date)"
 
-./hyperparam_search.sh bioportal 1 2 125 config/search/batches_2.py 4000 0
+./hyperparam_search.sh bioportal 1 2 100 config/search/batches_2.py 4000 0
 exit_1=$?
 
-./hyperparam_search.sh dbsnp 1 2 125 config/search/batches_2.py 4000 0
+./hyperparam_search.sh dbsnp 1 2 100 config/search/batches_2.py 4000 0
 exit_2=$?
 
-./hyperparam_search.sh drugbank 1 2 125 config/search/batches_2.py 4000 0
+./hyperparam_search.sh drugbank 1 2 100 config/search/batches_2.py 4000 0
 exit_3=$?
 
-./hyperparam_search.sh omim 1 2 125 config/search/batches_2.py 4000 0
+./hyperparam_search.sh omim 1 2 100 config/search/batches_2.py 4000 0
 exit_4=$?
 
-./hyperparam_search.sh pharmgkb 1 2 125 config/search/batches_2.py 4000 0
+./hyperparam_search.sh pharmgkb 1 2 100 config/search/batches_2.py 4000 0
 exit_5=$?
 
 echo exit_1 $exit_1

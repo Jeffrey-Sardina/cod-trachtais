@@ -1,4 +1,4 @@
-from config.search.general import get_val_for_iteration
+from config.search.batches_2 import get_val_for_iteration
 import sys
 
 if __name__ == '__main__':

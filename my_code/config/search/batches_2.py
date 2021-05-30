@@ -23,9 +23,9 @@ def get_val_for_iteration(search_iteration):
     '''
     import itertools
 
-    batch_size = [100, 500, 1000, 1500, 2000]
-    num_batch_negs = [10, 50, 100, 150, 300]
-    num_uniform_negs = [10, 50, 100, 150, 300]
+    batch_size = [500, 1000, 1500, 2000]
+    num_batch_negs = [10, 50, 100, 250, 500]
+    num_uniform_negs = [10, 50, 100, 250, 500]
     permutations = itertools.product(batch_size,
         num_batch_negs,
         num_uniform_negs)
@@ -49,7 +49,7 @@ def get_torchbiggraph_config():
     params, i = load_params()
     lr_i, regularization_coef_i, loss_fn_i, operator_i, comparator_i = get_cross_validated_values()
     batch_size_i, num_batch_negs_i, num_uniform_negs_i = get_val_for_iteration(i)
-
+    print(batch_size_i, num_batch_negs_i, num_uniform_negs_i)
 
     config = dict(
         # I/O data
