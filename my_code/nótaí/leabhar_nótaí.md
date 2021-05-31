@@ -132,7 +132,7 @@ Tá ana-mhéid eolais ó bioportal tar éis teacht isteach. Thug mé fé ndeara 
 - Táim chun meastachán amanta reatha (in aghaidh #triaracha) a thabhairt ar eolas bioportal, agus sin a úsáid amach ansin--bheadh ró-am ag baint leis sin a dhéanamh ar gach tacar eolais.
 
 ## 29-05-2021
-Anailísíocht ar hipearpharaiméadair a dheineas: 
+Anailísíocht ar hipearpharaiméadair a dheineas: (round1)
 - Próiséas: féach ar hyperparam_analysis.R
 - Úsáid graif as an gcód sin freisin
 
@@ -564,3 +564,228 @@ by_auc = order_by_metric(df, 'auc')
 by_auc = by_auc[by_auc$operator=='diagonal', ]
 by_auc
 ```
+
+## 29-05-2021
+Anailísíocht ar hipearpharaiméadair a dheineas: (round2)
+bioportal
+- There seems to be an effect of time; as batch_size increases, the best num_batch_negs decreases. Similarly, high num_batch_negs and num_uniform_negs are disfavored wqhen they occur together.
+- This makes sense: I would expect that higher numbers of samples batch should generally learn better to an extend, and since eval is on a diff dataset is is unlikely this is overfitting a lot.
+- The best I could do was around 0.81, across a few different parameterizations:
+    - Almost certainly overfitting:
+    - batch size 500, batch_negs 500, unif_negs 10 => 0.81
+    - batch size 500, batch_negs 500, unif_negs 50 => 0.807
+    - batch size 500, batch_negs 500, unif_negs 100 => 0.814
+
+    - Likely decent fit
+    - batch size 1000, batch_negs 250, unif_negs 10 => 0.81
+    - batch size 1000, batch_negs 50, unif_negs 100 => 0.815 **
+    - batch size 1000, batch_negs 50, unif_negs 250 => 0.81
+
+    - Likely an effect of time, not model
+    - batch size 1500, batch_negs 10, unif_negs 50 => 0.80 
+    - batch size 1500, batch_negs 10, unif_negs 100 => 0.80 
+
+- Like an effect of time, not model
+    - batch size 2000, batch_negs 10, unif_negs 50 => 0.807 
+    - batch size 2000, batch_negs 10, unif_negs 100 => 0.815 
+- Cóḋ le nótaí ann:
+```
+### For Bioportal
+#Batch size 500
+#Tends to do better on higher num_batch_negs
+batch_s = 500
+restricted = order_by_metric_incl(df, 'num_batch_negs', 'auc')
+restricted = restricted[restricted$batch_size==batch_s, ]
+restricted = restricted[restricted$num_uniform_negs==10, ]
+#max when num_batch_negs = 500, 0.81
+plot(restricted$num_batch_negs, restricted$auc)
+restricted
+
+restricted = order_by_metric_incl(df, 'num_batch_negs', 'auc')
+restricted = restricted[restricted$batch_size==batch_s, ]
+restricted = restricted[restricted$num_uniform_negs==50, ]
+#max when num_batch_negs = 500, 0.807
+plot(restricted$num_batch_negs, restricted$auc)
+restricted
+
+restricted = order_by_metric_incl(df, 'num_batch_negs', 'auc')
+restricted = restricted[restricted$batch_size==batch_s, ]
+restricted = restricted[restricted$num_uniform_negs==100, ]
+#max when num_batch_negs = 500, 0.814
+plot(restricted$num_batch_negs, restricted$auc)
+restricted
+
+restricted = order_by_metric_incl(df, 'num_batch_negs', 'auc')
+restricted = restricted[restricted$batch_size==batch_s, ]
+restricted = restricted[restricted$num_uniform_negs==250, ]
+#max when num_batch_negs = 10, 0.716
+#num_batch_negs = 500 also very good, 0.709
+plot(restricted$num_batch_negs, restricted$auc)
+restricted
+
+restricted = order_by_metric_incl(df, 'num_batch_negs', 'auc')
+restricted = restricted[restricted$batch_size==batch_s, ]
+restricted = restricted[restricted$num_uniform_negs==500, ]
+#max when num_batch_negs = 250, 0.775
+#num_batch_negs = 500 also very good, 0.767
+plot(restricted$num_batch_negs, restricted$auc)
+restricted
+
+#Batch size 1000
+# Lower num_batch_negs tend to be favored
+batch_s = 1000
+restricted = order_by_metric_incl(df, 'num_batch_negs', 'auc')
+restricted = restricted[restricted$batch_size==batch_s, ]
+restricted = restricted[restricted$num_uniform_negs==10, ]
+#max when num_batch_negs = 250, 0.81
+plot(restricted$num_batch_negs, restricted$auc)
+restricted
+
+restricted = order_by_metric_incl(df, 'num_batch_negs', 'auc')
+restricted = restricted[restricted$batch_size==batch_s, ]
+restricted = restricted[restricted$num_uniform_negs==50, ]
+#max when num_batch_negs = 250, 0.76
+plot(restricted$num_batch_negs, restricted$auc)
+restricted
+
+restricted = order_by_metric_incl(df, 'num_batch_negs', 'auc')
+restricted = restricted[restricted$batch_size==batch_s, ]
+restricted = restricted[restricted$num_uniform_negs==100, ]
+#max when num_batch_negs = 50, 0.815
+plot(restricted$num_batch_negs, restricted$auc)
+restricted
+
+restricted = order_by_metric_incl(df, 'num_batch_negs', 'auc')
+restricted = restricted[restricted$batch_size==batch_s, ]
+restricted = restricted[restricted$num_uniform_negs==250, ]
+#max when num_batch_negs = 50, 0.81
+#num_batch_negs = 500 also very good, 0.709
+plot(restricted$num_batch_negs, restricted$auc)
+restricted
+
+restricted = order_by_metric_incl(df, 'num_batch_negs', 'auc')
+restricted = restricted[restricted$batch_size==batch_s, ]
+restricted = restricted[restricted$num_uniform_negs==500, ]
+#max when num_batch_negs = 500, 0.74
+#num_batch_negs = 500 also very good, 0.767
+plot(restricted$num_batch_negs, restricted$auc)
+restricted
+
+
+#Batch size 1500
+# Lower num_batch_negs tend to be favored again!
+# ^^ VERY strong trend
+batch_s = 1500
+restricted = order_by_metric_incl(df, 'num_batch_negs', 'auc')
+restricted = restricted[restricted$batch_size==batch_s, ]
+restricted = restricted[restricted$num_uniform_negs==10, ]
+#max: num_batch_negs=10 => 0.79
+plot(restricted$num_batch_negs, restricted$auc)
+restricted
+
+restricted = order_by_metric_incl(df, 'num_batch_negs', 'auc')
+restricted = restricted[restricted$batch_size==batch_s, ]
+restricted = restricted[restricted$num_uniform_negs==50, ]
+#max: num_batch_negs=10 => 0.80
+plot(restricted$num_batch_negs, restricted$auc)
+restricted
+
+restricted = order_by_metric_incl(df, 'num_batch_negs', 'auc')
+restricted = restricted[restricted$batch_size==batch_s, ]
+restricted = restricted[restricted$num_uniform_negs==100, ]
+#max: num_batch_negs=10 => 0.80
+plot(restricted$num_batch_negs, restricted$auc)
+restricted
+
+restricted = order_by_metric_incl(df, 'num_batch_negs', 'auc')
+restricted = restricted[restricted$batch_size==batch_s, ]
+restricted = restricted[restricted$num_uniform_negs==250, ]
+#max: num_batch_negs=500 => 0.78 (likely outlier)
+plot(restricted$num_batch_negs, restricted$auc)
+restricted
+
+restricted = order_by_metric_incl(df, 'num_batch_negs', 'auc')
+restricted = restricted[restricted$batch_size==batch_s, ]
+restricted = restricted[restricted$num_uniform_negs==500, ]
+#max: num_batch_negs=10 => 0.73
+plot(restricted$num_batch_negs, restricted$auc)
+restricted
+
+#Batch size 2000
+# Lower num_batch_negs tend to be favored again!
+# ^^ VERY strong trend
+batch_s = 2000
+restricted = order_by_metric_incl(df, 'num_batch_negs', 'auc')
+restricted = restricted[restricted$batch_size==batch_s, ]
+restricted = restricted[restricted$num_uniform_negs==10, ]
+#max: num_batch_negs=50 => 0.744
+plot(restricted$num_batch_negs, restricted$auc)
+restricted
+
+restricted = order_by_metric_incl(df, 'num_batch_negs', 'auc')
+restricted = restricted[restricted$batch_size==batch_s, ]
+restricted = restricted[restricted$num_uniform_negs==50, ]
+#max: num_batch_negs=10 => 0.807
+plot(restricted$num_batch_negs, restricted$auc)
+restricted
+
+restricted = order_by_metric_incl(df, 'num_batch_negs', 'auc')
+restricted = restricted[restricted$batch_size==batch_s, ]
+restricted = restricted[restricted$num_uniform_negs==100, ]
+#max: num_batch_negs=10 => 0.815
+plot(restricted$num_batch_negs, restricted$auc)
+restricted
+
+restricted = order_by_metric_incl(df, 'num_batch_negs', 'auc')
+restricted = restricted[restricted$batch_size==batch_s, ]
+restricted = restricted[restricted$num_uniform_negs==250, ]
+#max: num_batch_negs=10 => 0.71
+plot(restricted$num_batch_negs, restricted$auc)
+restricted
+
+restricted = order_by_metric_incl(df, 'num_batch_negs', 'auc')
+restricted = restricted[restricted$batch_size==batch_s, ]
+restricted = restricted[restricted$num_uniform_negs==500, ]
+#max: num_batch_negs=100 => 0.78
+plot(restricted$num_batch_negs, restricted$auc)
+restricted
+```
+
+For dbsnp:
+- Using 3d plots only (Windows, see hyperparam_analysis.r2.R), I noted:
+    - A clear preference for negs (batch anfdn unif) <= 100
+    - Gets near or at 0.75 AUC in that region for all batch sizes
+
+For drugbank:
+- Using 3d plots only (Windows, see hyperparam_analysis.r2.R), I noted:
+    - A clear preference for negs (batch anfdn unif) <= 100
+    - Gets near or at 0.80 AUC in that region for all batch sizes
+
+For omim:
+- Using 3d plots only (Windows, see hyperparam_analysis.r2.R), I noted:
+    - A clear preference for negs (batch anfdn unif) <= 100
+    - Gets highest AUC in that region for all batch sizes
+    - Extremely low values (ie 10) of negs can be volatile and are favored at higher batch sizes--likely over-fitting and the such
+
+For pharmgkb:
+- Using 3d plots only (Windows, see hyperparam_analysis.r2.R), I noted:
+    - A clear preference for negs (batch anfdn unif) <= 100
+    - Gets near or at 0.75 AUC in that region for all batch sizes
+     Extremely low values (ie 10) of negs can be volatile and are favored at higher batch sizes--likely over-fitting and the such
+
+Overall:
+- 100 for both negs is always decent (never terrible), although not always ideal
+- 50 for both is much less consistently good at batch size = 1000
+- Ideals tend to be lower, but as noted above those can be VERY volatile
+- Thus I choose:
+    - batch_negs = 100
+    - unif_negs = 100
+    - batch_suize = 1000
+
+Aboutr epochs and the idea of round 3
+- Testing epochs on subsetted data may not be idea
+- However, I also need to test dimensions
+- Thus, I will do round 3 with both of those to see how dims and epochs interact
+- I will try this at both 4000 triples (2 splits) and 10000 triples (6 splits) to see if there is any effect of triple number.
+    - That is a binary test of 'do I see a difference'; not intended to quantify that diffrerence!
+    - That would take too much time

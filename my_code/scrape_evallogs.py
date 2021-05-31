@@ -5,10 +5,13 @@ import os
 config_to_use = sys.argv[3].strip()
 if len(config_to_use) == 0 or int(config_to_use) == 0:
     from config.search.general import get_val_for_iteration
+    test_stats='lr,reg,loss_fn,operator,comparator'
 elif int(config_to_use) == 1:
     from config.search.batches_2 import get_val_for_iteration
+    test_stats='batch_size,num_batch_negs,num_uniform_negs'
 elif  int(config_to_use) == 2:
     from config.search.epochs_3 import get_val_for_iteration
+    test_stats=None
 
 def process_files(files):
     all_data = []
@@ -51,7 +54,7 @@ def extract_csv_data(csv_data):
 def write_as_csv(all_data, header_keys, output):
     num_to_vals = get_hyperparam_map()
     with open(output, 'w') as out:
-        print('lr,reg,loss_fn,operator,comparator', end=',', file=out)
+        print(test_stats, end=',', file=out)
         print(','.join(header_keys), file=out)
         for i, vals in enumerate(all_data):
             print(num_to_vals[i], end=',',file=out)

@@ -23,8 +23,8 @@ def get_val_for_iteration(search_iteration):
     '''
     import itertools
 
-    epochs = [10, 50, 100, 200]
-    dimensions = [10, 50, 100, 150, 300]
+    epochs = [50, 100, 200, 400]
+    dimensions = [50, 100, 200, 400]
     permutations = itertools.product(epochs,
         dimensions)
     permutations = [x for x in permutations]
@@ -36,17 +36,17 @@ def get_val_for_iteration(search_iteration):
     raise ValueError('invalid search_iteration value. Note: it must start at 0')
 
 def get_cross_validated_values():
-    lr = 0
-    regularization_coef = 0
-    loss_fn = ''
-    operator = ''
-    comparator = ''
+    lr = 1e-4
+    regularization_coef = None
+    loss_fn = 'ranking'
+    operator = 'affine'
+    comparator = 'dot'
     return lr, regularization_coef, loss_fn, operator, comparator
 
 def get_cross_validated_batch_values():
-    batch_size = 0
-    num_batch_negs = 0
-    num_uniform_negs = 0
+    batch_size = 1000
+    num_batch_negs = 100
+    num_uniform_negs = 100
     return batch_size, num_batch_negs, num_uniform_negs
 
 def get_torchbiggraph_config():
