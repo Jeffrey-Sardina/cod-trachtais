@@ -786,6 +786,6 @@ Aboutr epochs and the idea of round 3
 - Testing epochs on subsetted data may not be idea
 - However, I also need to test dimensions
 - Thus, I will do round 3 with both of those to see how dims and epochs interact
-- I will try this at both 4000 triples (2 splits) and 10000 triples (6 splits) to see if there is any effect of triple number.
+- I will try this at both 4000 triples (2 splits) and 10000 triples (5 splits) to see if there is any effect of triple number.
     - That is a binary test of 'do I see a difference'; not intended to quantify that diffrerence!
     - That would take too much time

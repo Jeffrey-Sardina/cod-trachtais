@@ -11,7 +11,7 @@ elif int(config_to_use) == 1:
     test_stats='batch_size,num_batch_negs,num_uniform_negs'
 elif  int(config_to_use) == 2:
     from config.search.epochs_3 import get_val_for_iteration
-    test_stats=None
+    test_stats='epochs,dimensions'
 
 def process_files(files):
     all_data = []

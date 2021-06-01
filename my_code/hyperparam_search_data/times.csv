@@ -1,19 +1,115 @@
-#Hipearpharaiméadair úsáidte:
-#        lr_options = [1e-2, 1e-3, 1e-4]
-#        regularization_coef_options = [1e-1, 1e-3, 1e-5]
-#        loss_fn_options = ['ranking', 'softmax']
-#        operator_options = ['translation', 'diagonal']
-#        comparator_options = ['dot', 'l2']
-#    Unioned with
-#        lr_options = [1e-2, 1e-3, 1e-4]
-#        regularization_coef_options = [None]
-#        loss_fn_options = ['ranking', 'softmax']
-#        operator_options = ['affine']
-#        comparator_options = ['dot', 'l2']
-
-foinse eolais,am tógtha (ón gcéad evallog go dtí an ceann deireanach) (nóiméid)
-bioportal_randsub_200,111
-bioportal_randsub_2000,136
-bioportal_randsub_4000,193
-bioportal_randsub_8000,258
-dbsnp_randsub_4000,99
+#Hipearpharaiméadair úsáidte:,,,
+#        lr_options = [1e-2,0.001, 1e-4],
+#        regularization_coef_options = [1e-1,0.001, 1e-5],
+#        loss_fn_options = ['ranking', 'softmax'],,
+#        operator_options = ['translation', 'diagonal'],,
+#        comparator_options = ['dot', 'l2'],,
+#    Unioned with,,,
+#        lr_options = [1e-2,0.001, 1e-4],
+#        regularization_coef_options = [None],,,
+#        loss_fn_options = ['ranking', 'softmax'],,
+#        operator_options = ['affine'],,,
+#        comparator_options = ['dot', 'l2'],,
+,,,
+#Round 1,,,
+foinse eolais,am tógtha (ón gcéad evallog go dtí an ceann deireanach) (nóiméid),,
+bioportal_randsub_200,111,,
+bioportal_randsub_2000,136,,
+bioportal_randsub_4000,193,,
+bioportal_randsub_8000,258,,
+dbsnp_randsub_4000,99,,
+,,,
+#Round 3 bioportal,,,
+id,epochs,dims,seconds
+0,50,50,54
+1,50,100,59
+2,50,200,194
+3,50,400,725
+4,100,50,62
+5,100,100,129
+6,100,200,403
+7,100,400,1528
+8,200,50,125
+9,200,100,255
+10,200,200,836
+11,200,400,3594
+12,400,50,292
+13,400,100,608
+14,400,200,1864
+15,400,400,7041
+,,,
+#Round 3 dbsnp,,,
+id,epochs,dims,seconds
+0,50,50,29
+1,50,100,33
+2,50,200,63
+3,50,400,182
+4,100,50,41
+5,100,100,69
+6,100,200,122
+7,100,400,352
+8,200,50,71
+9,200,100,114
+10,200,200,254
+11,200,400,688
+12,400,50,151
+13,400,100,251
+14,400,200,547
+15,400,400,1941
+,,,
+#Round 3 drugbank,,,
+id,epochs,dims,seconds
+0,50,50,68
+1,50,100,57
+2,50,200,139
+3,50,400,409
+4,100,50,52
+5,100,100,88
+6,100,200,246
+7,100,400,802
+8,200,50,106
+9,200,100,183
+10,200,200,452
+11,200,400,1633
+12,400,50,205
+13,400,100,481
+14,400,200,1006
+15,400,400,3364
+,,,
+#Round 3 omim,,,
+id,epochs,dims,seconds
+0,50,50,91
+1,50,100,44
+2,50,200,96
+3,50,400,356
+4,100,50,50
+5,100,100,84
+6,100,200,196
+7,100,400,781
+8,200,50,92
+9,200,100,176
+10,200,200,414
+11,200,400,1462
+12,400,50,181
+13,400,100,338
+14,400,200,999
+15,400,400,2898
+,,,
+#Round 3 pharmgkb,,,
+id,epochs,dims,seconds
+0,50,50,58
+1,50,100,53
+2,50,200,128
+3,50,400,394
+4,100,50,53
+5,100,100,90
+6,100,200,230
+7,100,400,792
+8,200,50,90
+9,200,100,180
+10,200,200,443
+11,200,400,1576
+12,400,50,200
+13,400,100,345
+14,400,200,1081
+15,400,400,3209
