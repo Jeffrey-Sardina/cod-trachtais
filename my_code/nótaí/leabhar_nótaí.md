@@ -796,3 +796,8 @@ Looked through (some, not all) nq files for the 5 datasets I am analyzing at the
 Some cases (ie dbsnp) have only one major file that is all in one subgraph, and thus should not be an issue.
 
 In pharmgkb, some graphs have the same 4th quad, and thus would be appropriately merged.
+
+Finished up round 3 (10000 triples) hyperpartram validation. Now it's time to analyze that and possible move on to training a real model.
+- It's AUCs are a lot lower than I expected. Maybe number of partitions is having an effect here, I am going to re-run the 10000 dataset with only 2 partitions total before analysis.
+- This will help me see if there is an effect of number of partitions; lower (such that each partition has more data) is likely better based on PyTorch docs, I thiink (check that).
+- I'll do full analysis after all this data is in and see where to go
