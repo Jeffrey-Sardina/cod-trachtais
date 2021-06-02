@@ -789,3 +789,10 @@ Aboutr epochs and the idea of round 3
 - I will try this at both 4000 triples (2 splits) and 10000 triples (5 splits) to see if there is any effect of triple number.
     - That is a binary test of 'do I see a difference'; not intended to quantify that diffrerence!
     - That would take too much time
+
+## 2-6-2021
+Looked through (some, not all) nq files for the 5 datasets I am analyzing at the moment (bioportal, dbsnp, drugbank, omim, and pharmgkb). It looks like my nq => nt conversion should not be an issue, since many different files do not have overlapping entites when they have different graphs (the 4th element in the NQ).
+
+Some cases (ie dbsnp) have only one major file that is all in one subgraph, and thus should not be an issue.
+
+In pharmgkb, some graphs have the same 4th quad, and thus would be appropriately merged.

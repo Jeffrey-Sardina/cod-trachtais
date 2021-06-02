@@ -1,4 +1,4 @@
-#Hipearpharaiméadair úsáidte:,,,
+#(round 1) Hipearpharaiméadair úsáidte:,,,
 #        lr_options = [1e-2,0.001, 1e-4],
 #        regularization_coef_options = [1e-1,0.001, 1e-5],
 #        loss_fn_options = ['ranking', 'softmax'],,
