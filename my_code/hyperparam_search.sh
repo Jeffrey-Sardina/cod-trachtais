@@ -96,11 +96,11 @@ do
 done
 
 config_base=$( basename $CONFIG )
-if [[ config_base -eq "general.py" ]]
+if [[ config_base == "general.py" ]]
     python scrape_evallogs.py ../models/$DATA/ ../models/$DATA/evals.csv 0
-if [[ config_base -eq "batches_2.py" ]]
+if [[ config_base == "batches_2.py" ]]
     python scrape_evallogs.py ../models/$DATA/ ../models/$DATA/evals.csv 1
-if [[ config_base -eq "epochs_3.py" ]]
+if [[ config_base == "epochs_3.py" ]]
     python scrape_evallogs.py ../models/$DATA/ ../models/$DATA/evals.csv 2
 
 RUNNING_TIME=$[ $(date +%s) - ${START_TIME} ]
