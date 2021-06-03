@@ -19,16 +19,16 @@ else
     mkdir ../iterations/it_${ITERATION}/rounds
 fi
 
-#Run code for round 1
+echo 'Running code for round 1'
 ./run_round.sh 1 $PARTITIONS $TRIPLES > round1.runlog
 
-#Make dest folders
+echo 'Make dest folders'
 mkdir ../iterations/it_${ITERATION}/rounds/round1_${TRIPLES}_${PARTITIONS}part
 mkdir ../iterations/it_${ITERATION}/rounds/round1_${TRIPLES}_${PARTITIONS}part/copies
 mkdir ../iterations/it_${ITERATION}/rounds/round1_${TRIPLES}_${PARTITIONS}part/models
 mkdir ../iterations/it_${ITERATION}/rounds/round1_${TRIPLES}_${PARTITIONS}part/backups
 
-#Move to dest
+echo 'Moving data to dest folders'
 mv ../models/* ../iterations/it_${ITERATION}/rounds/round1_${TRIPLES}_${PARTITIONS}part/models
 mv backup_points/* ../iterations/it_${ITERATION}/rounds/round1_${TRIPLES}_${PARTITIONS}part/backups
 mv ../copies/*_randsub_* ../iterations/it_${ITERATION}/rounds/round1_${TRIPLES}_${PARTITIONS}part/copies
