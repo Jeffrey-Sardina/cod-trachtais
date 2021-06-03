@@ -1,10 +1,11 @@
 #!/bin/bash
 
 # For overnight batches of commands that should be independent of each other
+# For example: ./run_rounds.sh 2 4000 2
 
-PARTITIONS=$1
-TRIPLES=$2
-ITERATION=$3
+PARTITIONS=$1 #Num partitions to use
+TRIPLES=$2 #Num triples to use in subset
+ITERATION=$3 #Just an ID
 
 START_TIME="$(date +%s)"
 START_DATE="$(date)"
