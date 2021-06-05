@@ -801,6 +801,29 @@ Finished up round 3 (10000 triples) hyperpartram validation. Now it's time to an
 - I'll do full analysis after all this data is in and see where to go
 
 ## 3-6-2021
-I am starting to think that running all 3 trounds again, so make sure I get siilar results, is a good idea. I need to be able to vcerify all of this in my dissertation, and a sample size of 1 is never convicing. I should have the time for that, at least, maybe more.
+I am starting to think that running all 3 rounds again, so make sure I get siilar results, is a good idea. I need to be able to vcerify all of this in my dissertation, and a sample size of 1 is never convicing. I should have the time for that, at least, maybe more.
 
 Luckily, it should be easy to just write the batche scripts and run them as I have been. I'll do that and see where things go from there.
+
+## 4-6-2021
+Took a look at it 1 round 3 data. By inspection, time seems to relate linearly to epochs and quadtratically to dimmensions, as expected. Seconds taken and AUC have no clear correlation, ubt I still need to check dim / epochs vs AUC.
+
+Interestingly, the difference between 50 and 100 dims for #epohs=50 in time if not clear; it is sometimes near 0 or negative! 
+
+If it takes 1 minute to train a dataset of 4000 triples (over all epochs), then bioportal would take around 15 days to train. Thus, I want no more than 1 minute total time taken on datasets of 4000 triples, since the real datasets are so large.
+
+Interestingly, increasing dims seems to lead to higher AUC increases (and more consistent ones) than increasing epochs. Ideas
+- lack of data--it is just treating all concepts differently then (overiftting); a larger model that connects them maynot have that issue
+- maybe dims do help better form better-understanding vectors
+
+For dataset w/ 4000 triples and 2 parittions:
+- anything over 100 dims seems to take far to long to train (for bioportal especially) no matter the number of epochs, and can get REALLY long. 100 seems generally in the right ballpark. There seems to be no clear advantage, ofddly, of 100 epochs over 50. However, there is an advantage of 100 dims over 50.
+
+For dataset w/ 10000 triples and 2 parittions:
+- New time cutoff is 150 seconds for 10k triples (same as 60 seconds for 4000)
+- Again, anything over 100 dims seems to take far to long to train (for bioportal especially) no matter the number of epochs, and can get REALLY long.
+
+For dataset w/ 10000 triples and 5 parittions:
+
+
+NOTE: these are all point estimates. I'll est st. dev. after iteration 2, which is sitll running rightn now.

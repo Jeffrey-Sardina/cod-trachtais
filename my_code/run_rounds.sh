@@ -10,29 +10,29 @@ ITERATION=$3 #Just an ID
 START_TIME="$(date +%s)"
 START_DATE="$(date)"
 
-if [[ -d ../iterations/it_${ITERATION} ]]
-then
-    'output folder already exists, exiting'
-    exit 1
-else
-    mkdir ../iterations/it_${ITERATION}
-    mkdir ../iterations/it_${ITERATION}/rounds
-fi
+# if [[ -d ../iterations/it_${ITERATION} ]]
+# then
+#     'output folder already exists, exiting'
+#     exit 1
+# else
+#     mkdir ../iterations/it_${ITERATION}
+#     mkdir ../iterations/it_${ITERATION}/rounds
+# fi
 
-echo 'Running code for round 1'
-./run_round.sh 1 $PARTITIONS $TRIPLES > round1.runlog
+# echo 'Running code for round 1'
+# ./run_round.sh 1 $PARTITIONS $TRIPLES > round1.runlog
 
-echo 'Make dest folders'
-mkdir ../iterations/it_${ITERATION}/rounds/round1_${TRIPLES}_${PARTITIONS}part
-mkdir ../iterations/it_${ITERATION}/rounds/round1_${TRIPLES}_${PARTITIONS}part/copies
-mkdir ../iterations/it_${ITERATION}/rounds/round1_${TRIPLES}_${PARTITIONS}part/models
-mkdir ../iterations/it_${ITERATION}/rounds/round1_${TRIPLES}_${PARTITIONS}part/backups
+# echo 'Make dest folders'
+# mkdir ../iterations/it_${ITERATION}/rounds/round1_${TRIPLES}_${PARTITIONS}part
+# mkdir ../iterations/it_${ITERATION}/rounds/round1_${TRIPLES}_${PARTITIONS}part/copies
+# mkdir ../iterations/it_${ITERATION}/rounds/round1_${TRIPLES}_${PARTITIONS}part/models
+# mkdir ../iterations/it_${ITERATION}/rounds/round1_${TRIPLES}_${PARTITIONS}part/backups
 
-echo 'Moving data to dest folders'
-mv ../models/* ../iterations/it_${ITERATION}/rounds/round1_${TRIPLES}_${PARTITIONS}part/models
-mv backup_points/* ../iterations/it_${ITERATION}/rounds/round1_${TRIPLES}_${PARTITIONS}part/backups
-mv ../copies/*_randsub_* ../iterations/it_${ITERATION}/rounds/round1_${TRIPLES}_${PARTITIONS}part/copies
-mv round1.runlog ../iterations/it_${ITERATION}/rounds/round1_${TRIPLES}_${PARTITIONS}part/round1.runlog
+# echo 'Moving data to dest folders'
+# mv ../models/* ../iterations/it_${ITERATION}/rounds/round1_${TRIPLES}_${PARTITIONS}part/models
+# mv backup_points/* ../iterations/it_${ITERATION}/rounds/round1_${TRIPLES}_${PARTITIONS}part/backups
+# mv ../copies/*_randsub_* ../iterations/it_${ITERATION}/rounds/round1_${TRIPLES}_${PARTITIONS}part/copies
+# mv round1.runlog ../iterations/it_${ITERATION}/rounds/round1_${TRIPLES}_${PARTITIONS}part/round1.runlog
 
 #Run code for round 2
 ./run_round.sh 2 $PARTITIONS $TRIPLES > round2.runlog
