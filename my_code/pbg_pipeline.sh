@@ -14,6 +14,8 @@
 
 source pytorch-biggraph-gpu/bin/activate
 
+# to run: ./pbg_pipeline.sh pharmgkb validated_1 1 2 config/search/final.py
+
 DATA=$1 
 UUID=$2
 DEL_OLD_TSV=$3
@@ -90,32 +92,6 @@ fi
 #Céim 5
 if [[ $START -lt 6 ]]
 then
-    # echo 'ag aschur an eolais mar .tsv'
-    # mkdir ../copies/$DATA/pbg_out/
-    # torchbiggraph_export_to_tsv \
-    #     $CONFIG \
-    #     --entities-output ../copies/$DATA/pbg_out/entity_embeddings.tsv \
-    #     --relation-types-output ../copies/$DATA/pbg_out/relation_types_parameters.tsv
-    # if [[ $? -ne "0" ]]
-    # then
-    #     echo 'torchbiggraph_export_to_tsv error: stopping script'
-    #     exit 1
-    # fi
-
-    # echo 'ag scríobh eolais díchomhbhrúite'
-    # python uncompress.py ../copies/$DATA/pbg_out/entity_embeddings.tsv ../copies/$DATA/all_table.tsv ../copies/$DATA/pbg_out/entity_embeddings_uncompressed.tsv
-    # if [[ $? -ne "0" ]]
-    # then
-    #     echo 'uncompress.py (on entity_embeddings) error: stopping script'
-    #     exit 1
-    # fi
-
-    # python uncompress.py ../copies/$DATA/pbg_out/relation_types_parameters.tsv ../copies/$DATA/all_table.tsv ../copies/$DATA/pbg_out/relation_types_parameters_uncompressed.tsv
-    # if [[ $? -ne "0" ]]
-    # then
-    #     echo 'uncompress.py (on relation_types_parameters) error: stopping script'
-    #     exit 1
-    # fi
     ./output_training_results.sh $DATA $CONFIG
     if [[ $? -ne "0" ]]
     then

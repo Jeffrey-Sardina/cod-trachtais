@@ -832,3 +832,6 @@ For dataset w/ 10000 triples and 5 parittions:
 NOTE: these are all point estimates. I'll est st. dev. after iteration 2, which is sitll running rightn now.
 
 Conclusion: use 50 epochs, 100 dims as a starting point for training on a full data set.
+
+## 6-6-2021
+Smaoineamh: An ceart dom torthaí an céad babhta seo a úsáid mar bunluacha babhta eile, cosúil le Gibbs Sampler? Bheadh mé níos cinnte go bhfuil luacha mar agam mar sin féinig. Ba mhaith liom sin a déanamh, dá mb'fhéidir.
