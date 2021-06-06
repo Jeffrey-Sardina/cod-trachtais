@@ -17,42 +17,27 @@ def load_params():
     
     return params, search_iteration
 
-def get_val_for_iteration(search_iteration):
+def get_cross_validated_epoch_values():
     '''
     This should be the only hard-coded part
     '''
-    import itertools
-
-    epochs = [10, 50, 100, 200]
-    dimensions = [10, 50, 100, 150, 300]
-    permutations = itertools.product(epochs,
-        dimensions)
-    permutations = [x for x in permutations]
-
-    for i, permutation in enumerate(permutations):
-        if i == search_iteration:
-            return permutation
-    
-    raise ValueError('invalid search_iteration value. Note: it must start at 0')
+    epochs = 50
+    dimensions = 100
+    return epochs, dimensions
 
 def get_cross_validated_values():
-    lr = 0
-    regularization_coef = 0
-    loss_fn = ''
-    operator = ''
-    comparator = ''
+    lr = 1e-4
+    regularization_coef = None
+    loss_fn = 'ranking'
+    operator = 'affine'
+    comparator = 'dot'
     return lr, regularization_coef, loss_fn, operator, comparator
 
 def get_cross_validated_batch_values():
-    batch_size = 0
-    num_batch_negs = 0
-    num_uniform_negs = 0
+    batch_size = 1000
+    num_batch_negs = 100
+    num_uniform_negs = 100
     return batch_size, num_batch_negs, num_uniform_negs
-
-def get_cross_validated_epoch_values():
-    epochs = 0
-    dimensions = 0
-    return epochs, dimensions
 
 def get_torchbiggraph_config():
     params, i = load_params()

@@ -817,13 +817,18 @@ Interestingly, increasing dims seems to lead to higher AUC increases (and more c
 - maybe dims do help better form better-understanding vectors
 
 For dataset w/ 4000 triples and 2 parittions:
-- anything over 100 dims seems to take far to long to train (for bioportal especially) no matter the number of epochs, and can get REALLY long. 100 seems generally in the right ballpark. There seems to be no clear advantage, ofddly, of 100 epochs over 50. However, there is an advantage of 100 dims over 50.
+- anything over 100 dims seems to take far to long to train (for bioportal especially) no matter the number of epochs, and can get REALLY long. 100 seems generally in the right ballpark. There seems to be no clear advantage, oddly, of 100 epochs over 50. However, there is an advantage of 100 dims over 50.
 
 For dataset w/ 10000 triples and 2 parittions:
 - New time cutoff is 150 seconds for 10k triples (same as 60 seconds for 4000)
-- Again, anything over 100 dims seems to take far to long to train (for bioportal especially) no matter the number of epochs, and can get REALLY long.
+- Again, anything over 100 dims seems to take far t0o long to train (for bioportal especially) no matter the number of epochs, and can get REALLY long.
 
 For dataset w/ 10000 triples and 5 parittions:
-
+- AUCs were notably lower for bioportal, and slightly lower for drugbank (compared to 10000 triples and 2 splits).
+- Training times were notably longer than when 2 splits were used
+- Anything over 100 dims seems to take  to long to train
+- Again, more epochs seems to have no reliable effect on AUC
 
 NOTE: these are all point estimates. I'll est st. dev. after iteration 2, which is sitll running rightn now.
+
+Conclusion: use 50 epochs, 100 dims as a starting point for training on a full data set.
