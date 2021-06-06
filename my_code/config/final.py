@@ -2,9 +2,7 @@
 
 def load_params():
     import os
-
     params = {}
-    search_iteration = 0
     for key, val in os.environ.items():
         if key == "NUM_PARTITIONS":
             params[key] = int(val)
@@ -12,10 +10,7 @@ def load_params():
             params[key] = val
         if key == "UUID":
             params[key] = val
-        if key == "SEARCH_ITERATION":
-            search_iteration = int(val)
-    
-    return params, search_iteration
+    return params
 
 def get_cross_validated_epoch_values():
     '''
@@ -40,7 +35,7 @@ def get_cross_validated_batch_values():
     return batch_size, num_batch_negs, num_uniform_negs
 
 def get_torchbiggraph_config():
-    params, i = load_params()
+    params = load_params()
     lr_i, regularization_coef_i, loss_fn_i, operator_i, comparator_i = get_cross_validated_values()
     batch_size_i, num_batch_negs_i, num_uniform_negs_i = get_cross_validated_batch_values()
     epochs_i, dimensions_i = get_cross_validated_epoch_values()

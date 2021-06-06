@@ -1,5 +1,8 @@
 #!/bin/bash
 
+#Use this to output, but not to train; it is behind Master by a bit
+source pytorch-biggraph-gpu-writepatch/bin/activate
+
 DATA=$1 
 CONFIG=$2
 

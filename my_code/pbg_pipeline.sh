@@ -21,6 +21,7 @@ UUID=$2
 DEL_OLD_TSV=$3
 START=$4
 CONFIG=$5
+NUM_PARTITIONS=$6
 START_TIME="$(date +%s)"
 START_DATE="$(date)"
 
@@ -29,11 +30,12 @@ export NUM_PARTITIONS=$6
 export UUID=$2
 
 #Rabhaí agus earráidí
-if [[ -d "backup_points/${DATA}_${UUID}" && $START -lt 4 ]]
+if [[ -d "backup_points/${DATA}_${UUID}" && $START -lt 3 ]]
 then
     echo "ERROR: UUID úsáidte cheana, roghnaigh ceann eile"
     exit 1
 fi
+mkdir ../models/$DATA/
 
 #Céim 1
 if [[ $START -lt 2 ]] 
@@ -63,7 +65,7 @@ then
     echo 'ag rith algartaim leabaithe'
     torchbiggraph_train \
         $CONFIG \
-        -p edge_paths=../copies/$DATA/pbg_split/imported/training_data
+        -p edge_paths=../copies/$DATA/pbg_split/imported/training_data > "../models/${DATA}/${UUID}.trainlog"
     if [[ $? -ne "0" ]]
     then
         echo 'torchbiggraph_train error: stopping script'
@@ -81,7 +83,7 @@ then
         -p edge_paths=../copies/$DATA/pbg_split/imported/validation_data \
         -p relations.0.all_negs=false \
         -p num_batch_negs=500 \
-        -p num_uniform_negs=500
+        -p num_uniform_negs=500 > "../models/${DATA}/${UUID}.evallog"
     if [[ $? -ne "0" ]]
     then
         echo 'torchbiggraph_eval error: stopping script'
@@ -109,6 +111,7 @@ echo UUID $UUID
 echo DEL_OLD_TSV $DEL_OLD_TSV 
 echo START $START 
 echo CONFIG $CONFIG 
+echo NUM_PARTITIONS $NUM_PARTITIONS
 echo START_TIME $START_TIME
 echo RUNNING_TIME $RUNNING_TIME
 echo START_DATE $START_DATE
