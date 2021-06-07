@@ -835,3 +835,10 @@ Conclusion: use 50 epochs, 100 dims as a starting point for training on a full d
 
 ## 6-6-2021
 Smaoineamh: An ceart dom torthaí an céad babhta seo a úsáid mar bunluacha babhta eile, cosúil le Gibbs Sampler? Bheadh mé níos cinnte go bhfuil luacha mar agam mar sin féinig. Ba mhaith liom sin a déanamh, dá mb'fhéidir.
+
+## 7-6-2021
+Níl mar a shíltear a bhítear. Thóg sé i bhfad níos lú ama xhun omom agus pharmgkb a thraenáil ná mar a bhíos ag súil leis. Mar sin, is dóigh liom go mbeidh mé in ann méid na toisí a chur in airde. Ach sin ráite, fuairead AUC timpeall 0.78 orthu araon, agus mar sin de níl sé chomh dona anois in aon chor.
+
+Tá trothaí ó bhabhta eile fíordheimhniú hipearpharaiméadar tréis teacht isteach leis, agus mar sin  ba mhaith liom a bheith cinnte go bhfuil sé cosúil leis an gcéad babhta. Amach ansin, b'fhearr liom babhta eile a dhéanamh, go dtí go bhgfuil trí cinn déanta agam. 
+
+Móide sin, ba cheart dom córas analísíochta a chruthú chun rudaí a réamhinsint agus araile. Scríobhfiadh mé cód le haghaidh an córas sin freisin. Ar diereadh, toisc go bhfuil chuile rud seo i bhfad níod tapúla ná mar a bhíos ag súil leis, ba cheart dom shard_compress a chríochnú agus clinical_trials a úsáid leis. 
