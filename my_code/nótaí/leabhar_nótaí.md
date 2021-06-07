@@ -842,3 +842,7 @@ Níl mar a shíltear a bhítear. Thóg sé i bhfad níos lú ama xhun omom agus 
 Tá trothaí ó bhabhta eile fíordheimhniú hipearpharaiméadar tréis teacht isteach leis, agus mar sin  ba mhaith liom a bheith cinnte go bhfuil sé cosúil leis an gcéad babhta. Amach ansin, b'fhearr liom babhta eile a dhéanamh, go dtí go bhgfuil trí cinn déanta agam. 
 
 Móide sin, ba cheart dom córas analísíochta a chruthú chun rudaí a réamhinsint agus araile. Scríobhfiadh mé cód le haghaidh an córas sin freisin. Ar diereadh, toisc go bhfuil chuile rud seo i bhfad níod tapúla ná mar a bhíos ag súil leis, ba cheart dom shard_compress a chríochnú agus clinical_trials a úsáid leis. 
+
+Things I need to look at more:
+- (https://torchbiggraph.readthedocs.io/en/latest/loss_optimization.html) "This loss function is chosen by setting the loss_fn parameter to ranking, and the target margin is specified by the margin parameter."
+- My AUC is very good...but r1 is VERY low. This seems bad to me. I need to check on that!! See: https://torchbiggraph.readthedocs.io/en/latest/evaluation.html
