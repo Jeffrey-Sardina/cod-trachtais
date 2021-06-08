@@ -1,3 +1,5 @@
+#!/bin/bash
+
 # embeddings_h5_file = sys.argv[1]
 # entity_names_file = sys.argv[2]
 # target_entity = sys.argv[3]

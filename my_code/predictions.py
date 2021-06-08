@@ -16,9 +16,9 @@ import json
 import h5py
 import torch
 import numpy as np
-#import faiss
 import sys
 import torchbiggraph.model #ComplexDiagonalDynamicOperator, DotComparator
+#import faiss
 
 #Global vars
 num_dims = 100
@@ -40,8 +40,8 @@ def load_affine_operator(dynamic_rel_count, model_h5_file):
     # Load the operator's state dict
     with h5py.File(model_h5_file, "r") as hf:
         operator_state_dict = {
-            "real": torch.from_numpy(hf["model/relations/0/operator/rhs/real"][...]),
-            "imag": torch.from_numpy(hf["model/relations/0/operator/rhs/imag"][...]),
+            "linear_transformations": torch.from_numpy(hf["model/relations/0/operator/rhs/linear_transformations"][...]),
+            "translations": torch.from_numpy(hf["model/relations/0/operator/rhs/translations"][...]),
         }
     operator = torchbiggraph.model.AffineDynamicOperator(num_dims, dynamic_rel_count) # I think
     operator.load_state_dict(operator_state_dict)
