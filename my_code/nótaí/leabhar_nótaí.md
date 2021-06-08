@@ -837,12 +837,21 @@ Conclusion: use 50 epochs, 100 dims as a starting point for training on a full d
 Smaoineamh: An ceart dom torthaí an céad babhta seo a úsáid mar bunluacha babhta eile, cosúil le Gibbs Sampler? Bheadh mé níos cinnte go bhfuil luacha mar agam mar sin féinig. Ba mhaith liom sin a déanamh, dá mb'fhéidir.
 
 ## 7-6-2021
-Níl mar a shíltear a bhítear. Thóg sé i bhfad níos lú ama xhun omom agus pharmgkb a thraenáil ná mar a bhíos ag súil leis. Mar sin, is dóigh liom go mbeidh mé in ann méid na toisí a chur in airde. Ach sin ráite, fuairead AUC timpeall 0.78 orthu araon, agus mar sin de níl sé chomh dona anois in aon chor.
+Níl mar a shíltear a bhítear. Thóg sé i bhfad níos lú ama chun omim agus pharmgkb a thraenáil ná mar a bhíos ag súil leis. Mar sin, is dóigh liom go mbeidh mé in ann méid na toisí a chur in airde. Ach sin ráite, fuairead AUC timpeall 0.78 orthu araon, agus mar sin de níl sé chomh dona anois in aon chor.
 
-Tá trothaí ó bhabhta eile fíordheimhniú hipearpharaiméadar tréis teacht isteach leis, agus mar sin  ba mhaith liom a bheith cinnte go bhfuil sé cosúil leis an gcéad babhta. Amach ansin, b'fhearr liom babhta eile a dhéanamh, go dtí go bhgfuil trí cinn déanta agam. 
+Tá trothaí ó bhabhta eile fíordheimhniú hipearpharaiméadar tréis teacht isteach leis, agus mar sin  ba mhaith liom a bheith cinnte go bhfuil sé cosúil leis an gcéad babhta. Amach ansin, b'fhearr liom babhta eile a dhéanamh, go dtí go bhfuil trí cinn déanta agam. 
 
 Móide sin, ba cheart dom córas analísíochta a chruthú chun rudaí a réamhinsint agus araile. Scríobhfiadh mé cód le haghaidh an córas sin freisin. Ar diereadh, toisc go bhfuil chuile rud seo i bhfad níod tapúla ná mar a bhíos ag súil leis, ba cheart dom shard_compress a chríochnú agus clinical_trials a úsáid leis. 
 
 Things I need to look at more:
-- (https://torchbiggraph.readthedocs.io/en/latest/loss_optimization.html) "This loss function is chosen by setting the loss_fn parameter to ranking, and the target margin is specified by the margin parameter."
+- margin param: (https://torchbiggraph.readthedocs.io/en/latest/loss_optimization.html) "This loss function is chosen by setting the loss_fn parameter to ranking, and the target margin is specified by the margin parameter."
 - My AUC is very good...but r1 is VERY low. This seems bad to me. I need to check on that!! See: https://torchbiggraph.readthedocs.io/en/latest/evaluation.html
+
+## 8-6-2021
+For running on full datasets:
+- in all cases 2 partitions were used, except in bioportal which used NUMBER
+- So far all but bioportal are done; bioportal running now
+- AUC / r1 discprepancy -- possible this is due to a larger prevalance of end nodes that do not have other relations? Strings and the such.
+    - Note also that in it 1, round 1, bioportal and dbsnp have FAR higher r1 than they do at the end of round 3 (it 1), as well as far higher r1 than the other datasets
+- I am torn on whether AUC is the right vbalidating matric, or r1. It really depends on which better models the needs I have wrt predictions, but r1` seems more likely to be a good metric for that?
+- For now, time to get predicting
