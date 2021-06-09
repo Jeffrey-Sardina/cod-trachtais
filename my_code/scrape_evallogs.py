@@ -2,15 +2,28 @@ import sys
 import glob
 import os
 
+#Code: xy
+#x = search folder id (ie, search/ vs search_1/)
+#y = round (1, 2, or 3)
+
 config_to_use = sys.argv[3].strip()
-if len(config_to_use) == 0 or int(config_to_use) == 0:
+if len(config_to_use) == 0 or int(config_to_use) == 0: #00
     from config.search.general import get_val_for_iteration
     test_stats='lr,reg,loss_fn,operator,comparator'
-elif int(config_to_use) == 1:
+elif int(config_to_use) == 1: #01
     from config.search.batches_2 import get_val_for_iteration
     test_stats='batch_size,num_batch_negs,num_uniform_negs'
-elif  int(config_to_use) == 2:
+elif  int(config_to_use) == 2: #02
     from config.search.epochs_3 import get_val_for_iteration
+    test_stats='epochs,dimensions'
+elif int(config_to_use) == 10:
+    from config.search_1.general import get_val_for_iteration
+    test_stats='lr,reg,loss_fn,operator,comparator'
+elif int(config_to_use) == 11: #01
+    from config.search_1.batches_2 import get_val_for_iteration
+    test_stats='batch_size,num_batch_negs,num_uniform_negs'
+elif  int(config_to_use) == 12: #02
+    from config.search_1.epochs_3 import get_val_for_iteration
     test_stats='epochs,dimensions'
 
 def process_files(files):
