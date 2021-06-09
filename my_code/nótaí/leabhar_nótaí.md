@@ -849,9 +849,9 @@ Things I need to look at more:
 
 ## 8-6-2021
 For running on full datasets:
-- in all cases 2 partitions were used, except in bioportal which used NUMBER
+- in all cases 2 partitions were used, except in bioportal which used 3 (in progress)
 - So far all but bioportal are done; bioportal running now
 - AUC / r1 discprepancy -- possible this is due to a larger prevalance of end nodes that do not have other relations? Strings and the such.
     - Note also that in it 1, round 1, bioportal and dbsnp have FAR higher r1 than they do at the end of round 3 (it 1), as well as far higher r1 than the other datasets
-- I am torn on whether AUC is the right vbalidating matric, or r1. It really depends on which better models the needs I have wrt predictions, but r1` seems more likely to be a good metric for that?
+- I am torn on whether AUC is the right validating metric, or r1. It really depends on which better models the needs I have wrt predictions, but r1 seems more likely to be a good metric for that?
 - For now, time to get predicting
