@@ -855,3 +855,10 @@ For running on full datasets:
     - Note also that in it 1, round 1, bioportal and dbsnp have FAR higher r1 than they do at the end of round 3 (it 1), as well as far higher r1 than the other datasets
 - I am torn on whether AUC is the right validating metric, or r1. It really depends on which better models the needs I have wrt predictions, but r1 seems more likely to be a good metric for that?
 - For now, time to get predicting
+
+## 10-6-2021
+Wrote code to analyze graph structure and answer some of the above questions. I decided to do an iteration 3 of hyper-param search, since that will fuirther increase me confidence in my results. At a brief glance, iteration 2 seems broadly similar to iteration 1.
+
+Once that is done, I will redo validations with a basis on r1 this time, and see how the end results change after that.
+
+Bioportal (using the full data) may be taking too long to train. Epochs are around 15 to 25 hours, and there are 50 of those. SO I might have to subset it, or manage it some other way.

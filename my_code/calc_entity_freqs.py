@@ -9,7 +9,8 @@ def calc_counts(sorted_file):
             if curr_item == line:
                 curr_count += 1
             else:
-                print(curr_count, curr_item, sep='\t')
+                if curr_item != None:
+                    print(curr_count, curr_item, sep='\t')
                 curr_item = line
                 curr_count = 1
 
