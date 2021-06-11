@@ -4,6 +4,7 @@
 import sys
 import pandas as pd
 import numpy as np
+import matplotlib.pyplot as plt
 from sklearn.linear_model import Lasso
 from sklearn.metrics import mean_squared_error, r2_score
 from sklearn.model_selection import KFold
@@ -35,51 +36,62 @@ def plot_alpha_cross_validation(alphas, mean_errors, std_errors, title):
     plt.title(title)
     plt.show()
 
-def print_params(model, title):
+def print_params(model, labels, title):
     print(title)
-    print(str(model.intercept_))
-    for coef in model.coef_:
-        print(str(coef))
+    print('intercept:', str(model.intercept_))
+    for i, coef in enumerate(model.coef_):
+        print(labels[i], str(coef))
     print()
 
 def cross_val(X, y):
-    fold = 3 #10
-    alphas = [1e1, 1, 1e-1, 1e-2, 1e-3]
+    fold = 5
+    alphas = [1, 0.5, 1e-1, 1e-2, 1e-3]
     mean_errors, std_errors = cross_validate_alpha(alphas, fold, X, y)
-    plot_alpha_cross_validation(alphas, mean_errors, std_errors, 'Lasso, k=10')
+    plot_alpha_cross_validation(alphas, mean_errors, std_errors, 'Lasso, k=' + str(fold))
 
-def analyze(X, y, alpha):
+def analyze(X, y, alpha, labels):
     #Faigh eolas
     model = Lasso(alpha=alpha).fit(X, y)
     ypred = model.predict(X)
     r2 = r2_score(y, ypred)
 
     #Aschur sonraí
-    print_params(model, 'Lasso')
+    print_params(model, labels, 'Lasso')
     print('r2:', r2)
     return model
 
 def load_data(csv_file, target):
     data = pd.read_csv(csv_file, comment='#')
+
+    #Faigh y
+    if target != 'best_auc' and target != 'best_r1':
+        raise ValueError('Invalid target: ' + target)
+    y = data[target].to_numpy()
+    del data['best_auc']
+    del data['best_r1']
+
+    #Faigh X
     for i in range(len(data)):
         data.loc[i] = data.loc[i] / data.loc[i][0]
     del data['num_triples']
-    y = data[target].to_numpy()
-    del data[target]
     X = data.to_numpy()
-    return X, y
+
+    #Faigh teidil
+    labels = data.columns.values
+
+    return X, y, labels
 
 if __name__ == '__main__':
     #lódáil sonraí
     csv_file = sys.argv[1]
     do_cross_val = sys.argv[2] == '1'
     target = sys.argv[3]
-    X, y = load_data(csv_file, target)
+    X, y, labels = load_data(csv_file, target)
 
     #Déan anailísíocht
     if do_cross_val:
         cross_val(X, y)
     else:
         alpha = float(sys.argv[4])
-        model = analyze(x, y, alpha)
+        model = analyze(X, y, alpha, labels)
     exit(0)

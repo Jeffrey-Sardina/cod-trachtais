@@ -38,7 +38,7 @@ NUM_REPEATS_UNIQ=$( wc -l < $WORK_DIR/repeats_uniq.txt )
 #Aschuir sonraí
 if [[ PRINT_HEADER -eq 1 ]]
 then
-    echo "num_triples,num_sinks,num_sinks_no_dup,num_sources,num_sinks_no_dup,num_repeats,num_repeats_no_dup"
+    echo "num_triples,num_sinks,num_sinks_no_dup,num_sources,num_sources_no_dup,num_repeats,num_repeats_no_dup"
 fi
 echo $NUM_TRIPLES,$NUM_SINKS,$NUM_SINKS_UNIQ,$NUM_SOURCES,$NUM_SOURCES_UNIQ,$NUM_REPEATS,$NUM_REPEATS_UNIQ
 
