@@ -34,7 +34,8 @@ def plot_alpha_cross_validation(alphas, mean_errors, std_errors, title):
     plt.xlabel('alphas')
     plt.ylabel('Mean square error')
     plt.title(title)
-    plt.show()
+    plt.savefig('metric_analysis/fig.png')
+    #plt.show()
 
 def print_params(model, labels, title):
     print(title)
@@ -44,7 +45,7 @@ def print_params(model, labels, title):
     print()
 
 def cross_val(X, y):
-    fold = 5
+    fold = 2
     alphas = [1, 0.5, 1e-1, 1e-2, 1e-3]
     mean_errors, std_errors = cross_validate_alpha(alphas, fold, X, y)
     plot_alpha_cross_validation(alphas, mean_errors, std_errors, 'Lasso, k=' + str(fold))
@@ -54,6 +55,17 @@ def analyze(X, y, alpha, labels):
     model = Lasso(alpha=alpha).fit(X, y)
     ypred = model.predict(X)
     r2 = r2_score(y, ypred)
+
+    #Aschur sonraí
+    print_params(model, labels, 'Lasso')
+    print('r2:', r2)
+    return model
+
+def evaluate(X, y, alpha, labels, Xtest, ytest):
+    #Faigh eolas
+    model = Lasso(alpha=alpha).fit(X, y)
+    ypred = model.predict(Xtest)
+    r2 = r2_score(ytest, ypred)
 
     #Aschur sonraí
     print_params(model, labels, 'Lasso')
@@ -83,15 +95,20 @@ def load_data(csv_file, target):
 
 if __name__ == '__main__':
     #lódáil sonraí
-    csv_file = sys.argv[1]
-    do_cross_val = sys.argv[2] == '1'
+    training_file = sys.argv[1]
+    mode = sys.argv[2]
     target = sys.argv[3]
-    X, y, labels = load_data(csv_file, target)
+    X, y, labels = load_data(training_file, target)
 
     #Déan anailísíocht
-    if do_cross_val:
+    if mode == '1': #Cross-val
         cross_val(X, y)
-    else:
+    elif mode == '2': #Eval on given dataset
         alpha = float(sys.argv[4])
         model = analyze(X, y, alpha, labels)
+    elif mode == '3': #Train on one set, eval / apply on another
+        alpha = float(sys.argv[4])
+        test_file = sys.argv[5]
+        Xtest, ytest, _ = load_data(test_file, target)
+        model = evaluate(X, y, alpha, labels, Xtest, ytest)
     exit(0)
