@@ -40,7 +40,7 @@ def print_params(model, labels, title):
     print(title)
     print('intercept:', str(model.intercept_))
     for i, coef in enumerate(model.coef_):
-        print(labels[i], str(coef))
+        print('-', labels[i], str(coef))
     print()
 
 def cross_val(X, y):
