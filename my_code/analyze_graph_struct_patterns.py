@@ -83,13 +83,25 @@ def load_data(csv_file, target):
     del data['best_r1']
 
     #Faigh X
-    for i in range(len(data)):
-        data.loc[i] = data.loc[i] / data.loc[i][0]
-    del data['num_triples']
-    X = data.to_numpy()
+    # for i in range(len(data)):
+    #     data.loc[i] = data.loc[i] / data.loc[i][0]
+    # data['num_sinks'] = data['num_sinks'] / data['num_triples'][0]
+    # data['num_sinks_no_dup'] = data['num_sinks_no_dup'] / data['num_triples'][0]
+    # data['num_sources'] = data['num_sources'] / data['num_triples'][0]
+    # data['num_sources_no_dup'] = data['num_sources_no_dup'] / data['num_triples'][0]
+    # data['num_repeats'] = data['num_repeats'] / data['num_triples'][0]
+    # data['num_repeats_no_dup'] = data['num_repeats_no_dup'] / data['num_triples'][0]
+    
+    ratio_df = data.copy()
+    for i in range(len(ratio_df)):
+        ratio_df.loc[i] = ratio_df.loc[i] / ratio_df.loc[i][0]
+    del ratio_df['num_triples']
+    ratio_df.columns = [data.columns]
+    full_data = data.merge(ratio_df, how='outer')
+    X = full_data.to_numpy()
 
     #Faigh teidil
-    labels = data.columns.values
+    labels = full_data.columns.values
 
     return X, y, labels
 

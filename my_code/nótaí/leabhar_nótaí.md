@@ -862,3 +862,14 @@ Wrote code to analyze graph structure and answer some of the above questions. I 
 Once that is done, I will redo validations with a basis on r1 this time, and see how the end results change after that.
 
 Bioportal (using the full data) may be taking too long to train. Epochs are around 15 to 25 hours, and there are 50 of those. SO I might have to subset it, or manage it some other way.
+
+## 13-06-2021
+Over the last few days, I have tried to analyze whether graph structure is having a significant impactnon the difference in r1 rankings accross different datasets. So far, considering, the propotions of sinks, sources, and repeated entities (counting and not counting duplicates), I have not found a model that can explain the effect on both the randsub and the full datasets. However, using jsut the randsub datasets, a Lasso model indiacted that the protprotion of sources to the total number of triples (not counting duplicatse) was able to explain around 80% of the variation in the r1 values. In no case were AUC values explainable from these predictors.
+
+Interestingly, the model that had r2 = 0.8 (above) anti-correlated with the data from full (not subsetted) datasets. This raises concerning in how I am subsetting to an exent WRT r1 (as mentioed before, the independence of AUC does not lead me to have such concerns for that metric). I, thus, must continue with my r1 cross-validation with great care.
+
+Other ideas for analyzing the model:
+- average in / out degree
+- median in / out degree
+- max and min in / out degree
+- quartile or stdev in / out degree
