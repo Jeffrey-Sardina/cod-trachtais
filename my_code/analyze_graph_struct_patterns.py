@@ -9,12 +9,14 @@ from sklearn.linear_model import Lasso
 from sklearn.metrics import mean_squared_error, r2_score
 from sklearn.model_selection import KFold
 
+max_iter=100_000
+
 def cross_validate_alpha(alphas, fold, X, y):
     kf = KFold(n_splits=fold, shuffle=True)
     mean_errors = []
     std_errors = []
     for alpha in alphas:
-        model = Lasso(alpha=alpha)
+        model = Lasso(alpha=alpha, max_iter=max_iter)
         MSEs = []
         for train, test in kf.split(X):
             model.fit(X[train], y[train])
@@ -45,14 +47,14 @@ def print_params(model, labels, title):
     print()
 
 def cross_val(X, y):
-    fold = 2
+    fold = 5
     alphas = [1, 0.5, 1e-1, 1e-2, 1e-3]
     mean_errors, std_errors = cross_validate_alpha(alphas, fold, X, y)
     plot_alpha_cross_validation(alphas, mean_errors, std_errors, 'Lasso, k=' + str(fold))
 
 def analyze(X, y, alpha, labels):
     #Faigh eolas
-    model = Lasso(alpha=alpha).fit(X, y)
+    model = Lasso(alpha=alpha, max_iter=max_iter).fit(X, y)
     ypred = model.predict(X)
     r2 = r2_score(y, ypred)
 
@@ -63,7 +65,7 @@ def analyze(X, y, alpha, labels):
 
 def evaluate(X, y, alpha, labels, Xtest, ytest):
     #Faigh eolas
-    model = Lasso(alpha=alpha).fit(X, y)
+    model = Lasso(alpha=alpha, max_iter=max_iter).fit(X, y)
     ypred = model.predict(Xtest)
     r2 = r2_score(ytest, ypred)
 
@@ -96,8 +98,8 @@ def load_data(csv_file, target):
     for i in range(len(ratio_df)):
         ratio_df.loc[i] = ratio_df.loc[i] / ratio_df.loc[i][0]
     del ratio_df['num_triples']
-    ratio_df.columns = [data.columns]
-    full_data = data.merge(ratio_df, how='outer')
+    ratio_df.columns = ['ratio_' + x for x in data.columns if x != 'num_triples']
+    full_data = pd.concat([data, ratio_df], axis=1) #data.merge(ratio_df, how='outer')
     X = full_data.to_numpy()
 
     #Faigh teidil
