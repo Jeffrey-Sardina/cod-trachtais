@@ -21,13 +21,13 @@ SOURCE_STATS=$( python calc_entity_degree_stats.py $WORK_DIR/sinks_freqs.tsv )
 comm -23 $WORK_DIR/col1.tmp $WORK_DIR/col3.tmp > $WORK_DIR/sources.txt
 uniq $WORK_DIR/sources.txt > $WORK_DIR/sources_uniq.txt
 python calc_entity_freqs.py $WORK_DIR/sources.txt | sort -n > $WORK_DIR/sources_freqs.tsv
-SINK_STATS=$( python calc_entity_degree_stats.py $WORK_DIR/sinks_freqs.tsv )
+SINK_STATS=$( python calc_entity_degree_stats.py $WORK_DIR/sources_freqs.tsv )
 
 #Comhaireamh na rudaí nach slogaidí ná foinsí iad
 comm -12 $WORK_DIR/col1.tmp $WORK_DIR/col3.tmp > $WORK_DIR/repeats.txt
 uniq $WORK_DIR/repeats.txt > $WORK_DIR/repeats_uniq.txt
 python calc_entity_freqs.py $WORK_DIR/repeats.txt | sort -n > $WORK_DIR/repeats_freqs.tsv
-REPEAT_STATS=$( python calc_entity_degree_stats.py $WORK_DIR/sinks_freqs.tsv )
+REPEAT_STATS=$( python calc_entity_degree_stats.py $WORK_DIR/repeats_freqs.tsv )
 
 #Faigh sonraí gnáthacha
 NUM_TRIPLES=$( wc -l  < $SOURCE_FILE )

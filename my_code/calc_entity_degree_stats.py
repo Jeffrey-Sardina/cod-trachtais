@@ -2,7 +2,7 @@ import pandas as pd
 import sys
 
 def read_counts(input_file):
-    counts_df = pd.read_csv(input_file, header=None, sep='\t')
+    counts_df = pd.read_csv(input_file, header=None, sep='\t', quotechar=None, quoting=3)
     counts_df.columns = ['counts', 'items']
     return counts_df
 
