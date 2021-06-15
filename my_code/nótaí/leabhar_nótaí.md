@@ -882,3 +882,18 @@ Ok, this graph structure data (to regerss to r1 / auc) just makes no sense. I am
 I'll need to check on that. Hold on. I just found out that some of the data I had was entered wrong (AUC and r1 got flipped for the DBSNP full dataset row). I may need to re-run this analysis and see if that changes anything.
 
 I just started off search_1, which is using r1 to select hyperparameters (seach 0 was the same but for AUC). So far, the models are (mostly) good with the same hyperwparameters--which is very enocuraging. Bioportal is one exception, but it is still similar as well.
+
+Doing an analysis of structure of subsets vs full data via inspection on metric_analusis/all_data_with_ratios.csv. Compared to the full datasets, the subsets seem to have:
+- greater ratio_num_sinks
+- greater ratio_num_sinks_no_dup
+- greater ratio_num_sources
+- MUCH greater ratio_num_sources_no_dup
+- lower ratio_num_repeats
+- lower ratio_num_repeats_no_dup
+- much greater ratio_sink_avg, ratio_sink_min, ratio_sink_q1, ratio_sink_med, ratio_sink_q3
+- generally greater ratio_sink_max (drugbank and omim are exceptions; they are similar)
+- much greater ratio_source_avg, ratio_source_min, ratio_source_q1, ratio_source_med, ratio_source_q3
+- similar ratio_source_max
+- much greater ratio_repeat_avg, ratio_repeat_min, ratio_repeat_q1, ratio_repeat_med, ratio_repeat_q3
+- similar ratio_repeat_max
+I think this is largely to be expected with randomness. I'll keep this in mind as I explore the final dataset evaluations; if they givew results counter to what was expected from the validation rounds, this may be (at least part of) the answer.

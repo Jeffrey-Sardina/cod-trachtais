@@ -95,6 +95,8 @@ def load_data(csv_file, target, keep_raw_numbers):
         full_data = ratio_df
     X = full_data.to_numpy()
 
+    #full_data.to_csv('all_data_with_ratios.csv', index=None)
+
     #Faigh teidil
     labels = full_data.columns.values
 
