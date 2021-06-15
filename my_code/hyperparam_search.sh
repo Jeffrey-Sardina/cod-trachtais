@@ -12,6 +12,7 @@ NUM_OPTIONS=$4 #Must be manually calcualted from number of options in the search
 CONFIG=$5
 TRIPLES_TO_KEEP=$6 #if 0, keep all
 START_SEARCH_ITERATION=$7
+SEARCH_ID=$8
 START_TIME="$(date +%s)"
 START_DATE="$(date)"
 
@@ -23,9 +24,16 @@ then
     if [[ $TRIPLES_TO_KEEP -gt 0 ]]
     then
         echo 'ag cruthú fothacair eolais go randamach'
-        mkdir ../copies/${DATA}_randsub_${TRIPLES_TO_KEEP}/
-        DATA_OLD=$DATA
-        DATA=${DATA}_randsub_${TRIPLES_TO_KEEP}
+        if [[ -z $SEARCH_ID ]]
+        then
+            mkdir ../copies/${DATA}_randsub_${TRIPLES_TO_KEEP}/
+            DATA_OLD=$DATA
+            DATA=${DATA}_randsub_${TRIPLES_TO_KEEP}
+        else
+            mkdir ../copies/${DATA}_randsub_${TRIPLES_TO_KEEP}_${SEARCH_ID}/
+            DATA_OLD=$DATA
+            DATA=${DATA}_randsub_${TRIPLES_TO_KEEP}_${SEARCH_ID}
+        fi
         cp ../copies/$DATA_OLD/all_table.tsv ../copies/$DATA/
         python create_random_subset.py ../copies/$DATA_OLD/ ../copies/$DATA/ $TRIPLES_TO_KEEP
         if [[ $? -ne "0" ]]
