@@ -100,11 +100,11 @@ if __name__ == '__main__':
         logs.append(y_var)
 
     #lódáil eolas (le srianta, b'fhéidir)
-    eq_constrains = sys.argv[5:]
+    constrains = sys.argv[5:]
     vars_to_limit = [] #ainm
     limit_types = [] #-eq, -ne, -gt, lt
     limits = [] #luach
-    for i, item in enumerate(eq_constrains):
+    for i, item in enumerate(constrains):
         if i % 3 == 0:
             vars_to_limit.append(item)
         elif i % 3 == 1:
@@ -113,7 +113,7 @@ if __name__ == '__main__':
             limits.append(item)
     data = load_data(evals_file, vars_to_limit, limit_types, limits)
 
-    #cruthaigh cgraf
+    #cruthaigh graf
     if y_var == 'NB':
         do_2dplot(data, response_var, x_var, logs)
     else:    
