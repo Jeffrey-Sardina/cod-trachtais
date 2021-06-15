@@ -1,5 +1,5 @@
 num_triples,num_sinks,num_sinks_no_dup,num_sources,num_sources_no_dup,num_repeats,num_repeats_no_dup,best_auc,best_r1
-12633560,11423953,2981629,11423953,586130,1209607,550671,0.0652028,0.867946 #dbsnp (from CV round 1 ../iterations_search_0/final_set/)
+12633560,11423953,2981629,11423953,586130,1209607,550671,0.867946,0.0652028 #dbsnp (from CV round 1 ../iterations_search_0/final_set/)
 6497964,5446117,2079154,5446117,414454,1051847,399251,0.823933,0.0751645 #drugbank (from CV round 1 ../iterations_search_0/final_set/)
 10504995,8864606,4507308,8864606,1121071,1640389,1122401,0.788168,0.0422123 #omim (from CV round 1 ../iterations_search_0/final_set/)
 7113312,6090194,2811465,6090194,641974,1023118,521171,0.781327,0.0562321 #pharmgkb (from CV round 1 ../iterations_search_0/final_set/)

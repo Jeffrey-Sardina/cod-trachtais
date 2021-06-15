@@ -873,3 +873,12 @@ Other ideas for analyzing the model:
 - median in / out degree
 - max and min in / out degree
 - quartile or stdev in / out degree
+
+## 15-06-2021
+Ok, this graph structure data (to regerss to r1 / auc) just makes no sense. I am beginning to wonder if the subsets have different structure than the overall graphs...which wouold be a tough thing to counter. If so
+- subgraph sampling?
+- more triples in the samples?
+- both?
+I'll need to check on that. Hold on. I just found out that some of the data I had was entered wrong (AUC and r1 got flipped for the DBSNP full dataset row). I may need to re-run this analysis and see if that changes anything.
+
+I just started off search_1, which is using r1 to select hyperparameters (seach 0 was the same but for AUC). So far, the models are (mostly) good with the same hyperwparameters--which is very enocuraging. Bioportal is one exception, but it is still similar as well.
