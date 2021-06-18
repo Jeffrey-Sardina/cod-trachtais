@@ -896,4 +896,7 @@ Doing an analysis of structure of subsets vs full data via inspection on metric_
 - similar ratio_source_max
 - much greater ratio_repeat_avg, ratio_repeat_min, ratio_repeat_q1, ratio_repeat_med, ratio_repeat_q3
 - similar ratio_repeat_max
-I think this is largely to be expected with randomness. I'll keep this in mind as I explore the final dataset evaluations; if they givew results counter to what was expected from the validation rounds, this may be (at least part of) the answer.
+I think this is largely to be expected with randomness. I'll keep this in mind as I explore the final dataset evaluations; if they give results counter to what was expected from the validation rounds, this may be (at least part of) the answer.
+
+## 18-06-2021
+Críochnaigh an dara babhta cuardaithe hipearpharaiméadar (cearch_1, it_3, round_2). Tá orm anois a fheiceáil céard é an rogha ceart dóibh, agus dul ar aghaidh ar an tríú babhta.
