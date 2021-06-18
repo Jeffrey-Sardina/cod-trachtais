@@ -45,7 +45,7 @@ def get_cross_validated_values():
 
 def get_cross_validated_batch_values():
     batch_size = 1000
-    num_batch_negs = 100
+    num_batch_negs = 500
     num_uniform_negs = 100
     return batch_size, num_batch_negs, num_uniform_negs
 

@@ -900,3 +900,20 @@ I think this is largely to be expected with randomness. I'll keep this in mind a
 
 ## 18-06-2021
 Críochnaigh an dara babhta cuardaithe hipearpharaiméadar (cearch_1, it_3, round_2). Tá orm anois a fheiceáil céard é an rogha ceart dóibh, agus dul ar aghaidh ar an tríú babhta.
+
+Ón mbabhta seo, chonaic me:
+- 500 batch size best for dbsnp, drugbank, omim, pharmgkb Those tend to have their highest points (and several lower ones) at smaller numbers of batch negs and smaller numbers for uniform negs
+    - batch size above 500 tended to form a 'sea of dots' at very low values, scattered randomly, and one or two unusually high values in unpredictable locations
+    - 250 uniform and 100 batch seem good (often optimal) for all of these. The unif=250 subgraph even has a similar stucture in all 4.
+    - Why?? There is something here, is dóigh liom
+- All sizes are similar in terms of r1 for bioportal softmax and bioportal ranking
+    - ranking once again consistently out-did softmax
+    - For ranking, even the wostr parameterizations do well (r1 >= 0.22); the best points can be as high as 0.255-ish
+    - Lower values of both negs, esp combined with each other, have no clear pattern for average r1
+    - st dev on most points is 0.02 to 0.04, so distinguishing them is not easy with such a small range of values (0.22 to 0.25)
+    - 1000.0 batch size, 500.0 batch negs, 100.0 uniform negs => 0.2525 r1 seems good, since:
+        - 500.0 batch negs, 100.0 uniform negs not most batch sizes has high r1
+        - I am suspicious of lower values, as they seem to be less reliable (for negs)
+        - batch negs =/= batch size, so lower chance of overfitting
+
+Bainfaidh mé úsáid as an eolas sin le haghaidh an chéad bhabhta eile!

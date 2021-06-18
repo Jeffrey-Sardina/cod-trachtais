@@ -2,6 +2,7 @@ from mpl_toolkits import mplot3d
 import numpy as np
 import matplotlib.pyplot as plt
 import pandas as pd
+import os
 import sys
 
 def load_data(evals_file, vars_to_limit, limit_types, limits):
@@ -22,7 +23,7 @@ def load_data(evals_file, vars_to_limit, limit_types, limits):
             data = data[data[var] < val]
     return data
 
-def do_3dplot(data, z_var, x_var, y_var, logs):
+def do_3dplot(data, z_var, x_var, y_var, logs, title):
     '''
     z is response
     x,y are explanatory
@@ -50,10 +51,10 @@ def do_3dplot(data, z_var, x_var, y_var, logs):
     ax.set_ylabel(y_var)
     ax.set_zlabel(z_var, rotation='horizontal')
 
-    ax.set_title('Plot')
+    ax.set_title(title)
     plt.show()
 
-def do_2dplot(data, y_var, x_var, logs):
+def do_2dplot(data, y_var, x_var, logs, title):
     '''
     y is response
     x is explanatory
@@ -75,8 +76,14 @@ def do_2dplot(data, y_var, x_var, logs):
     ax.scatter(x, y)
     ax.set_xlabel(x_var)
     ax.set_ylabel(y_var)
-    ax.set_title('Plot')
+    ax.set_title(title)
     plt.show()
+
+def try_float(val):
+    try:
+        return float(val)
+    except:
+        return val
 
 if __name__ == '__main__':
     #eolas ón úsáideoir
@@ -110,11 +117,12 @@ if __name__ == '__main__':
         elif i % 3 == 1:
             limit_types.append(item)
         else:
-            limits.append(item)
+            limits.append(try_float(item))
     data = load_data(evals_file, vars_to_limit, limit_types, limits)
 
     #cruthaigh graf
+    title = os.path.basename(evals_file) + '\n' + ' '.join(x for x in constrains)
     if y_var == 'NB':
-        do_2dplot(data, response_var, x_var, logs)
+        do_2dplot(data, response_var, x_var, logs, title)
     else:    
-        do_3dplot(data, response_var, x_var, y_var, logs)
+        do_3dplot(data, response_var, x_var, y_var, logs, title)

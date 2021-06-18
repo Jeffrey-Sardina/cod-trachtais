@@ -50,19 +50,19 @@ fi
 
 if [[ $ROUND -eq 3 ]]
 then
-    ./hyperparam_search.sh bioportal 1 $PARTITIONS 16 config/search_1/epochs_3.py $TRIPLES 0
+    ./hyperparam_search.sh bioportal 1 $PARTITIONS 16 config/search_1/epochs_3_bioportal_rank.py $TRIPLES 0
     exit_1=$?
 
-    ./hyperparam_search.sh dbsnp 1 $PARTITIONS 16 config/search_1/epochs_3.py $TRIPLES 0
+    ./hyperparam_search.sh dbsnp 1 $PARTITIONS 16 config/search_1/epochs_3_general.py $TRIPLES 0
     exit_2=$?
 
-    ./hyperparam_search.sh drugbank 1 $PARTITIONS 16 config/search_1/epochs_3.py $TRIPLES 0
+    ./hyperparam_search.sh drugbank 1 $PARTITIONS 16 config/search_1/epochs_3_general.py $TRIPLES 0
     exit_3=$?
 
-    ./hyperparam_search.sh omim 1 $PARTITIONS 16 config/search_1/epochs_3.py $TRIPLES 0
+    ./hyperparam_search.sh omim 1 $PARTITIONS 16 config/search_1/epochs_3_general.py $TRIPLES 0
     exit_4=$?
 
-    ./hyperparam_search.sh pharmgkb 1 $PARTITIONS 16 config/search_1/epochs_3.py $TRIPLES 0
+    ./hyperparam_search.sh pharmgkb 1 $PARTITIONS 16 config/search_1/epochs_3_general.py $TRIPLES 0
     exit_5=$?
 fi
 
