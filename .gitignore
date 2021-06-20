@@ -1,6 +1,8 @@
 copies/
-iterations_search_0/
-iterations_search_1/
+iterations_search_0/it_*/
+iterations_search_0/final_set/
+iterations_search_1/it_*/
+iterations_search_1/final_set/
 models/
 old/
 original/
