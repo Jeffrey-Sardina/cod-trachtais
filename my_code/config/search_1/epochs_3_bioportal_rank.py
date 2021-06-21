@@ -36,11 +36,11 @@ def get_val_for_iteration(search_iteration):
     raise ValueError('invalid search_iteration value. Note: it must start at 0')
 
 def get_cross_validated_values():
-    lr = 1e-4
-    regularization_coef = None
+    lr = 1e-2
+    regularization_coef = 1e-1
     loss_fn = 'ranking'
-    operator = 'affine'
-    comparator = 'dot'
+    operator = 'translation'
+    comparator = 'l2'
     return lr, regularization_coef, loss_fn, operator, comparator
 
 def get_cross_validated_batch_values():

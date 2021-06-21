@@ -37,10 +37,10 @@ def get_val_for_iteration(search_iteration):
 
 def get_cross_validated_values():
     lr = 1e-4
-    regularization_coef = None
-    loss_fn = 'ranking'
-    operator = 'affine'
-    comparator = 'dot'
+    regularization_coef = 1e-3
+    loss_fn = 'softmax'
+    operator = 'translation'
+    comparator = 'l2'
     return lr, regularization_coef, loss_fn, operator, comparator
 
 def get_cross_validated_batch_values():

@@ -881,7 +881,7 @@ Ok, this graph structure data (to regerss to r1 / auc) just makes no sense. I am
 - both?
 I'll need to check on that. Hold on. I just found out that some of the data I had was entered wrong (AUC and r1 got flipped for the DBSNP full dataset row). I may need to re-run this analysis and see if that changes anything.
 
-I just started off search_1, which is using r1 to select hyperparameters (seach 0 was the same but for AUC). So far, the models are (mostly) good with the same hyperwparameters--which is very enocuraging. Bioportal is one exception, but it is still similar as well.
+I just started off search_1, which is using r1 to select hyperparameters (seach 0 was the same but for AUC). So far, the models are (mostly) good with the same hyperparameters--which is very enocuraging. Bioportal is one exception, but it is still similar as well.
 
 Doing an analysis of structure of subsets vs full data via inspection on metric_analusis/all_data_with_ratios.csv. Compared to the full datasets, the subsets seem to have:
 - greater ratio_num_sinks
@@ -917,3 +917,8 @@ Críochnaigh an dara babhta cuardaithe hipearpharaiméadar (cearch_1, it_3, roun
         - batch negs =/= batch size, so lower chance of overfitting
 
 Bainfaidh mé úsáid as an eolas sin le haghaidh an chéad bhabhta eile!
+
+## 21-06-2021
+Bioportal--very oddly I saw that, even when all things were equal (all hyperparams from both rounds) ranking in bioportal orund 3 did very much worse than ranking in bioportal round 2 (.25 r1 vs .128). I can't find a reason to explain this, since I can verify the averages seem right, and since the same method was used (I did double-check). The others all got somewhat better or stayed in the beleivable range as expected.
+
+Wait. I got it. WHen I copied the config file from seach_0, I accidentally kept some of its hyperparams suchnas the affine operator. I'nn need to re-run round 3 now. Doing that.
