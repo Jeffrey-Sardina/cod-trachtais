@@ -922,3 +922,7 @@ Bainfaidh mé úsáid as an eolas sin le haghaidh an chéad bhabhta eile!
 Bioportal--very oddly I saw that, even when all things were equal (all hyperparams from both rounds) ranking in bioportal orund 3 did very much worse than ranking in bioportal round 2 (.25 r1 vs .128). I can't find a reason to explain this, since I can verify the averages seem right, and since the same method was used (I did double-check). The others all got somewhat better or stayed in the beleivable range as expected.
 
 Wait. I got it. WHen I copied the config file from seach_0, I accidentally kept some of its hyperparams suchnas the affine operator. I'nn need to re-run round 3 now. Doing that.
+
+In the mean time I may start to write my lit. review. I am still good on time overall, on-schedule despite these setbacks.
+
+Once this is done (likely faster than before since I am learning linear numbers of parameters rather than quadratic numbers, so maybe under 2 days) I'll have plenty of time to analyse and run on the real datasets. Remeber: run bioportal last since it will take the longest.
