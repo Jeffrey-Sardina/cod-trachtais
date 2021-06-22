@@ -926,3 +926,16 @@ Wait. I got it. WHen I copied the config file from seach_0, I accidentally kept 
 In the mean time I may start to write my lit. review. I am still good on time overall, on-schedule despite these setbacks.
 
 Once this is done (likely faster than before since I am learning linear numbers of parameters rather than quadratic numbers, so maybe under 2 days) I'll have plenty of time to analyse and run on the real datasets. Remeber: run bioportal last since it will take the longest.
+
+## 22-06-2021
+Ok, realy round 3 is in, time to make final models!
+Bioportal:
+I notice two poosite trends. When epchs >= 200, the lowest dim num(s) are preferred. After a dip, increasing dim nums come to be more preferred.
+
+When epochs < 200, there is a pstive correlation between dims and r1 that increases more slowly over time and may even start decreasing at the end. This can lead to very few epochs and relatively many dimensions...which I worry may overfit. It's a hard choice, and I am tempted to rerun that round on a larger dataset (say 8000 or 10000 triples) to see what happens. That said, bioportal is a alrge dataset...so more epochs and more dims will take more time, and I'ff notice that. I think I'll start with 50 epochs and 200 dims (the 2nd best point, best being 400 epochs and 50 dims). I can increase this later from the backup to use more epochs, I think, so that should not be an issue.
+
+Other 4:
+low epochs are universally bad, ezcept when dims are also low, probably an effect of time (epoch to dims ratio). Interestingly, 200 epochs and 100 dims is universally optimal or second best. It's a clear winner, as far as I am concerned.
+
+For running on full datasets:
+- in all cases 2 partitions were used, except in bioportal which used 3 (in progress) (as before)
