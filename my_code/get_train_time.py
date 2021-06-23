@@ -25,6 +25,13 @@ def get_time_difference(first_line, last_line):
 
 if __name__ == '__main__':
     in_file = sys.argv[1]
+    verbose = sys.argv[2] == '1'
     first, last = get_first_and_last_lines(in_file)
     time = get_time_difference(first, last)
-    print(time)
+    if verbose:
+        print(time, 'soicind')
+        print(time / 60, 'nóiméad')
+        print(time / 60 / 60, 'uair')
+        print(time / 60 / 60 / 24, 'lá') 
+    else:
+        print(time)

@@ -16,7 +16,7 @@ source pytorch-biggraph-gpu/bin/activate
 
 # to run: ./pbg_pipeline.sh pharmgkb validated_1 1 2 config/search/final.py
 
-DATA=$1 
+DATA=$1
 UUID=$2
 DEL_OLD_TSV=$3
 START=$4
@@ -40,7 +40,7 @@ mkdir ../models/$DATA/
 #Céim 1
 if [[ $START -lt 2 ]] 
 then
-    ./compress_copy.sh $DATA $DEL_OLD_TSV
+    ./compress_copy.sh $DATA $DEL_OLD_TSV 0 $DEL_OLD_TSV
     if [[ $? -ne "0" ]]
     then
         echo 'compress_copy.sh error: stopping script'

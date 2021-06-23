@@ -939,3 +939,20 @@ low epochs are universally bad, ezcept when dims are also low, probably an effec
 
 For running on full datasets:
 - in all cases 2 partitions were used, except in bioportal which used 3 (in progress) (as before)
+
+## 23-06-2021
+Notes from talk with Fabrizio Orlandi:
+    take a look at dataset profiling
+    if you use a lot of literals, this affects performance negatively
+        I had observed this in my work so far as well
+    do you read literal content? This can change things
+        I do not, and should mention this in my write up
+    how regular are graph patterns?
+        star shapes (one node, many relations to sinks) can lower performance in generalizing. Did not meat other ML Possibly since graph structure was not used, when that is the point of KGEs
+    why are max values rather than means / quartiles the best preedictors for r1?
+        he was not sure what this effect occured
+        worth exploring
+    Analysis point: Measure diff vs no partitions?
+    Metrics to take a look at (more complex)
+        centrality
+        page rank
