@@ -269,3 +269,35 @@ Algartam:
 - Níl na paraiméadar deighilte, toice go gcaithfidh go bhfuil suad mar an gcéanna i ngach buicéad (srl).
 - Úsáideann siad baisceanna samplaí diúltacha chun cuimhne 7 am a shábháil
 - Deir siad nach bhfuil ComplEx go hiomlán iontaofa ('instability' ann ar roinnt eolais)
+
+### RDF Dataset Profiling - a Survey of Features, Methods, Applications and Vocabularies
+Nasc: https://www.academia.edu/34713748/RDF_Dataset_Profiling_a_Survey_of_Features_Methods_Applications_and_Vocabularies (7 mar pdf anseo)
+
+Aidhm: Graif eolais a phróifíliú agus a achoimriú maidir lena gcuid eolais / sonraí agus araile. Mar gheall ar sin, tá súil agus aimsiú graif eolais (a bheadh oiriúnach do shaghas taighde áirithe) a chur chun cinn. Ach móide sin, déanann siad tráchtanna ar structúr graif eolais a achoimriú, agus b'eo an rud is úsáidí domsa fé láthair.
+
+Tá cuid mór de bunaithe ar eolas RDF (ar nós uimhir ásc / uimhir aicmi). Toisc nach mbaineann an t-eolas sin lem chuid oibre anseo, ní dóigh liom go bhfuil na slata tomhais sin foirfe dó. Ach rinne sé tagairt ar cúpla córais chun staitisticí ar ghraif eolas a bhailú:
+- LODStats
+- ExpLOD
+- ProLOD++
+Níl aon rud ana-chasta iontu--áireamh ar uimhreacha faisnéisí / cúspóirí agus araile.
+
+### Embedding Knowledge Graphs Attentive to Positional and Centrality Qualities
+Nasc: https://www.researchgate.net/publication/352645259_Embedding_Knowledge_Graphs_Attentive_to_Positional_and_Centrality_Qualities (7 mar pdf anseo)
+
+Aidhm: Córas nua leabaithe graf eolais (Graph Feature Attentive Neural Network (GFA-NN)) a léiriú. Tá sé mar adhaim ag an gcóras sin eolas níos doimhne a chur i leabuithe graif eolais. Dé ghnáth, ní thuigeann na leabuithe ach a bhfuil nasctha go díreach le réada. Leis an gcóras seo, is féidir eolas uilíoch a chur san áireamh freisin.
+
+Tá sé bunatihe ar structúr an ghraif, agus bheadh mé in nann an t-eolas sin a úsáid chun mo chuid eolais ar structúir na ngraf a thuiscint níos fearr.
+
+A deir siad
+- lárnacht (centrality)--tomhais ar cé chomh tábhactach is atá nód i ngraf. Mar shampla, céim an nóid.
+- is minic a bhfuil fadhabanna le holas bitheolaíochta ("This proposition justifies the good performance of KGE models in tasks requiring graphical properties and their under-performance in real-world graphs such as biological and omniscience KGs (e.g., Freebase, DBpedia), in which the structure of local neighborhoods are quite common")
+
+A algartam
+- cuireann sé eolas lárnachta agus faid isteach, leis an leabú freisin, agus é ag foghlaim gach sonra.
+- tá líon na dtagairtí (do thomhais fhaid agus do thomhais lárnachta) mar an gcéanna le haghaidh gach nód, go dtí gur féidir iad a cóimheas le chéile.
+- tá spriocaidhmanna ar leith ag gach ceann tomhas, go dtí go bhfuil siad uile neamhspleách óna chéile
+- Déanann siad normalú ar an tomas lárnachta--ba cheart com ceapadh faoi seo maidir lem chuid oibre féinig
+- Cuireann aschur gan spriocfhaidhm 's acu le chéile trí suim ualaithe líneach
+
+Rudaí eile
+-Tacar sonraí (graf eolais) bitheolaíochta eile: ogbl-biokg

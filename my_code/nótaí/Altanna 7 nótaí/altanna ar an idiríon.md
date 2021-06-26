@@ -83,7 +83,7 @@ https://www-sciencedirect-com.elib.tcd.ie/science/article/pii/S1532046406000311?
 https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2656016/
 
 
-### nótaí anseo, ar Meaisínfhoghlaim
+### Nótaí anseo, ar Meaisínfhoghlaim
 18. Knowledge Graph Embedding: A Survey of Approaches and Applications
 <br>
 https://ieeexplore.ieee.org/document/8047276 (7 mar pdf anseo)
@@ -116,6 +116,14 @@ https://mlsys.org/Conferences/2019/doc/2019/71.pdf (7 mar pdf anseo)
 <br>
 https://arxiv.org/abs/1806.07297 (7 mar pdf anseo)
 
+26. RDF Dataset Profiling - a Survey of Features, Methods, Applications and Vocabularies
+<br>
+https://www.academia.edu/34713748/RDF_Dataset_Profiling_a_Survey_of_Features_Methods_Applications_and_Vocabularies (7 mar pdf anseo)
+
+27.
+Embedding Knowledge Graphs Attentive to Positional and Centrality Qualities
+<br>
+https://www.researchgate.net/publication/352645259_Embedding_Knowledge_Graphs_Attentive_to_Positional_and_Centrality_Qualities (7 mar pdf anseo)
 
 
 ## Eile
