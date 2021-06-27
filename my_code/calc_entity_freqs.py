@@ -15,6 +15,6 @@ def calc_counts(sorted_file):
                 curr_count = 1
 
 if __name__ == '__main__':
-    input_file = sys.argv[1]
+    input_file = sys.argv[1] #caithfidh go bhfuil sé sórtáilte
     calc_counts(input_file)
     exit(0)

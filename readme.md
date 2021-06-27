@@ -76,7 +76,7 @@ Master scripts (major pipelines):
         - main subroutines:
             - calc_graph_stats.sh
     - calc_graph_stats.sh
-        - Creates a summary of a great variety of figures relating to graph structure. Output is structured as a sigle lione of a CSV file, with or without headers.
+        - Creates a summary of a great variety of figures relating to graph structure. Output is structured as a single line of a CSV file, with or without headers.
         - main subroutines:
             - calc_entity_freqs.py
             - calc_entity_degree_stats.py
