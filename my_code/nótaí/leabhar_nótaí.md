@@ -956,3 +956,12 @@ Notes from talk with Fabrizio Orlandi:
     Metrics to take a look at (more complex)
         centrality
         page rank
+
+## 27-06-2021
+All datasets finished training; evals for bioportal is crashing, but will be really quick once I resolve that error (Git issue created already).
+
+In the mean time, I took a look at histograms of the max repeats value (the number of times the highest-occuring entity that was neither a source or a sink occurred), and found they are very different between bioportal and all the other datasets. 
+
+Amach anseo:
+- lárnacht a áireamh ar gach nód ins na graif
+- mar gheall ar a bhfuil léirithe ag [27], níl orm ach céim amháin a úsáid chun lárnacht a áireamh--ní féidir leis an algartam leabuithe ach sin a thuiscint ar aon nós!
