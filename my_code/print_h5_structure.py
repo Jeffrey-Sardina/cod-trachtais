@@ -1,4 +1,5 @@
 import h5py
+import sys
 
 #From: https://stackoverflow.com/questions/43371438/how-to-inspect-h5-file-in-python
 def scan_hdf5(path, recursive=True, tab_step=2):
@@ -12,5 +13,5 @@ def scan_hdf5(path, recursive=True, tab_step=2):
     with h5py.File(path, 'r') as f:
         scan_node(f)
 
-embeddings_h5_file = 'backup_points/dbsnp_validated50e_100d_1/model.v50.h5'
+embeddings_h5_file = sys.argv[1]
 scan_hdf5(embeddings_h5_file)

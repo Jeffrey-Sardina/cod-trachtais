@@ -965,3 +965,18 @@ In the mean time, I took a look at histograms of the max repeats value (the numb
 Amach anseo:
 - lárnacht a áireamh ar gach nód ins na graif
 - mar gheall ar a bhfuil léirithe ag [27], níl orm ach céim amháin a úsáid chun lárnacht a áireamh--ní féidir leis an algartam leabuithe ach sin a thuiscint ar aon nós!
+
+## 29-06-2021
+Turns out the eval error was causews be too-low shared memory (/dev/shm). It was at 7.8 GB; this can be seen using:
+```
+df -h
+```
+
+I set it to 12, which worked, via
+```
+sudo  mount -o remount,size=12G /dev/shm
+```
+
+Anois, níl orm ach anailísíocht a dhéanamh, is dóigh liom. Nach deas an rud é! Tá a lána ama á thógáil ag aschur na leabuithe fhéinig, ach ní dóigh liom go bhfuil siad sin ró-thábhachach don anailísíocht ar aon nós.
+
+I hope to build a model of centrality => best embedding system. After that, I want to test in on several other datasets--all bio, but maybe not all cancer--and see if they confirm the trend.
