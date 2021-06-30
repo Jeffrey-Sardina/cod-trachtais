@@ -1,0 +1,870 @@
+ag lódáil sonraí
+ag scriosadh seanchomhad
+ag aistriú gach comhaid ó NQ go TSV
+ag baint amach an iri: <http://bio2rdf.org/goa_resource:bio2rdf.dataset.goa.R4>
+<ftp://ftp.ebi.ac.uk/pub/databases/GO/goa/ARABIDOPSIS/gene_association.goa_arabidopsis.gz> <http://www.w3.org/2000/01/rdf-schema#label> "Gene Ontology Annotation file arabidopsis (ftp://ftp.ebi.ac.uk/pub/databases/GO/goa/ARABIDOPSIS/gene_association.goa_arabidopsis.gz"
+91 89
+<ftp://ftp.ebi.ac.uk/pub/databases/GO/goa/ARABIDOPSIS/gene_association.goa_arabidopsis.gz> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/dcat#Distribution>
+91 89
+<ftp://ftp.ebi.ac.uk/pub/databases/GO/goa/ARABIDOPSIS/gene_association.goa_arabidopsis.gz> <http://purl.org/dc/terms/title> "Gene Ontology Annotation file arabidopsis (ftp://ftp.ebi.ac.uk/pub/databases/GO/goa/ARABIDOPSIS/gene_association.goa_arabidopsis.gz"
+91 89
+<ftp://ftp.ebi.ac.uk/pub/databases/GO/goa/ARABIDOPSIS/gene_association.goa_arabidopsis.gz> <http://purl.org/pav/retrievedOn> "2015-11-30T13:38:15Z"^^<http://www.w3.org/2001/XMLSchema#dateTime>
+91 89
+<ftp://ftp.ebi.ac.uk/pub/databases/GO/goa/ARABIDOPSIS/gene_association.goa_arabidopsis.gz> <http://purl.org/dc/terms/publisher> <http://www.ebi.ac.uk/>
+91 89
+<ftp://ftp.ebi.ac.uk/pub/databases/GO/goa/ARABIDOPSIS/gene_association.goa_arabidopsis.gz> <http://xmlns.com/foaf/0.1/page> <http://www.ebi.ac.uk/GOA/>
+91 89
+<ftp://ftp.ebi.ac.uk/pub/databases/GO/goa/ARABIDOPSIS/gene_association.goa_arabidopsis.gz> <http://purl.org/dc/terms/format> "text/tab-separated-value"
+91 89
+<ftp://ftp.ebi.ac.uk/pub/databases/GO/goa/ARABIDOPSIS/gene_association.goa_arabidopsis.gz> <http://purl.org/dc/terms/format> "application/gzip"
+91 89
+<http://identifiers.org/goa/> <http://www.w3.org/ns/dcat#distribution> <ftp://ftp.ebi.ac.uk/pub/databases/GO/goa/ARABIDOPSIS/gene_association.goa_arabidopsis.gz>
+0 28
+<http://identifiers.org/goa/> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/dc/terms/Dataset>
+0 28
+<ftp://ftp.ebi.ac.uk/pub/databases/GO/goa/ARABIDOPSIS/gene_association.goa_arabidopsis.gz> <http://purl.org/dc/terms/license> <http://www.ebi.ac.uk/GOA/goaHelp.html>
+91 89
+<ftp://ftp.ebi.ac.uk/pub/databases/GO/goa/ARABIDOPSIS/gene_association.goa_arabidopsis.gz> <http://purl.org/dc/terms/rights> "use"
+91 89
+<http://download.bio2rdf.org/release/4/goa/goa_arabidopsis.nq.gz> <http://www.w3.org/2000/01/rdf-schema#label> "Bio2RDF v4 RDF version of goa (generated at 2015-11-30T13:42:54Z) generated at 2015-11-30T13:42:54Z"
+0 64
+<http://download.bio2rdf.org/release/4/goa/goa_arabidopsis.nq.gz> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/dcat#Distribution>
+0 64
+<http://download.bio2rdf.org/release/4/goa/goa_arabidopsis.nq.gz> <http://purl.org/dc/terms/title> "Bio2RDF v4 RDF version of goa (generated at 2015-11-30T13:42:54Z)"
+0 64
+<http://download.bio2rdf.org/release/4/goa/goa_arabidopsis.nq.gz> <http://purl.org/dc/terms/created> "2015-11-30T13:42:54Z"^^<http://www.w3.org/2001/XMLSchema#dateTime>
+0 64
+<http://download.bio2rdf.org/release/4/goa/goa_arabidopsis.nq.gz> <http://purl.org/dc/terms/source> <ftp://ftp.ebi.ac.uk/pub/databases/GO/goa/ARABIDOPSIS/gene_association.goa_arabidopsis.gz>
+0 64
+<http://download.bio2rdf.org/release/4/goa/goa_arabidopsis.nq.gz> <http://purl.org/dc/terms/creator> <https://github.com/bio2rdf/bio2rdf-scripts/blob/master/irefindex/irefindex.php>
+0 64
+<http://download.bio2rdf.org/release/4/goa/goa_arabidopsis.nq.gz> <http://purl.org/dc/terms/publisher> <http://bio2rdf.org>
+0 64
+<http://download.bio2rdf.org/release/4/goa/goa_arabidopsis.nq.gz> <http://xmlns.com/foaf/0.1/page> <http://download.bio2rdf.org/release/4/goa/goa.html>
+0 64
+<http://download.bio2rdf.org/release/4/goa/goa_arabidopsis.nq.gz> <http://purl.org/dc/terms/format> "application/gzip"
+0 64
+<http://download.bio2rdf.org/release/4/goa/goa_arabidopsis.nq.gz> <http://purl.org/dc/terms/format> "application/n-quads"
+0 64
+<http://bio2rdf.org/goa_resource:bio2rdf.dataset.goa.R4> <http://www.w3.org/ns/dcat#distribution> <http://download.bio2rdf.org/release/4/goa/goa_arabidopsis.nq.gz>
+0 55
+<http://bio2rdf.org/goa_resource:bio2rdf.dataset.goa.R4> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/dc/terms/Dataset>
+0 55
+<http://download.bio2rdf.org/release/4/goa/goa_arabidopsis.nq.gz> <http://purl.org/dc/terms/license> <http://creativecommons.org/licenses/by/3.0/>
+0 64
+<http://download.bio2rdf.org/release/4/goa/goa_arabidopsis.nq.gz> <http://purl.org/dc/terms/rights> "use-share-modify"
+0 64
+<http://download.bio2rdf.org/release/4/goa/goa_arabidopsis.nq.gz> <http://purl.org/dc/terms/rights> "by-attribution"
+0 64
+<http://download.bio2rdf.org/release/4/goa/goa_arabidopsis.nq.gz> <http://purl.org/dc/terms/rights> "restricted-by-source-license"
+0 64
+<ftp://ftp.ebi.ac.uk/pub/databases/GO/goa/CHICKEN/gene_association.goa_chicken.gz> <http://www.w3.org/2000/01/rdf-schema#label> "Gene Ontology Annotation file chicken (ftp://ftp.ebi.ac.uk/pub/databases/GO/goa/CHICKEN/gene_association.goa_chicken.gz"
+83 81
+<ftp://ftp.ebi.ac.uk/pub/databases/GO/goa/CHICKEN/gene_association.goa_chicken.gz> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/dcat#Distribution>
+83 81
+<ftp://ftp.ebi.ac.uk/pub/databases/GO/goa/CHICKEN/gene_association.goa_chicken.gz> <http://purl.org/dc/terms/title> "Gene Ontology Annotation file chicken (ftp://ftp.ebi.ac.uk/pub/databases/GO/goa/CHICKEN/gene_association.goa_chicken.gz"
+83 81
+<ftp://ftp.ebi.ac.uk/pub/databases/GO/goa/CHICKEN/gene_association.goa_chicken.gz> <http://purl.org/pav/retrievedOn> "2015-11-30T13:43:00Z"^^<http://www.w3.org/2001/XMLSchema#dateTime>
+83 81
+<ftp://ftp.ebi.ac.uk/pub/databases/GO/goa/CHICKEN/gene_association.goa_chicken.gz> <http://purl.org/dc/terms/publisher> <http://www.ebi.ac.uk/>
+83 81
+<ftp://ftp.ebi.ac.uk/pub/databases/GO/goa/CHICKEN/gene_association.goa_chicken.gz> <http://xmlns.com/foaf/0.1/page> <http://www.ebi.ac.uk/GOA/>
+83 81
+<ftp://ftp.ebi.ac.uk/pub/databases/GO/goa/CHICKEN/gene_association.goa_chicken.gz> <http://purl.org/dc/terms/format> "text/tab-separated-value"
+83 81
+<ftp://ftp.ebi.ac.uk/pub/databases/GO/goa/CHICKEN/gene_association.goa_chicken.gz> <http://purl.org/dc/terms/format> "application/gzip"
+83 81
+<http://identifiers.org/goa/> <http://www.w3.org/ns/dcat#distribution> <ftp://ftp.ebi.ac.uk/pub/databases/GO/goa/CHICKEN/gene_association.goa_chicken.gz>
+0 28
+<http://identifiers.org/goa/> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/dc/terms/Dataset>
+0 28
+<ftp://ftp.ebi.ac.uk/pub/databases/GO/goa/CHICKEN/gene_association.goa_chicken.gz> <http://purl.org/dc/terms/license> <http://www.ebi.ac.uk/GOA/goaHelp.html>
+83 81
+<ftp://ftp.ebi.ac.uk/pub/databases/GO/goa/CHICKEN/gene_association.goa_chicken.gz> <http://purl.org/dc/terms/rights> "use"
+83 81
+<http://download.bio2rdf.org/release/4/goa/goa_chicken.nq.gz> <http://www.w3.org/2000/01/rdf-schema#label> "Bio2RDF v4 RDF version of goa (generated at 2015-11-30T13:46:44Z) generated at 2015-11-30T13:46:44Z"
+0 60
+<http://download.bio2rdf.org/release/4/goa/goa_chicken.nq.gz> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/dcat#Distribution>
+0 60
+<http://download.bio2rdf.org/release/4/goa/goa_chicken.nq.gz> <http://purl.org/dc/terms/title> "Bio2RDF v4 RDF version of goa (generated at 2015-11-30T13:46:44Z)"
+0 60
+<http://download.bio2rdf.org/release/4/goa/goa_chicken.nq.gz> <http://purl.org/dc/terms/created> "2015-11-30T13:46:44Z"^^<http://www.w3.org/2001/XMLSchema#dateTime>
+0 60
+<http://download.bio2rdf.org/release/4/goa/goa_chicken.nq.gz> <http://purl.org/dc/terms/source> <ftp://ftp.ebi.ac.uk/pub/databases/GO/goa/CHICKEN/gene_association.goa_chicken.gz>
+0 60
+<http://download.bio2rdf.org/release/4/goa/goa_chicken.nq.gz> <http://purl.org/dc/terms/creator> <https://github.com/bio2rdf/bio2rdf-scripts/blob/master/irefindex/irefindex.php>
+0 60
+<http://download.bio2rdf.org/release/4/goa/goa_chicken.nq.gz> <http://purl.org/dc/terms/publisher> <http://bio2rdf.org>
+0 60
+<http://download.bio2rdf.org/release/4/goa/goa_chicken.nq.gz> <http://xmlns.com/foaf/0.1/page> <http://download.bio2rdf.org/release/4/goa/goa.html>
+0 60
+<http://download.bio2rdf.org/release/4/goa/goa_chicken.nq.gz> <http://purl.org/dc/terms/format> "application/gzip"
+0 60
+<http://download.bio2rdf.org/release/4/goa/goa_chicken.nq.gz> <http://purl.org/dc/terms/format> "application/n-quads"
+0 60
+<http://bio2rdf.org/goa_resource:bio2rdf.dataset.goa.R4> <http://www.w3.org/ns/dcat#distribution> <http://download.bio2rdf.org/release/4/goa/goa_chicken.nq.gz>
+0 55
+<http://bio2rdf.org/goa_resource:bio2rdf.dataset.goa.R4> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/dc/terms/Dataset>
+0 55
+<http://download.bio2rdf.org/release/4/goa/goa_chicken.nq.gz> <http://purl.org/dc/terms/license> <http://creativecommons.org/licenses/by/3.0/>
+0 60
+<http://download.bio2rdf.org/release/4/goa/goa_chicken.nq.gz> <http://purl.org/dc/terms/rights> "use-share-modify"
+0 60
+<http://download.bio2rdf.org/release/4/goa/goa_chicken.nq.gz> <http://purl.org/dc/terms/rights> "by-attribution"
+0 60
+<http://download.bio2rdf.org/release/4/goa/goa_chicken.nq.gz> <http://purl.org/dc/terms/rights> "restricted-by-source-license"
+0 60
+<ftp://ftp.ebi.ac.uk/pub/databases/GO/goa/COW/gene_association.goa_cow.gz> <http://www.w3.org/2000/01/rdf-schema#label> "Gene Ontology Annotation file cow (ftp://ftp.ebi.ac.uk/pub/databases/GO/goa/COW/gene_association.goa_cow.gz"
+75 73
+<ftp://ftp.ebi.ac.uk/pub/databases/GO/goa/COW/gene_association.goa_cow.gz> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/dcat#Distribution>
+75 73
+<ftp://ftp.ebi.ac.uk/pub/databases/GO/goa/COW/gene_association.goa_cow.gz> <http://purl.org/dc/terms/title> "Gene Ontology Annotation file cow (ftp://ftp.ebi.ac.uk/pub/databases/GO/goa/COW/gene_association.goa_cow.gz"
+75 73
+<ftp://ftp.ebi.ac.uk/pub/databases/GO/goa/COW/gene_association.goa_cow.gz> <http://purl.org/pav/retrievedOn> "2015-11-30T13:46:48Z"^^<http://www.w3.org/2001/XMLSchema#dateTime>
+75 73
+<ftp://ftp.ebi.ac.uk/pub/databases/GO/goa/COW/gene_association.goa_cow.gz> <http://purl.org/dc/terms/publisher> <http://www.ebi.ac.uk/>
+75 73
+<ftp://ftp.ebi.ac.uk/pub/databases/GO/goa/COW/gene_association.goa_cow.gz> <http://xmlns.com/foaf/0.1/page> <http://www.ebi.ac.uk/GOA/>
+75 73
+<ftp://ftp.ebi.ac.uk/pub/databases/GO/goa/COW/gene_association.goa_cow.gz> <http://purl.org/dc/terms/format> "text/tab-separated-value"
+75 73
+<ftp://ftp.ebi.ac.uk/pub/databases/GO/goa/COW/gene_association.goa_cow.gz> <http://purl.org/dc/terms/format> "application/gzip"
+75 73
+<http://identifiers.org/goa/> <http://www.w3.org/ns/dcat#distribution> <ftp://ftp.ebi.ac.uk/pub/databases/GO/goa/COW/gene_association.goa_cow.gz>
+0 28
+<http://identifiers.org/goa/> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/dc/terms/Dataset>
+0 28
+<ftp://ftp.ebi.ac.uk/pub/databases/GO/goa/COW/gene_association.goa_cow.gz> <http://purl.org/dc/terms/license> <http://www.ebi.ac.uk/GOA/goaHelp.html>
+75 73
+<ftp://ftp.ebi.ac.uk/pub/databases/GO/goa/COW/gene_association.goa_cow.gz> <http://purl.org/dc/terms/rights> "use"
+75 73
+<http://download.bio2rdf.org/release/4/goa/goa_cow.nq.gz> <http://www.w3.org/2000/01/rdf-schema#label> "Bio2RDF v4 RDF version of goa (generated at 2015-11-30T13:51:52Z) generated at 2015-11-30T13:51:52Z"
+0 56
+<http://download.bio2rdf.org/release/4/goa/goa_cow.nq.gz> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/dcat#Distribution>
+0 56
+<http://download.bio2rdf.org/release/4/goa/goa_cow.nq.gz> <http://purl.org/dc/terms/title> "Bio2RDF v4 RDF version of goa (generated at 2015-11-30T13:51:52Z)"
+0 56
+<http://download.bio2rdf.org/release/4/goa/goa_cow.nq.gz> <http://purl.org/dc/terms/created> "2015-11-30T13:51:52Z"^^<http://www.w3.org/2001/XMLSchema#dateTime>
+0 56
+<http://download.bio2rdf.org/release/4/goa/goa_cow.nq.gz> <http://purl.org/dc/terms/source> <ftp://ftp.ebi.ac.uk/pub/databases/GO/goa/COW/gene_association.goa_cow.gz>
+0 56
+<http://download.bio2rdf.org/release/4/goa/goa_cow.nq.gz> <http://purl.org/dc/terms/creator> <https://github.com/bio2rdf/bio2rdf-scripts/blob/master/irefindex/irefindex.php>
+0 56
+<http://download.bio2rdf.org/release/4/goa/goa_cow.nq.gz> <http://purl.org/dc/terms/publisher> <http://bio2rdf.org>
+0 56
+<http://download.bio2rdf.org/release/4/goa/goa_cow.nq.gz> <http://xmlns.com/foaf/0.1/page> <http://download.bio2rdf.org/release/4/goa/goa.html>
+0 56
+<http://download.bio2rdf.org/release/4/goa/goa_cow.nq.gz> <http://purl.org/dc/terms/format> "application/gzip"
+0 56
+<http://download.bio2rdf.org/release/4/goa/goa_cow.nq.gz> <http://purl.org/dc/terms/format> "application/n-quads"
+0 56
+<http://bio2rdf.org/goa_resource:bio2rdf.dataset.goa.R4> <http://www.w3.org/ns/dcat#distribution> <http://download.bio2rdf.org/release/4/goa/goa_cow.nq.gz>
+0 55
+<http://bio2rdf.org/goa_resource:bio2rdf.dataset.goa.R4> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/dc/terms/Dataset>
+0 55
+<http://download.bio2rdf.org/release/4/goa/goa_cow.nq.gz> <http://purl.org/dc/terms/license> <http://creativecommons.org/licenses/by/3.0/>
+0 56
+<http://download.bio2rdf.org/release/4/goa/goa_cow.nq.gz> <http://purl.org/dc/terms/rights> "use-share-modify"
+0 56
+<http://download.bio2rdf.org/release/4/goa/goa_cow.nq.gz> <http://purl.org/dc/terms/rights> "by-attribution"
+0 56
+<http://download.bio2rdf.org/release/4/goa/goa_cow.nq.gz> <http://purl.org/dc/terms/rights> "restricted-by-source-license"
+0 56
+<ftp://ftp.ebi.ac.uk/pub/databases/GO/goa/DICTY/gene_association.goa_dicty.gz> <http://www.w3.org/2000/01/rdf-schema#label> "Gene Ontology Annotation file dicty (ftp://ftp.ebi.ac.uk/pub/databases/GO/goa/DICTY/gene_association.goa_dicty.gz"
+79 77
+<ftp://ftp.ebi.ac.uk/pub/databases/GO/goa/DICTY/gene_association.goa_dicty.gz> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/dcat#Distribution>
+79 77
+<ftp://ftp.ebi.ac.uk/pub/databases/GO/goa/DICTY/gene_association.goa_dicty.gz> <http://purl.org/dc/terms/title> "Gene Ontology Annotation file dicty (ftp://ftp.ebi.ac.uk/pub/databases/GO/goa/DICTY/gene_association.goa_dicty.gz"
+79 77
+<ftp://ftp.ebi.ac.uk/pub/databases/GO/goa/DICTY/gene_association.goa_dicty.gz> <http://purl.org/pav/retrievedOn> "2015-11-30T13:52:06Z"^^<http://www.w3.org/2001/XMLSchema#dateTime>
+79 77
+<ftp://ftp.ebi.ac.uk/pub/databases/GO/goa/DICTY/gene_association.goa_dicty.gz> <http://purl.org/dc/terms/publisher> <http://www.ebi.ac.uk/>
+79 77
+<ftp://ftp.ebi.ac.uk/pub/databases/GO/goa/DICTY/gene_association.goa_dicty.gz> <http://xmlns.com/foaf/0.1/page> <http://www.ebi.ac.uk/GOA/>
+79 77
+<ftp://ftp.ebi.ac.uk/pub/databases/GO/goa/DICTY/gene_association.goa_dicty.gz> <http://purl.org/dc/terms/format> "text/tab-separated-value"
+79 77
+<ftp://ftp.ebi.ac.uk/pub/databases/GO/goa/DICTY/gene_association.goa_dicty.gz> <http://purl.org/dc/terms/format> "application/gzip"
+79 77
+<http://identifiers.org/goa/> <http://www.w3.org/ns/dcat#distribution> <ftp://ftp.ebi.ac.uk/pub/databases/GO/goa/DICTY/gene_association.goa_dicty.gz>
+0 28
+<http://identifiers.org/goa/> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/dc/terms/Dataset>
+0 28
+<ftp://ftp.ebi.ac.uk/pub/databases/GO/goa/DICTY/gene_association.goa_dicty.gz> <http://purl.org/dc/terms/license> <http://www.ebi.ac.uk/GOA/goaHelp.html>
+79 77
+<ftp://ftp.ebi.ac.uk/pub/databases/GO/goa/DICTY/gene_association.goa_dicty.gz> <http://purl.org/dc/terms/rights> "use"
+79 77
+<http://download.bio2rdf.org/release/4/goa/goa_dicty.nq.gz> <http://www.w3.org/2000/01/rdf-schema#label> "Bio2RDF v4 RDF version of goa (generated at 2015-11-30T13:53:26Z) generated at 2015-11-30T13:53:26Z"
+0 58
+<http://download.bio2rdf.org/release/4/goa/goa_dicty.nq.gz> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/dcat#Distribution>
+0 58
+<http://download.bio2rdf.org/release/4/goa/goa_dicty.nq.gz> <http://purl.org/dc/terms/title> "Bio2RDF v4 RDF version of goa (generated at 2015-11-30T13:53:26Z)"
+0 58
+<http://download.bio2rdf.org/release/4/goa/goa_dicty.nq.gz> <http://purl.org/dc/terms/created> "2015-11-30T13:53:26Z"^^<http://www.w3.org/2001/XMLSchema#dateTime>
+0 58
+<http://download.bio2rdf.org/release/4/goa/goa_dicty.nq.gz> <http://purl.org/dc/terms/source> <ftp://ftp.ebi.ac.uk/pub/databases/GO/goa/DICTY/gene_association.goa_dicty.gz>
+0 58
+<http://download.bio2rdf.org/release/4/goa/goa_dicty.nq.gz> <http://purl.org/dc/terms/creator> <https://github.com/bio2rdf/bio2rdf-scripts/blob/master/irefindex/irefindex.php>
+0 58
+<http://download.bio2rdf.org/release/4/goa/goa_dicty.nq.gz> <http://purl.org/dc/terms/publisher> <http://bio2rdf.org>
+0 58
+<http://download.bio2rdf.org/release/4/goa/goa_dicty.nq.gz> <http://xmlns.com/foaf/0.1/page> <http://download.bio2rdf.org/release/4/goa/goa.html>
+0 58
+<http://download.bio2rdf.org/release/4/goa/goa_dicty.nq.gz> <http://purl.org/dc/terms/format> "application/gzip"
+0 58
+<http://download.bio2rdf.org/release/4/goa/goa_dicty.nq.gz> <http://purl.org/dc/terms/format> "application/n-quads"
+0 58
+<http://bio2rdf.org/goa_resource:bio2rdf.dataset.goa.R4> <http://www.w3.org/ns/dcat#distribution> <http://download.bio2rdf.org/release/4/goa/goa_dicty.nq.gz>
+0 55
+<http://bio2rdf.org/goa_resource:bio2rdf.dataset.goa.R4> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/dc/terms/Dataset>
+0 55
+<http://download.bio2rdf.org/release/4/goa/goa_dicty.nq.gz> <http://purl.org/dc/terms/license> <http://creativecommons.org/licenses/by/3.0/>
+0 58
+<http://download.bio2rdf.org/release/4/goa/goa_dicty.nq.gz> <http://purl.org/dc/terms/rights> "use-share-modify"
+0 58
+<http://download.bio2rdf.org/release/4/goa/goa_dicty.nq.gz> <http://purl.org/dc/terms/rights> "by-attribution"
+0 58
+<http://download.bio2rdf.org/release/4/goa/goa_dicty.nq.gz> <http://purl.org/dc/terms/rights> "restricted-by-source-license"
+0 58
+<ftp://ftp.ebi.ac.uk/pub/databases/GO/goa/DOG/gene_association.goa_dog.gz> <http://www.w3.org/2000/01/rdf-schema#label> "Gene Ontology Annotation file dog (ftp://ftp.ebi.ac.uk/pub/databases/GO/goa/DOG/gene_association.goa_dog.gz"
+75 73
+<ftp://ftp.ebi.ac.uk/pub/databases/GO/goa/DOG/gene_association.goa_dog.gz> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/dcat#Distribution>
+75 73
+<ftp://ftp.ebi.ac.uk/pub/databases/GO/goa/DOG/gene_association.goa_dog.gz> <http://purl.org/dc/terms/title> "Gene Ontology Annotation file dog (ftp://ftp.ebi.ac.uk/pub/databases/GO/goa/DOG/gene_association.goa_dog.gz"
+75 73
+<ftp://ftp.ebi.ac.uk/pub/databases/GO/goa/DOG/gene_association.goa_dog.gz> <http://purl.org/pav/retrievedOn> "2015-11-30T13:53:29Z"^^<http://www.w3.org/2001/XMLSchema#dateTime>
+75 73
+<ftp://ftp.ebi.ac.uk/pub/databases/GO/goa/DOG/gene_association.goa_dog.gz> <http://purl.org/dc/terms/publisher> <http://www.ebi.ac.uk/>
+75 73
+<ftp://ftp.ebi.ac.uk/pub/databases/GO/goa/DOG/gene_association.goa_dog.gz> <http://xmlns.com/foaf/0.1/page> <http://www.ebi.ac.uk/GOA/>
+75 73
+<ftp://ftp.ebi.ac.uk/pub/databases/GO/goa/DOG/gene_association.goa_dog.gz> <http://purl.org/dc/terms/format> "text/tab-separated-value"
+75 73
+<ftp://ftp.ebi.ac.uk/pub/databases/GO/goa/DOG/gene_association.goa_dog.gz> <http://purl.org/dc/terms/format> "application/gzip"
+75 73
+<http://identifiers.org/goa/> <http://www.w3.org/ns/dcat#distribution> <ftp://ftp.ebi.ac.uk/pub/databases/GO/goa/DOG/gene_association.goa_dog.gz>
+0 28
+<http://identifiers.org/goa/> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/dc/terms/Dataset>
+0 28
+<ftp://ftp.ebi.ac.uk/pub/databases/GO/goa/DOG/gene_association.goa_dog.gz> <http://purl.org/dc/terms/license> <http://www.ebi.ac.uk/GOA/goaHelp.html>
+75 73
+<ftp://ftp.ebi.ac.uk/pub/databases/GO/goa/DOG/gene_association.goa_dog.gz> <http://purl.org/dc/terms/rights> "use"
+75 73
+<http://download.bio2rdf.org/release/4/goa/goa_dog.nq.gz> <http://www.w3.org/2000/01/rdf-schema#label> "Bio2RDF v4 RDF version of goa (generated at 2015-11-30T13:58:13Z) generated at 2015-11-30T13:58:13Z"
+0 56
+<http://download.bio2rdf.org/release/4/goa/goa_dog.nq.gz> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/dcat#Distribution>
+0 56
+<http://download.bio2rdf.org/release/4/goa/goa_dog.nq.gz> <http://purl.org/dc/terms/title> "Bio2RDF v4 RDF version of goa (generated at 2015-11-30T13:58:13Z)"
+0 56
+<http://download.bio2rdf.org/release/4/goa/goa_dog.nq.gz> <http://purl.org/dc/terms/created> "2015-11-30T13:58:13Z"^^<http://www.w3.org/2001/XMLSchema#dateTime>
+0 56
+<http://download.bio2rdf.org/release/4/goa/goa_dog.nq.gz> <http://purl.org/dc/terms/source> <ftp://ftp.ebi.ac.uk/pub/databases/GO/goa/DOG/gene_association.goa_dog.gz>
+0 56
+<http://download.bio2rdf.org/release/4/goa/goa_dog.nq.gz> <http://purl.org/dc/terms/creator> <https://github.com/bio2rdf/bio2rdf-scripts/blob/master/irefindex/irefindex.php>
+0 56
+<http://download.bio2rdf.org/release/4/goa/goa_dog.nq.gz> <http://purl.org/dc/terms/publisher> <http://bio2rdf.org>
+0 56
+<http://download.bio2rdf.org/release/4/goa/goa_dog.nq.gz> <http://xmlns.com/foaf/0.1/page> <http://download.bio2rdf.org/release/4/goa/goa.html>
+0 56
+<http://download.bio2rdf.org/release/4/goa/goa_dog.nq.gz> <http://purl.org/dc/terms/format> "application/gzip"
+0 56
+<http://download.bio2rdf.org/release/4/goa/goa_dog.nq.gz> <http://purl.org/dc/terms/format> "application/n-quads"
+0 56
+<http://bio2rdf.org/goa_resource:bio2rdf.dataset.goa.R4> <http://www.w3.org/ns/dcat#distribution> <http://download.bio2rdf.org/release/4/goa/goa_dog.nq.gz>
+0 55
+<http://bio2rdf.org/goa_resource:bio2rdf.dataset.goa.R4> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/dc/terms/Dataset>
+0 55
+<http://download.bio2rdf.org/release/4/goa/goa_dog.nq.gz> <http://purl.org/dc/terms/license> <http://creativecommons.org/licenses/by/3.0/>
+0 56
+<http://download.bio2rdf.org/release/4/goa/goa_dog.nq.gz> <http://purl.org/dc/terms/rights> "use-share-modify"
+0 56
+<http://download.bio2rdf.org/release/4/goa/goa_dog.nq.gz> <http://purl.org/dc/terms/rights> "by-attribution"
+0 56
+<http://download.bio2rdf.org/release/4/goa/goa_dog.nq.gz> <http://purl.org/dc/terms/rights> "restricted-by-source-license"
+0 56
+<ftp://ftp.ebi.ac.uk/pub/databases/GO/goa/FLY/gene_association.goa_fly.gz> <http://www.w3.org/2000/01/rdf-schema#label> "Gene Ontology Annotation file fly (ftp://ftp.ebi.ac.uk/pub/databases/GO/goa/FLY/gene_association.goa_fly.gz"
+75 73
+<ftp://ftp.ebi.ac.uk/pub/databases/GO/goa/FLY/gene_association.goa_fly.gz> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/dcat#Distribution>
+75 73
+<ftp://ftp.ebi.ac.uk/pub/databases/GO/goa/FLY/gene_association.goa_fly.gz> <http://purl.org/dc/terms/title> "Gene Ontology Annotation file fly (ftp://ftp.ebi.ac.uk/pub/databases/GO/goa/FLY/gene_association.goa_fly.gz"
+75 73
+<ftp://ftp.ebi.ac.uk/pub/databases/GO/goa/FLY/gene_association.goa_fly.gz> <http://purl.org/pav/retrievedOn> "2015-11-30T13:58:16Z"^^<http://www.w3.org/2001/XMLSchema#dateTime>
+75 73
+<ftp://ftp.ebi.ac.uk/pub/databases/GO/goa/FLY/gene_association.goa_fly.gz> <http://purl.org/dc/terms/publisher> <http://www.ebi.ac.uk/>
+75 73
+<ftp://ftp.ebi.ac.uk/pub/databases/GO/goa/FLY/gene_association.goa_fly.gz> <http://xmlns.com/foaf/0.1/page> <http://www.ebi.ac.uk/GOA/>
+75 73
+<ftp://ftp.ebi.ac.uk/pub/databases/GO/goa/FLY/gene_association.goa_fly.gz> <http://purl.org/dc/terms/format> "text/tab-separated-value"
+75 73
+<ftp://ftp.ebi.ac.uk/pub/databases/GO/goa/FLY/gene_association.goa_fly.gz> <http://purl.org/dc/terms/format> "application/gzip"
+75 73
+<http://identifiers.org/goa/> <http://www.w3.org/ns/dcat#distribution> <ftp://ftp.ebi.ac.uk/pub/databases/GO/goa/FLY/gene_association.goa_fly.gz>
+0 28
+<http://identifiers.org/goa/> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/dc/terms/Dataset>
+0 28
+<ftp://ftp.ebi.ac.uk/pub/databases/GO/goa/FLY/gene_association.goa_fly.gz> <http://purl.org/dc/terms/license> <http://www.ebi.ac.uk/GOA/goaHelp.html>
+75 73
+<ftp://ftp.ebi.ac.uk/pub/databases/GO/goa/FLY/gene_association.goa_fly.gz> <http://purl.org/dc/terms/rights> "use"
+75 73
+<http://download.bio2rdf.org/release/4/goa/goa_fly.nq.gz> <http://www.w3.org/2000/01/rdf-schema#label> "Bio2RDF v4 RDF version of goa (generated at 2015-11-30T14:03:22Z) generated at 2015-11-30T14:03:22Z"
+0 56
+<http://download.bio2rdf.org/release/4/goa/goa_fly.nq.gz> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/dcat#Distribution>
+0 56
+<http://download.bio2rdf.org/release/4/goa/goa_fly.nq.gz> <http://purl.org/dc/terms/title> "Bio2RDF v4 RDF version of goa (generated at 2015-11-30T14:03:22Z)"
+0 56
+<http://download.bio2rdf.org/release/4/goa/goa_fly.nq.gz> <http://purl.org/dc/terms/created> "2015-11-30T14:03:22Z"^^<http://www.w3.org/2001/XMLSchema#dateTime>
+0 56
+<http://download.bio2rdf.org/release/4/goa/goa_fly.nq.gz> <http://purl.org/dc/terms/source> <ftp://ftp.ebi.ac.uk/pub/databases/GO/goa/FLY/gene_association.goa_fly.gz>
+0 56
+<http://download.bio2rdf.org/release/4/goa/goa_fly.nq.gz> <http://purl.org/dc/terms/creator> <https://github.com/bio2rdf/bio2rdf-scripts/blob/master/irefindex/irefindex.php>
+0 56
+<http://download.bio2rdf.org/release/4/goa/goa_fly.nq.gz> <http://purl.org/dc/terms/publisher> <http://bio2rdf.org>
+0 56
+<http://download.bio2rdf.org/release/4/goa/goa_fly.nq.gz> <http://xmlns.com/foaf/0.1/page> <http://download.bio2rdf.org/release/4/goa/goa.html>
+0 56
+<http://download.bio2rdf.org/release/4/goa/goa_fly.nq.gz> <http://purl.org/dc/terms/format> "application/gzip"
+0 56
+<http://download.bio2rdf.org/release/4/goa/goa_fly.nq.gz> <http://purl.org/dc/terms/format> "application/n-quads"
+0 56
+<http://bio2rdf.org/goa_resource:bio2rdf.dataset.goa.R4> <http://www.w3.org/ns/dcat#distribution> <http://download.bio2rdf.org/release/4/goa/goa_fly.nq.gz>
+0 55
+<http://bio2rdf.org/goa_resource:bio2rdf.dataset.goa.R4> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/dc/terms/Dataset>
+0 55
+<http://download.bio2rdf.org/release/4/goa/goa_fly.nq.gz> <http://purl.org/dc/terms/license> <http://creativecommons.org/licenses/by/3.0/>
+0 56
+<http://download.bio2rdf.org/release/4/goa/goa_fly.nq.gz> <http://purl.org/dc/terms/rights> "use-share-modify"
+0 56
+<http://download.bio2rdf.org/release/4/goa/goa_fly.nq.gz> <http://purl.org/dc/terms/rights> "by-attribution"
+0 56
+<http://download.bio2rdf.org/release/4/goa/goa_fly.nq.gz> <http://purl.org/dc/terms/rights> "restricted-by-source-license"
+0 56
+<ftp://ftp.ebi.ac.uk/pub/databases/GO/goa/HUMAN/gene_association.goa_human.gz> <http://www.w3.org/2000/01/rdf-schema#label> "Gene Ontology Annotation file human (ftp://ftp.ebi.ac.uk/pub/databases/GO/goa/HUMAN/gene_association.goa_human.gz"
+79 77
+<ftp://ftp.ebi.ac.uk/pub/databases/GO/goa/HUMAN/gene_association.goa_human.gz> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/dcat#Distribution>
+79 77
+<ftp://ftp.ebi.ac.uk/pub/databases/GO/goa/HUMAN/gene_association.goa_human.gz> <http://purl.org/dc/terms/title> "Gene Ontology Annotation file human (ftp://ftp.ebi.ac.uk/pub/databases/GO/goa/HUMAN/gene_association.goa_human.gz"
+79 77
+<ftp://ftp.ebi.ac.uk/pub/databases/GO/goa/HUMAN/gene_association.goa_human.gz> <http://purl.org/pav/retrievedOn> "2015-11-30T14:03:27Z"^^<http://www.w3.org/2001/XMLSchema#dateTime>
+79 77
+<ftp://ftp.ebi.ac.uk/pub/databases/GO/goa/HUMAN/gene_association.goa_human.gz> <http://purl.org/dc/terms/publisher> <http://www.ebi.ac.uk/>
+79 77
+<ftp://ftp.ebi.ac.uk/pub/databases/GO/goa/HUMAN/gene_association.goa_human.gz> <http://xmlns.com/foaf/0.1/page> <http://www.ebi.ac.uk/GOA/>
+79 77
+<ftp://ftp.ebi.ac.uk/pub/databases/GO/goa/HUMAN/gene_association.goa_human.gz> <http://purl.org/dc/terms/format> "text/tab-separated-value"
+79 77
+<ftp://ftp.ebi.ac.uk/pub/databases/GO/goa/HUMAN/gene_association.goa_human.gz> <http://purl.org/dc/terms/format> "application/gzip"
+79 77
+<http://identifiers.org/goa/> <http://www.w3.org/ns/dcat#distribution> <ftp://ftp.ebi.ac.uk/pub/databases/GO/goa/HUMAN/gene_association.goa_human.gz>
+0 28
+<http://identifiers.org/goa/> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/dc/terms/Dataset>
+0 28
+<ftp://ftp.ebi.ac.uk/pub/databases/GO/goa/HUMAN/gene_association.goa_human.gz> <http://purl.org/dc/terms/license> <http://www.ebi.ac.uk/GOA/goaHelp.html>
+79 77
+<ftp://ftp.ebi.ac.uk/pub/databases/GO/goa/HUMAN/gene_association.goa_human.gz> <http://purl.org/dc/terms/rights> "use"
+79 77
+<http://download.bio2rdf.org/release/4/goa/goa_human.nq.gz> <http://www.w3.org/2000/01/rdf-schema#label> "Bio2RDF v4 RDF version of goa (generated at 2015-11-30T14:18:49Z) generated at 2015-11-30T14:18:49Z"
+0 58
+<http://download.bio2rdf.org/release/4/goa/goa_human.nq.gz> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/dcat#Distribution>
+0 58
+<http://download.bio2rdf.org/release/4/goa/goa_human.nq.gz> <http://purl.org/dc/terms/title> "Bio2RDF v4 RDF version of goa (generated at 2015-11-30T14:18:49Z)"
+0 58
+<http://download.bio2rdf.org/release/4/goa/goa_human.nq.gz> <http://purl.org/dc/terms/created> "2015-11-30T14:18:49Z"^^<http://www.w3.org/2001/XMLSchema#dateTime>
+0 58
+<http://download.bio2rdf.org/release/4/goa/goa_human.nq.gz> <http://purl.org/dc/terms/source> <ftp://ftp.ebi.ac.uk/pub/databases/GO/goa/HUMAN/gene_association.goa_human.gz>
+0 58
+<http://download.bio2rdf.org/release/4/goa/goa_human.nq.gz> <http://purl.org/dc/terms/creator> <https://github.com/bio2rdf/bio2rdf-scripts/blob/master/irefindex/irefindex.php>
+0 58
+<http://download.bio2rdf.org/release/4/goa/goa_human.nq.gz> <http://purl.org/dc/terms/publisher> <http://bio2rdf.org>
+0 58
+<http://download.bio2rdf.org/release/4/goa/goa_human.nq.gz> <http://xmlns.com/foaf/0.1/page> <http://download.bio2rdf.org/release/4/goa/goa.html>
+0 58
+<http://download.bio2rdf.org/release/4/goa/goa_human.nq.gz> <http://purl.org/dc/terms/format> "application/gzip"
+0 58
+<http://download.bio2rdf.org/release/4/goa/goa_human.nq.gz> <http://purl.org/dc/terms/format> "application/n-quads"
+0 58
+<http://bio2rdf.org/goa_resource:bio2rdf.dataset.goa.R4> <http://www.w3.org/ns/dcat#distribution> <http://download.bio2rdf.org/release/4/goa/goa_human.nq.gz>
+0 55
+<http://bio2rdf.org/goa_resource:bio2rdf.dataset.goa.R4> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/dc/terms/Dataset>
+0 55
+<http://download.bio2rdf.org/release/4/goa/goa_human.nq.gz> <http://purl.org/dc/terms/license> <http://creativecommons.org/licenses/by/3.0/>
+0 58
+<http://download.bio2rdf.org/release/4/goa/goa_human.nq.gz> <http://purl.org/dc/terms/rights> "use-share-modify"
+0 58
+<http://download.bio2rdf.org/release/4/goa/goa_human.nq.gz> <http://purl.org/dc/terms/rights> "by-attribution"
+0 58
+<http://download.bio2rdf.org/release/4/goa/goa_human.nq.gz> <http://purl.org/dc/terms/rights> "restricted-by-source-license"
+0 58
+<ftp://ftp.ebi.ac.uk/pub/databases/GO/goa/MOUSE/gene_association.goa_mouse.gz> <http://www.w3.org/2000/01/rdf-schema#label> "Gene Ontology Annotation file mouse (ftp://ftp.ebi.ac.uk/pub/databases/GO/goa/MOUSE/gene_association.goa_mouse.gz"
+79 77
+<ftp://ftp.ebi.ac.uk/pub/databases/GO/goa/MOUSE/gene_association.goa_mouse.gz> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/dcat#Distribution>
+79 77
+<ftp://ftp.ebi.ac.uk/pub/databases/GO/goa/MOUSE/gene_association.goa_mouse.gz> <http://purl.org/dc/terms/title> "Gene Ontology Annotation file mouse (ftp://ftp.ebi.ac.uk/pub/databases/GO/goa/MOUSE/gene_association.goa_mouse.gz"
+79 77
+<ftp://ftp.ebi.ac.uk/pub/databases/GO/goa/MOUSE/gene_association.goa_mouse.gz> <http://purl.org/pav/retrievedOn> "2015-11-30T14:19:21Z"^^<http://www.w3.org/2001/XMLSchema#dateTime>
+79 77
+<ftp://ftp.ebi.ac.uk/pub/databases/GO/goa/MOUSE/gene_association.goa_mouse.gz> <http://purl.org/dc/terms/publisher> <http://www.ebi.ac.uk/>
+79 77
+<ftp://ftp.ebi.ac.uk/pub/databases/GO/goa/MOUSE/gene_association.goa_mouse.gz> <http://xmlns.com/foaf/0.1/page> <http://www.ebi.ac.uk/GOA/>
+79 77
+<ftp://ftp.ebi.ac.uk/pub/databases/GO/goa/MOUSE/gene_association.goa_mouse.gz> <http://purl.org/dc/terms/format> "text/tab-separated-value"
+79 77
+<ftp://ftp.ebi.ac.uk/pub/databases/GO/goa/MOUSE/gene_association.goa_mouse.gz> <http://purl.org/dc/terms/format> "application/gzip"
+79 77
+<http://identifiers.org/goa/> <http://www.w3.org/ns/dcat#distribution> <ftp://ftp.ebi.ac.uk/pub/databases/GO/goa/MOUSE/gene_association.goa_mouse.gz>
+0 28
+<http://identifiers.org/goa/> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/dc/terms/Dataset>
+0 28
+<ftp://ftp.ebi.ac.uk/pub/databases/GO/goa/MOUSE/gene_association.goa_mouse.gz> <http://purl.org/dc/terms/license> <http://www.ebi.ac.uk/GOA/goaHelp.html>
+79 77
+<ftp://ftp.ebi.ac.uk/pub/databases/GO/goa/MOUSE/gene_association.goa_mouse.gz> <http://purl.org/dc/terms/rights> "use"
+79 77
+<http://download.bio2rdf.org/release/4/goa/goa_mouse.nq.gz> <http://www.w3.org/2000/01/rdf-schema#label> "Bio2RDF v4 RDF version of goa (generated at 2015-11-30T14:38:31Z) generated at 2015-11-30T14:38:31Z"
+0 58
+<http://download.bio2rdf.org/release/4/goa/goa_mouse.nq.gz> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/dcat#Distribution>
+0 58
+<http://download.bio2rdf.org/release/4/goa/goa_mouse.nq.gz> <http://purl.org/dc/terms/title> "Bio2RDF v4 RDF version of goa (generated at 2015-11-30T14:38:31Z)"
+0 58
+<http://download.bio2rdf.org/release/4/goa/goa_mouse.nq.gz> <http://purl.org/dc/terms/created> "2015-11-30T14:38:31Z"^^<http://www.w3.org/2001/XMLSchema#dateTime>
+0 58
+<http://download.bio2rdf.org/release/4/goa/goa_mouse.nq.gz> <http://purl.org/dc/terms/source> <ftp://ftp.ebi.ac.uk/pub/databases/GO/goa/MOUSE/gene_association.goa_mouse.gz>
+0 58
+<http://download.bio2rdf.org/release/4/goa/goa_mouse.nq.gz> <http://purl.org/dc/terms/creator> <https://github.com/bio2rdf/bio2rdf-scripts/blob/master/irefindex/irefindex.php>
+0 58
+<http://download.bio2rdf.org/release/4/goa/goa_mouse.nq.gz> <http://purl.org/dc/terms/publisher> <http://bio2rdf.org>
+0 58
+<http://download.bio2rdf.org/release/4/goa/goa_mouse.nq.gz> <http://xmlns.com/foaf/0.1/page> <http://download.bio2rdf.org/release/4/goa/goa.html>
+0 58
+<http://download.bio2rdf.org/release/4/goa/goa_mouse.nq.gz> <http://purl.org/dc/terms/format> "application/gzip"
+0 58
+<http://download.bio2rdf.org/release/4/goa/goa_mouse.nq.gz> <http://purl.org/dc/terms/format> "application/n-quads"
+0 58
+<http://bio2rdf.org/goa_resource:bio2rdf.dataset.goa.R4> <http://www.w3.org/ns/dcat#distribution> <http://download.bio2rdf.org/release/4/goa/goa_mouse.nq.gz>
+0 55
+<http://bio2rdf.org/goa_resource:bio2rdf.dataset.goa.R4> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/dc/terms/Dataset>
+0 55
+<http://download.bio2rdf.org/release/4/goa/goa_mouse.nq.gz> <http://purl.org/dc/terms/license> <http://creativecommons.org/licenses/by/3.0/>
+0 58
+<http://download.bio2rdf.org/release/4/goa/goa_mouse.nq.gz> <http://purl.org/dc/terms/rights> "use-share-modify"
+0 58
+<http://download.bio2rdf.org/release/4/goa/goa_mouse.nq.gz> <http://purl.org/dc/terms/rights> "by-attribution"
+0 58
+<http://download.bio2rdf.org/release/4/goa/goa_mouse.nq.gz> <http://purl.org/dc/terms/rights> "restricted-by-source-license"
+0 58
+<ftp://ftp.ebi.ac.uk/pub/databases/GO/goa/PIG/gene_association.goa_pig.gz> <http://www.w3.org/2000/01/rdf-schema#label> "Gene Ontology Annotation file pig (ftp://ftp.ebi.ac.uk/pub/databases/GO/goa/PIG/gene_association.goa_pig.gz"
+75 73
+<ftp://ftp.ebi.ac.uk/pub/databases/GO/goa/PIG/gene_association.goa_pig.gz> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/dcat#Distribution>
+75 73
+<ftp://ftp.ebi.ac.uk/pub/databases/GO/goa/PIG/gene_association.goa_pig.gz> <http://purl.org/dc/terms/title> "Gene Ontology Annotation file pig (ftp://ftp.ebi.ac.uk/pub/databases/GO/goa/PIG/gene_association.goa_pig.gz"
+75 73
+<ftp://ftp.ebi.ac.uk/pub/databases/GO/goa/PIG/gene_association.goa_pig.gz> <http://purl.org/pav/retrievedOn> "2015-11-30T14:38:36Z"^^<http://www.w3.org/2001/XMLSchema#dateTime>
+75 73
+<ftp://ftp.ebi.ac.uk/pub/databases/GO/goa/PIG/gene_association.goa_pig.gz> <http://purl.org/dc/terms/publisher> <http://www.ebi.ac.uk/>
+75 73
+<ftp://ftp.ebi.ac.uk/pub/databases/GO/goa/PIG/gene_association.goa_pig.gz> <http://xmlns.com/foaf/0.1/page> <http://www.ebi.ac.uk/GOA/>
+75 73
+<ftp://ftp.ebi.ac.uk/pub/databases/GO/goa/PIG/gene_association.goa_pig.gz> <http://purl.org/dc/terms/format> "text/tab-separated-value"
+75 73
+<ftp://ftp.ebi.ac.uk/pub/databases/GO/goa/PIG/gene_association.goa_pig.gz> <http://purl.org/dc/terms/format> "application/gzip"
+75 73
+<http://identifiers.org/goa/> <http://www.w3.org/ns/dcat#distribution> <ftp://ftp.ebi.ac.uk/pub/databases/GO/goa/PIG/gene_association.goa_pig.gz>
+0 28
+<http://identifiers.org/goa/> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/dc/terms/Dataset>
+0 28
+<ftp://ftp.ebi.ac.uk/pub/databases/GO/goa/PIG/gene_association.goa_pig.gz> <http://purl.org/dc/terms/license> <http://www.ebi.ac.uk/GOA/goaHelp.html>
+75 73
+<ftp://ftp.ebi.ac.uk/pub/databases/GO/goa/PIG/gene_association.goa_pig.gz> <http://purl.org/dc/terms/rights> "use"
+75 73
+<http://download.bio2rdf.org/release/4/goa/goa_pig.nq.gz> <http://www.w3.org/2000/01/rdf-schema#label> "Bio2RDF v4 RDF version of goa (generated at 2015-11-30T14:43:14Z) generated at 2015-11-30T14:43:14Z"
+0 56
+<http://download.bio2rdf.org/release/4/goa/goa_pig.nq.gz> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/dcat#Distribution>
+0 56
+<http://download.bio2rdf.org/release/4/goa/goa_pig.nq.gz> <http://purl.org/dc/terms/title> "Bio2RDF v4 RDF version of goa (generated at 2015-11-30T14:43:14Z)"
+0 56
+<http://download.bio2rdf.org/release/4/goa/goa_pig.nq.gz> <http://purl.org/dc/terms/created> "2015-11-30T14:43:14Z"^^<http://www.w3.org/2001/XMLSchema#dateTime>
+0 56
+<http://download.bio2rdf.org/release/4/goa/goa_pig.nq.gz> <http://purl.org/dc/terms/source> <ftp://ftp.ebi.ac.uk/pub/databases/GO/goa/PIG/gene_association.goa_pig.gz>
+0 56
+<http://download.bio2rdf.org/release/4/goa/goa_pig.nq.gz> <http://purl.org/dc/terms/creator> <https://github.com/bio2rdf/bio2rdf-scripts/blob/master/irefindex/irefindex.php>
+0 56
+<http://download.bio2rdf.org/release/4/goa/goa_pig.nq.gz> <http://purl.org/dc/terms/publisher> <http://bio2rdf.org>
+0 56
+<http://download.bio2rdf.org/release/4/goa/goa_pig.nq.gz> <http://xmlns.com/foaf/0.1/page> <http://download.bio2rdf.org/release/4/goa/goa.html>
+0 56
+<http://download.bio2rdf.org/release/4/goa/goa_pig.nq.gz> <http://purl.org/dc/terms/format> "application/gzip"
+0 56
+<http://download.bio2rdf.org/release/4/goa/goa_pig.nq.gz> <http://purl.org/dc/terms/format> "application/n-quads"
+0 56
+<http://bio2rdf.org/goa_resource:bio2rdf.dataset.goa.R4> <http://www.w3.org/ns/dcat#distribution> <http://download.bio2rdf.org/release/4/goa/goa_pig.nq.gz>
+0 55
+<http://bio2rdf.org/goa_resource:bio2rdf.dataset.goa.R4> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/dc/terms/Dataset>
+0 55
+<http://download.bio2rdf.org/release/4/goa/goa_pig.nq.gz> <http://purl.org/dc/terms/license> <http://creativecommons.org/licenses/by/3.0/>
+0 56
+<http://download.bio2rdf.org/release/4/goa/goa_pig.nq.gz> <http://purl.org/dc/terms/rights> "use-share-modify"
+0 56
+<http://download.bio2rdf.org/release/4/goa/goa_pig.nq.gz> <http://purl.org/dc/terms/rights> "by-attribution"
+0 56
+<http://download.bio2rdf.org/release/4/goa/goa_pig.nq.gz> <http://purl.org/dc/terms/rights> "restricted-by-source-license"
+0 56
+<ftp://ftp.ebi.ac.uk/pub/databases/GO/goa/RAT/gene_association.goa_rat.gz> <http://www.w3.org/2000/01/rdf-schema#label> "Gene Ontology Annotation file rat (ftp://ftp.ebi.ac.uk/pub/databases/GO/goa/RAT/gene_association.goa_rat.gz"
+75 73
+<ftp://ftp.ebi.ac.uk/pub/databases/GO/goa/RAT/gene_association.goa_rat.gz> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/dcat#Distribution>
+75 73
+<ftp://ftp.ebi.ac.uk/pub/databases/GO/goa/RAT/gene_association.goa_rat.gz> <http://purl.org/dc/terms/title> "Gene Ontology Annotation file rat (ftp://ftp.ebi.ac.uk/pub/databases/GO/goa/RAT/gene_association.goa_rat.gz"
+75 73
+<ftp://ftp.ebi.ac.uk/pub/databases/GO/goa/RAT/gene_association.goa_rat.gz> <http://purl.org/pav/retrievedOn> "2015-11-30T14:43:19Z"^^<http://www.w3.org/2001/XMLSchema#dateTime>
+75 73
+<ftp://ftp.ebi.ac.uk/pub/databases/GO/goa/RAT/gene_association.goa_rat.gz> <http://purl.org/dc/terms/publisher> <http://www.ebi.ac.uk/>
+75 73
+<ftp://ftp.ebi.ac.uk/pub/databases/GO/goa/RAT/gene_association.goa_rat.gz> <http://xmlns.com/foaf/0.1/page> <http://www.ebi.ac.uk/GOA/>
+75 73
+<ftp://ftp.ebi.ac.uk/pub/databases/GO/goa/RAT/gene_association.goa_rat.gz> <http://purl.org/dc/terms/format> "text/tab-separated-value"
+75 73
+<ftp://ftp.ebi.ac.uk/pub/databases/GO/goa/RAT/gene_association.goa_rat.gz> <http://purl.org/dc/terms/format> "application/gzip"
+75 73
+<http://identifiers.org/goa/> <http://www.w3.org/ns/dcat#distribution> <ftp://ftp.ebi.ac.uk/pub/databases/GO/goa/RAT/gene_association.goa_rat.gz>
+0 28
+<http://identifiers.org/goa/> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/dc/terms/Dataset>
+0 28
+<ftp://ftp.ebi.ac.uk/pub/databases/GO/goa/RAT/gene_association.goa_rat.gz> <http://purl.org/dc/terms/license> <http://www.ebi.ac.uk/GOA/goaHelp.html>
+75 73
+<ftp://ftp.ebi.ac.uk/pub/databases/GO/goa/RAT/gene_association.goa_rat.gz> <http://purl.org/dc/terms/rights> "use"
+75 73
+<http://download.bio2rdf.org/release/4/goa/goa_rat.nq.gz> <http://www.w3.org/2000/01/rdf-schema#label> "Bio2RDF v4 RDF version of goa (generated at 2015-11-30T14:50:55Z) generated at 2015-11-30T14:50:55Z"
+0 56
+<http://download.bio2rdf.org/release/4/goa/goa_rat.nq.gz> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/dcat#Distribution>
+0 56
+<http://download.bio2rdf.org/release/4/goa/goa_rat.nq.gz> <http://purl.org/dc/terms/title> "Bio2RDF v4 RDF version of goa (generated at 2015-11-30T14:50:55Z)"
+0 56
+<http://download.bio2rdf.org/release/4/goa/goa_rat.nq.gz> <http://purl.org/dc/terms/created> "2015-11-30T14:50:55Z"^^<http://www.w3.org/2001/XMLSchema#dateTime>
+0 56
+<http://download.bio2rdf.org/release/4/goa/goa_rat.nq.gz> <http://purl.org/dc/terms/source> <ftp://ftp.ebi.ac.uk/pub/databases/GO/goa/RAT/gene_association.goa_rat.gz>
+0 56
+<http://download.bio2rdf.org/release/4/goa/goa_rat.nq.gz> <http://purl.org/dc/terms/creator> <https://github.com/bio2rdf/bio2rdf-scripts/blob/master/irefindex/irefindex.php>
+0 56
+<http://download.bio2rdf.org/release/4/goa/goa_rat.nq.gz> <http://purl.org/dc/terms/publisher> <http://bio2rdf.org>
+0 56
+<http://download.bio2rdf.org/release/4/goa/goa_rat.nq.gz> <http://xmlns.com/foaf/0.1/page> <http://download.bio2rdf.org/release/4/goa/goa.html>
+0 56
+<http://download.bio2rdf.org/release/4/goa/goa_rat.nq.gz> <http://purl.org/dc/terms/format> "application/gzip"
+0 56
+<http://download.bio2rdf.org/release/4/goa/goa_rat.nq.gz> <http://purl.org/dc/terms/format> "application/n-quads"
+0 56
+<http://bio2rdf.org/goa_resource:bio2rdf.dataset.goa.R4> <http://www.w3.org/ns/dcat#distribution> <http://download.bio2rdf.org/release/4/goa/goa_rat.nq.gz>
+0 55
+<http://bio2rdf.org/goa_resource:bio2rdf.dataset.goa.R4> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/dc/terms/Dataset>
+0 55
+<http://download.bio2rdf.org/release/4/goa/goa_rat.nq.gz> <http://purl.org/dc/terms/license> <http://creativecommons.org/licenses/by/3.0/>
+0 56
+<http://download.bio2rdf.org/release/4/goa/goa_rat.nq.gz> <http://purl.org/dc/terms/rights> "use-share-modify"
+0 56
+<http://download.bio2rdf.org/release/4/goa/goa_rat.nq.gz> <http://purl.org/dc/terms/rights> "by-attribution"
+0 56
+<http://download.bio2rdf.org/release/4/goa/goa_rat.nq.gz> <http://purl.org/dc/terms/rights> "restricted-by-source-license"
+0 56
+<ftp://ftp.ebi.ac.uk/pub/databases/GO/goa/WORM/gene_association.goa_worm.gz> <http://www.w3.org/2000/01/rdf-schema#label> "Gene Ontology Annotation file worm (ftp://ftp.ebi.ac.uk/pub/databases/GO/goa/WORM/gene_association.goa_worm.gz"
+77 75
+<ftp://ftp.ebi.ac.uk/pub/databases/GO/goa/WORM/gene_association.goa_worm.gz> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/dcat#Distribution>
+77 75
+<ftp://ftp.ebi.ac.uk/pub/databases/GO/goa/WORM/gene_association.goa_worm.gz> <http://purl.org/dc/terms/title> "Gene Ontology Annotation file worm (ftp://ftp.ebi.ac.uk/pub/databases/GO/goa/WORM/gene_association.goa_worm.gz"
+77 75
+<ftp://ftp.ebi.ac.uk/pub/databases/GO/goa/WORM/gene_association.goa_worm.gz> <http://purl.org/pav/retrievedOn> "2015-11-30T14:50:59Z"^^<http://www.w3.org/2001/XMLSchema#dateTime>
+77 75
+<ftp://ftp.ebi.ac.uk/pub/databases/GO/goa/WORM/gene_association.goa_worm.gz> <http://purl.org/dc/terms/publisher> <http://www.ebi.ac.uk/>
+77 75
+<ftp://ftp.ebi.ac.uk/pub/databases/GO/goa/WORM/gene_association.goa_worm.gz> <http://xmlns.com/foaf/0.1/page> <http://www.ebi.ac.uk/GOA/>
+77 75
+<ftp://ftp.ebi.ac.uk/pub/databases/GO/goa/WORM/gene_association.goa_worm.gz> <http://purl.org/dc/terms/format> "text/tab-separated-value"
+77 75
+<ftp://ftp.ebi.ac.uk/pub/databases/GO/goa/WORM/gene_association.goa_worm.gz> <http://purl.org/dc/terms/format> "application/gzip"
+77 75
+<http://identifiers.org/goa/> <http://www.w3.org/ns/dcat#distribution> <ftp://ftp.ebi.ac.uk/pub/databases/GO/goa/WORM/gene_association.goa_worm.gz>
+0 28
+<http://identifiers.org/goa/> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/dc/terms/Dataset>
+0 28
+<ftp://ftp.ebi.ac.uk/pub/databases/GO/goa/WORM/gene_association.goa_worm.gz> <http://purl.org/dc/terms/license> <http://www.ebi.ac.uk/GOA/goaHelp.html>
+77 75
+<ftp://ftp.ebi.ac.uk/pub/databases/GO/goa/WORM/gene_association.goa_worm.gz> <http://purl.org/dc/terms/rights> "use"
+77 75
+<http://download.bio2rdf.org/release/4/goa/goa_worm.nq.gz> <http://www.w3.org/2000/01/rdf-schema#label> "Bio2RDF v4 RDF version of goa (generated at 2015-11-30T14:53:36Z) generated at 2015-11-30T14:53:36Z"
+0 57
+<http://download.bio2rdf.org/release/4/goa/goa_worm.nq.gz> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/dcat#Distribution>
+0 57
+<http://download.bio2rdf.org/release/4/goa/goa_worm.nq.gz> <http://purl.org/dc/terms/title> "Bio2RDF v4 RDF version of goa (generated at 2015-11-30T14:53:36Z)"
+0 57
+<http://download.bio2rdf.org/release/4/goa/goa_worm.nq.gz> <http://purl.org/dc/terms/created> "2015-11-30T14:53:36Z"^^<http://www.w3.org/2001/XMLSchema#dateTime>
+0 57
+<http://download.bio2rdf.org/release/4/goa/goa_worm.nq.gz> <http://purl.org/dc/terms/source> <ftp://ftp.ebi.ac.uk/pub/databases/GO/goa/WORM/gene_association.goa_worm.gz>
+0 57
+<http://download.bio2rdf.org/release/4/goa/goa_worm.nq.gz> <http://purl.org/dc/terms/creator> <https://github.com/bio2rdf/bio2rdf-scripts/blob/master/irefindex/irefindex.php>
+0 57
+<http://download.bio2rdf.org/release/4/goa/goa_worm.nq.gz> <http://purl.org/dc/terms/publisher> <http://bio2rdf.org>
+0 57
+<http://download.bio2rdf.org/release/4/goa/goa_worm.nq.gz> <http://xmlns.com/foaf/0.1/page> <http://download.bio2rdf.org/release/4/goa/goa.html>
+0 57
+<http://download.bio2rdf.org/release/4/goa/goa_worm.nq.gz> <http://purl.org/dc/terms/format> "application/gzip"
+0 57
+<http://download.bio2rdf.org/release/4/goa/goa_worm.nq.gz> <http://purl.org/dc/terms/format> "application/n-quads"
+0 57
+<http://bio2rdf.org/goa_resource:bio2rdf.dataset.goa.R4> <http://www.w3.org/ns/dcat#distribution> <http://download.bio2rdf.org/release/4/goa/goa_worm.nq.gz>
+0 55
+<http://bio2rdf.org/goa_resource:bio2rdf.dataset.goa.R4> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/dc/terms/Dataset>
+0 55
+<http://download.bio2rdf.org/release/4/goa/goa_worm.nq.gz> <http://purl.org/dc/terms/license> <http://creativecommons.org/licenses/by/3.0/>
+0 57
+<http://download.bio2rdf.org/release/4/goa/goa_worm.nq.gz> <http://purl.org/dc/terms/rights> "use-share-modify"
+0 57
+<http://download.bio2rdf.org/release/4/goa/goa_worm.nq.gz> <http://purl.org/dc/terms/rights> "by-attribution"
+0 57
+<http://download.bio2rdf.org/release/4/goa/goa_worm.nq.gz> <http://purl.org/dc/terms/rights> "restricted-by-source-license"
+0 57
+<ftp://ftp.ebi.ac.uk/pub/databases/GO/goa/YEAST/gene_association.goa_yeast.gz> <http://www.w3.org/2000/01/rdf-schema#label> "Gene Ontology Annotation file yeast (ftp://ftp.ebi.ac.uk/pub/databases/GO/goa/YEAST/gene_association.goa_yeast.gz"
+79 77
+<ftp://ftp.ebi.ac.uk/pub/databases/GO/goa/YEAST/gene_association.goa_yeast.gz> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/dcat#Distribution>
+79 77
+<ftp://ftp.ebi.ac.uk/pub/databases/GO/goa/YEAST/gene_association.goa_yeast.gz> <http://purl.org/dc/terms/title> "Gene Ontology Annotation file yeast (ftp://ftp.ebi.ac.uk/pub/databases/GO/goa/YEAST/gene_association.goa_yeast.gz"
+79 77
+<ftp://ftp.ebi.ac.uk/pub/databases/GO/goa/YEAST/gene_association.goa_yeast.gz> <http://purl.org/pav/retrievedOn> "2015-11-30T14:53:39Z"^^<http://www.w3.org/2001/XMLSchema#dateTime>
+79 77
+<ftp://ftp.ebi.ac.uk/pub/databases/GO/goa/YEAST/gene_association.goa_yeast.gz> <http://purl.org/dc/terms/publisher> <http://www.ebi.ac.uk/>
+79 77
+<ftp://ftp.ebi.ac.uk/pub/databases/GO/goa/YEAST/gene_association.goa_yeast.gz> <http://xmlns.com/foaf/0.1/page> <http://www.ebi.ac.uk/GOA/>
+79 77
+<ftp://ftp.ebi.ac.uk/pub/databases/GO/goa/YEAST/gene_association.goa_yeast.gz> <http://purl.org/dc/terms/format> "text/tab-separated-value"
+79 77
+<ftp://ftp.ebi.ac.uk/pub/databases/GO/goa/YEAST/gene_association.goa_yeast.gz> <http://purl.org/dc/terms/format> "application/gzip"
+79 77
+<http://identifiers.org/goa/> <http://www.w3.org/ns/dcat#distribution> <ftp://ftp.ebi.ac.uk/pub/databases/GO/goa/YEAST/gene_association.goa_yeast.gz>
+0 28
+<http://identifiers.org/goa/> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/dc/terms/Dataset>
+0 28
+<ftp://ftp.ebi.ac.uk/pub/databases/GO/goa/YEAST/gene_association.goa_yeast.gz> <http://purl.org/dc/terms/license> <http://www.ebi.ac.uk/GOA/goaHelp.html>
+79 77
+<ftp://ftp.ebi.ac.uk/pub/databases/GO/goa/YEAST/gene_association.goa_yeast.gz> <http://purl.org/dc/terms/rights> "use"
+79 77
+<http://download.bio2rdf.org/release/4/goa/goa_yeast.nq.gz> <http://www.w3.org/2000/01/rdf-schema#label> "Bio2RDF v4 RDF version of goa (generated at 2015-11-30T14:56:05Z) generated at 2015-11-30T14:56:05Z"
+0 58
+<http://download.bio2rdf.org/release/4/goa/goa_yeast.nq.gz> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/dcat#Distribution>
+0 58
+<http://download.bio2rdf.org/release/4/goa/goa_yeast.nq.gz> <http://purl.org/dc/terms/title> "Bio2RDF v4 RDF version of goa (generated at 2015-11-30T14:56:05Z)"
+0 58
+<http://download.bio2rdf.org/release/4/goa/goa_yeast.nq.gz> <http://purl.org/dc/terms/created> "2015-11-30T14:56:05Z"^^<http://www.w3.org/2001/XMLSchema#dateTime>
+0 58
+<http://download.bio2rdf.org/release/4/goa/goa_yeast.nq.gz> <http://purl.org/dc/terms/source> <ftp://ftp.ebi.ac.uk/pub/databases/GO/goa/YEAST/gene_association.goa_yeast.gz>
+0 58
+<http://download.bio2rdf.org/release/4/goa/goa_yeast.nq.gz> <http://purl.org/dc/terms/creator> <https://github.com/bio2rdf/bio2rdf-scripts/blob/master/irefindex/irefindex.php>
+0 58
+<http://download.bio2rdf.org/release/4/goa/goa_yeast.nq.gz> <http://purl.org/dc/terms/publisher> <http://bio2rdf.org>
+0 58
+<http://download.bio2rdf.org/release/4/goa/goa_yeast.nq.gz> <http://xmlns.com/foaf/0.1/page> <http://download.bio2rdf.org/release/4/goa/goa.html>
+0 58
+<http://download.bio2rdf.org/release/4/goa/goa_yeast.nq.gz> <http://purl.org/dc/terms/format> "application/gzip"
+0 58
+<http://download.bio2rdf.org/release/4/goa/goa_yeast.nq.gz> <http://purl.org/dc/terms/format> "application/n-quads"
+0 58
+<http://bio2rdf.org/goa_resource:bio2rdf.dataset.goa.R4> <http://www.w3.org/ns/dcat#distribution> <http://download.bio2rdf.org/release/4/goa/goa_yeast.nq.gz>
+0 55
+<http://bio2rdf.org/goa_resource:bio2rdf.dataset.goa.R4> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/dc/terms/Dataset>
+0 55
+<http://download.bio2rdf.org/release/4/goa/goa_yeast.nq.gz> <http://purl.org/dc/terms/license> <http://creativecommons.org/licenses/by/3.0/>
+0 58
+<http://download.bio2rdf.org/release/4/goa/goa_yeast.nq.gz> <http://purl.org/dc/terms/rights> "use-share-modify"
+0 58
+<http://download.bio2rdf.org/release/4/goa/goa_yeast.nq.gz> <http://purl.org/dc/terms/rights> "by-attribution"
+0 58
+<http://download.bio2rdf.org/release/4/goa/goa_yeast.nq.gz> <http://purl.org/dc/terms/rights> "restricted-by-source-license"
+0 58
+<ftp://ftp.ebi.ac.uk/pub/databases/GO/goa/ZEBRAFISH/gene_association.goa_zebrafish.gz> <http://www.w3.org/2000/01/rdf-schema#label> "Gene Ontology Annotation file zebrafish (ftp://ftp.ebi.ac.uk/pub/databases/GO/goa/ZEBRAFISH/gene_association.goa_zebrafish.gz"
+87 85
+<ftp://ftp.ebi.ac.uk/pub/databases/GO/goa/ZEBRAFISH/gene_association.goa_zebrafish.gz> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/dcat#Distribution>
+87 85
+<ftp://ftp.ebi.ac.uk/pub/databases/GO/goa/ZEBRAFISH/gene_association.goa_zebrafish.gz> <http://purl.org/dc/terms/title> "Gene Ontology Annotation file zebrafish (ftp://ftp.ebi.ac.uk/pub/databases/GO/goa/ZEBRAFISH/gene_association.goa_zebrafish.gz"
+87 85
+<ftp://ftp.ebi.ac.uk/pub/databases/GO/goa/ZEBRAFISH/gene_association.goa_zebrafish.gz> <http://purl.org/pav/retrievedOn> "2015-11-30T14:56:08Z"^^<http://www.w3.org/2001/XMLSchema#dateTime>
+87 85
+<ftp://ftp.ebi.ac.uk/pub/databases/GO/goa/ZEBRAFISH/gene_association.goa_zebrafish.gz> <http://purl.org/dc/terms/publisher> <http://www.ebi.ac.uk/>
+87 85
+<ftp://ftp.ebi.ac.uk/pub/databases/GO/goa/ZEBRAFISH/gene_association.goa_zebrafish.gz> <http://xmlns.com/foaf/0.1/page> <http://www.ebi.ac.uk/GOA/>
+87 85
+<ftp://ftp.ebi.ac.uk/pub/databases/GO/goa/ZEBRAFISH/gene_association.goa_zebrafish.gz> <http://purl.org/dc/terms/format> "text/tab-separated-value"
+87 85
+<ftp://ftp.ebi.ac.uk/pub/databases/GO/goa/ZEBRAFISH/gene_association.goa_zebrafish.gz> <http://purl.org/dc/terms/format> "application/gzip"
+87 85
+<http://identifiers.org/goa/> <http://www.w3.org/ns/dcat#distribution> <ftp://ftp.ebi.ac.uk/pub/databases/GO/goa/ZEBRAFISH/gene_association.goa_zebrafish.gz>
+0 28
+<http://identifiers.org/goa/> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/dc/terms/Dataset>
+0 28
+<ftp://ftp.ebi.ac.uk/pub/databases/GO/goa/ZEBRAFISH/gene_association.goa_zebrafish.gz> <http://purl.org/dc/terms/license> <http://www.ebi.ac.uk/GOA/goaHelp.html>
+87 85
+<ftp://ftp.ebi.ac.uk/pub/databases/GO/goa/ZEBRAFISH/gene_association.goa_zebrafish.gz> <http://purl.org/dc/terms/rights> "use"
+87 85
+<http://download.bio2rdf.org/release/4/goa/goa_zebrafish.nq.gz> <http://www.w3.org/2000/01/rdf-schema#label> "Bio2RDF v4 RDF version of goa (generated at 2015-11-30T15:00:09Z) generated at 2015-11-30T15:00:09Z"
+0 62
+<http://download.bio2rdf.org/release/4/goa/goa_zebrafish.nq.gz> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/dcat#Distribution>
+0 62
+<http://download.bio2rdf.org/release/4/goa/goa_zebrafish.nq.gz> <http://purl.org/dc/terms/title> "Bio2RDF v4 RDF version of goa (generated at 2015-11-30T15:00:09Z)"
+0 62
+<http://download.bio2rdf.org/release/4/goa/goa_zebrafish.nq.gz> <http://purl.org/dc/terms/created> "2015-11-30T15:00:09Z"^^<http://www.w3.org/2001/XMLSchema#dateTime>
+0 62
+<http://download.bio2rdf.org/release/4/goa/goa_zebrafish.nq.gz> <http://purl.org/dc/terms/source> <ftp://ftp.ebi.ac.uk/pub/databases/GO/goa/ZEBRAFISH/gene_association.goa_zebrafish.gz>
+0 62
+<http://download.bio2rdf.org/release/4/goa/goa_zebrafish.nq.gz> <http://purl.org/dc/terms/creator> <https://github.com/bio2rdf/bio2rdf-scripts/blob/master/irefindex/irefindex.php>
+0 62
+<http://download.bio2rdf.org/release/4/goa/goa_zebrafish.nq.gz> <http://purl.org/dc/terms/publisher> <http://bio2rdf.org>
+0 62
+<http://download.bio2rdf.org/release/4/goa/goa_zebrafish.nq.gz> <http://xmlns.com/foaf/0.1/page> <http://download.bio2rdf.org/release/4/goa/goa.html>
+0 62
+<http://download.bio2rdf.org/release/4/goa/goa_zebrafish.nq.gz> <http://purl.org/dc/terms/format> "application/gzip"
+0 62
+<http://download.bio2rdf.org/release/4/goa/goa_zebrafish.nq.gz> <http://purl.org/dc/terms/format> "application/n-quads"
+0 62
+<http://bio2rdf.org/goa_resource:bio2rdf.dataset.goa.R4> <http://www.w3.org/ns/dcat#distribution> <http://download.bio2rdf.org/release/4/goa/goa_zebrafish.nq.gz>
+0 55
+<http://bio2rdf.org/goa_resource:bio2rdf.dataset.goa.R4> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/dc/terms/Dataset>
+0 55
+<http://download.bio2rdf.org/release/4/goa/goa_zebrafish.nq.gz> <http://purl.org/dc/terms/license> <http://creativecommons.org/licenses/by/3.0/>
+0 62
+<http://download.bio2rdf.org/release/4/goa/goa_zebrafish.nq.gz> <http://purl.org/dc/terms/rights> "use-share-modify"
+0 62
+<http://download.bio2rdf.org/release/4/goa/goa_zebrafish.nq.gz> <http://purl.org/dc/terms/rights> "by-attribution"
+0 62
+<http://download.bio2rdf.org/release/4/goa/goa_zebrafish.nq.gz> <http://purl.org/dc/terms/rights> "restricted-by-source-license"
+0 62
+ag fíordheimhniú an .tsv
+0
+1
+2
+3
+4
+5
+6
+7
+10
+11
+28
+29
+30
+31
+32
+33
+34
+35
+38
+39
+56
+57
+58
+59
+60
+61
+62
+63
+66
+67
+84
+85
+86
+87
+88
+89
+90
+91
+94
+95
+112
+113
+114
+115
+116
+117
+118
+119
+122
+123
+140
+141
+142
+143
+144
+145
+146
+147
+150
+151
+168
+169
+170
+171
+172
+173
+174
+175
+178
+179
+196
+197
+198
+199
+200
+201
+202
+203
+206
+207
+224
+225
+226
+227
+228
+229
+230
+231
+234
+235
+252
+253
+254
+255
+256
+257
+258
+259
+262
+263
+280
+281
+282
+283
+284
+285
+286
+287
+290
+291
+308
+309
+310
+311
+312
+313
+314
+315
+318
+319
+336
+337
+338
+339
+340
+341
+342
+343
+346
+347
+Dump: numcols params
+{2, 3}
+../copies/goa/bio2rdf-goa.nq.nt.tsv
+3
+
+nq=>tsv error detected by numcols.py: stopping script
+to_compressed_nt.sh error: stopping script

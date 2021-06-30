@@ -1,17 +1,19 @@
-#Load data; https://stackoverflow.com/questions/5788117/only-read-selected-columns
-df = read.csv("my_code/metric_analysis/centrality/centrality_quantiles_norm_to_triples.csv", sep=',')
-df = read.csv("my_code/metric_analysis/centrality/centrality_quantiles.csv", sep=',')
+load_cor_norm = function()
+{
+    df = read.csv("my_code/metric_analysis/centrality/centrality_quantiles_norm_to_triples.csv", sep=',')
+}
 
-df[] <- lapply(df, as.numeric)
-head(df)
+load_cor_raw = function()
+{
+    df = read.csv("my_code/metric_analysis/centrality/centrality_quantiles.csv", sep=',')
+}
 
-explanatory = df[c(1:18)]
-head(explanatory)
+disp_cors = function(df)
+{
+    explanatory = df[c(1:18)]
+    response = df[c(21:23)]
+    print(cor(explanatory, response)^2)
+}
 
-response = df[c(21:23)]
-head(response)
-
-pairs(response)
-cor(response)
-
-cor(explanatory, response)^2
+disp_cors(load_cor_norm())
+disp_cors(load_cor_raw())

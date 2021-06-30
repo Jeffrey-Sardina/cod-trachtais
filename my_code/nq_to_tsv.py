@@ -25,22 +25,62 @@ def find_unquoted(line, char):
                 return i
     raise ValueError("could not find " + char + ' in ' + line)
 
+# def get_items(line):
+#     print(line)
+#     start = line.find('<http') #find_unquoted(line, '<') #line.find('<')
+#     if start == -1:
+#         start = line.find('<ftp')
+#     end = line.find('> <http') #find_unquoted(line, '>') #line.find('>')
+#     if end == -1:
+#         end = line.find('> <ftp')
+#     print(start, end)
+#     subject = line[start : end+1]
+#     line = line[end+1: ]
+
+#     start = line.find('<http') #find_unquoted(line, '<') #line.find('<')
+#     if start == -1:
+#         start = line.find('<ftp')
+#     end = find_unquoted(line, '>')
+#     if end == -1:
+#         end = line.find('> <ftp')
+#     predicate = line[start : end+1]
+#     object = line[end+1: ].strip().replace('\t', ' ')
+
+#     return subject, predicate, object
+
 def get_items(line):
-    start = line.find('<http') #find_unquoted(line, '<') #line.find('<')
-    if start == -1:
-        start = line.find('<ftp')
-    end = line.find('> <http') #find_unquoted(line, '>') #line.find('>')
-    if end == -1:
-        end = line.find('> <ftp')
+    start_http = line.find('<http') #find_unquoted(line, '<') #line.find('<')
+    start_ftp = line.find('<ftp')
+    if start_http == -1:
+        start = start_ftp
+    elif start_ftp == -1:
+        start = start_http
+    else:
+        start = min(start_http, start_ftp)
+
+    end_http = line.find('> <http') #find_unquoted(line, '>') #line.find('>')
+    end_ftp = line.find('> <ftp')
+    if end_http == -1:
+        end = end_ftp
+    elif end_ftp == -1:
+        end = end_http
+    else:
+        end = min(end_http, end_ftp)
+
+    #print(start, end)
     subject = line[start : end+1]
     line = line[end+1: ]
 
-    start = line.find('<http') #find_unquoted(line, '<') #line.find('<')
-    if start == -1:
-        start = line.find('<ftp')
+    start_http = line.find('<http') #find_unquoted(line, '<') #line.find('<')
+    start_ftp = line.find('<ftp')
+    if start_http == -1:
+        start = start_ftp
+    elif start_ftp == -1:
+        start = start_http
+    else:
+        start = min(start_http, start_ftp)
+
     end = find_unquoted(line, '>')
-    if end == -1:
-        end = line.find('> <ftp')
     predicate = line[start : end+1]
     object = line[end+1: ].strip().replace('\t', ' ')
 

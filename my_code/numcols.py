@@ -13,7 +13,7 @@ def get_num_cols(file, expected):
     return cols
 
 if __name__ == '__main__':
-    #Verify that expected numcols = actuals numcols
+    #Verify that expected numcols = actual numcols
     file = sys.argv[1]
     expected = int(sys.argv[2])
     cols = get_num_cols(file, expected)
@@ -23,5 +23,5 @@ if __name__ == '__main__':
         print(file)
         print(expected)
         print()
-        raise ValueError('Tá ar a laghad ró amháin ann leis an uimhir mícheart colúin aige')
+        raise ValueError('Tá ar a laghad ró amháin ann leis an uimhir colúin mícheart aige')
     exit(0)

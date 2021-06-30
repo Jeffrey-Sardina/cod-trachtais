@@ -36,9 +36,23 @@
 #     config/final_1_bioportal_rank.py \
 #     5 > bioportal_final_1.runlog
 
-./pbg_pipeline.sh bioportal \
+# ./pbg_pipeline.sh bioportal \
+#     final \
+#     0 \
+#     4 \
+#     config/final_1_bioportal_rank.py \
+#     5 > bioportal_final_1_run2.runlog
+
+./pbg_pipeline.sh goa \
     final \
     0 \
-    4 \
-    config/final_1_bioportal_rank.py \
-    5 > bioportal_final_1_run2.runlog
+    2 \
+    config/final_1_general.py \
+    2 > goa_final_1.runlog
+
+# ./pbg_pipeline.sh goa \
+#     final \
+#     0 \
+#     2 \
+#     config/final_1_bioportal_rank.py \
+#     2 > goa_final_1.runlog

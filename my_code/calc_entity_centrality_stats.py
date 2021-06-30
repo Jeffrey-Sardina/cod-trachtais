@@ -21,7 +21,7 @@ def output_stats(avg, quantiles, quantiles_vals, print_header=True):
     print(data)
 
 if __name__ == '__main__':
-    input_file = sys.argv[1]
+    input_file = sys.argv[1] #on, for ex, total_deg.csv
     print_header = sys.argv[2] == '1'
     centr_df = read_counts(input_file)
     avg, quantiles, quantiles_vals = summary_stats(centr_df)
