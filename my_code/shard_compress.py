@@ -128,6 +128,26 @@ def compress_counts_file(counts_file, input_file, output_file, table_file):
     compress.write_compressed_file(table, input_file, output_file)
     print('comhaid comhbhrúite scríofa')
 
+# def compress_counts_file(counts_file, input_file, output_file, table_file):
+#     #This file should still be sorted, since all components were!
+#     print('ag cruthú agus ag scríobh an tábla')
+#     table = OrderedSet()
+#     with open(counts_file, 'r') as inp:
+#         with open(table_file, 'w') as output:
+#             i = 0
+#             for line in inp:
+#                 line = line.strip()
+#                 if len(line) == 0:
+#                     continue
+#                 to_write = line.split('\t')[1]
+#                 print(compress.to_base_94(i), to_write, sep='\t', file=output)
+#     print('tábla scríofa (' + str(i) + ' line)')
+    
+      # Céard aois, gan an tábla i gcuimhne...
+#     print('ag scríobh an comhaid comhbhrúite')
+#     compress.write_compressed_file(table, input_file, output_file)
+#     print('comhaid comhbhrúite scríofa')
+
 if __name__ == '__main__':
     # input_file = sys.argv[1]
     # output_file = sys.argv[2]

@@ -43,16 +43,38 @@
 #     config/final_1_bioportal_rank.py \
 #     5 > bioportal_final_1_run2.runlog
 
-./pbg_pipeline.sh goa \
+#Failed on 2,3
+# ./pbg_pipeline.sh goa \
+#     final_4part \
+#     0 \
+#     2 \
+#     config/final_1_general.py \
+#     4 > goa_final_1.runlog
+
+./pbg_pipeline.sh hgnc \
     final \
     0 \
     2 \
     config/final_1_general.py \
-    2 > goa_final_1.runlog
+    1 > hgnc_final.runlog
 
-# ./pbg_pipeline.sh goa \
+./pbg_pipeline.sh lsr \
+    final \
+    0 \
+    2 \
+    config/final_1_general.py \
+    1 > lsr_final.runlog
+
+# ./pbg_pipeline.sh hgnc \
 #     final \
 #     0 \
 #     2 \
 #     config/final_1_bioportal_rank.py \
-#     2 > goa_final_1.runlog
+#     1 > hgnc_final.runlog
+
+# ./pbg_pipeline.sh lsr \
+#     final \
+#     0 \
+#     2 \
+#     config/final_1_bioportal_rank.py \
+#     1 > lsr_final.runlog
