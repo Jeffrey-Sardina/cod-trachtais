@@ -967,7 +967,7 @@ Amach anseo:
 - mar gheall ar a bhfuil léirithe ag [27], níl orm ach céim amháin a úsáid chun lárnacht a áireamh--ní féidir leis an algartam leabuithe ach sin a thuiscint ar aon nós!
 
 ## 29-06-2021
-Turns out the eval error was causews be too-low shared memory (/dev/shm). It was at 7.8 GB; this can be seen using:
+Turns out the eval error was caused be too-low shared memory (/dev/shm). It was at 7.8 GB; this can be seen using:
 ```
 df -h
 ```
@@ -980,3 +980,10 @@ sudo  mount -o remount,size=12G /dev/shm
 Anois, níl orm ach anailísíocht a dhéanamh, is dóigh liom. Nach deas an rud é! Tá a lána ama á thógáil ag aschur na leabuithe fhéinig, ach ní dóigh liom go bhfuil siad sin ró-thábhachach don anailísíocht ar aon nós.
 
 I hope to build a model of centrality => best embedding system. After that, I want to test in on several other datasets--all bio, but maybe not all cancer--and see if they confirm the trend.
+
+## 06-07-2021
+This Wednesday I am set to stop running analysis and to start writing. There qare, however, a few things that I think may be useful to run in the background while I write, possible overnight:
+- goa using the bioportal config from search round 1
+- bioportal using the final config from esearch round 0
+
+Having those 2 will likely be of great use to giving a more completed feeling to the overall thesis. Of the 2, the second is more important, and will (hopefully) take less time. Thus, I'll probably start writing without it, but I will run it for completion. The first one I may not run, or may save for later, since it is only a post-model-creation testing thing, and since other such tests exist and have given me interesting data.
