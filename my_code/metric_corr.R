@@ -1,11 +1,13 @@
 load_cor_norm = function()
 {
-    df = read.csv("my_code/metric_analysis/centrality/centrality_quantiles_norm_to_triples.csv", sep=',')
+    df = read.csv("my_code/metric_analysis/centrality/centrality_quantiles_norm_to_triples.csv", sep=',', comment.char = '#')
+    return(df)
 }
 
 load_cor_raw = function()
 {
-    df = read.csv("my_code/metric_analysis/centrality/centrality_quantiles.csv", sep=',')
+    df = read.csv("my_code/metric_analysis/centrality/centrality_quantiles.csv", sep=',', comment.char = '#')
+    return(df)
 }
 
 disp_cors = function(df)
