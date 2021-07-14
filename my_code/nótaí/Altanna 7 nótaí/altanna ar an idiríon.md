@@ -2,7 +2,7 @@
 
 ## Jeffrey Sardina
 
-Tá mo chuid nótaí i mo leabhar féinig, nó anseo. Tá agus beidh gach rud scríofa anseo i nGaeilge, toisc go mbeadh sé níos éasca mo thráchtas a scríobh mar sin.
+Tá mo chuid nótaí i mo leabhar féinig, nó anso. Tá agus beidh gach rud scríofa anseo i nGaeilge, toisc go mbeadh sé níos éasca mo thráchtas a scríobh mar sin.
 
 
 ## Léite
@@ -34,13 +34,13 @@ https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7233104/
 
 7. A Knowledge Graph Approach for the Secondary Use of Cancer Registry Data
 <br>
-https://ieeexplore.ieee.org/document/8834538, https://www.osti.gov/servlets/purl/1558464
+https://ieeexplore.ieee.org/document/8834538, https://www.osti.gov/servlets/purl/1558464 (agus mar PDF anseo)
 
 8. Bio2RDF: Towards a mashup to build bioinformatics knowledge systems
 <br>
 https://www.sciencedirect.com/science/article/pii/S1532046408000415?via%3Dihub
 
-9. A Cancer Genomics Data Space within the Linked Open Data (LOD. Cloud
+9. A Cancer Genomics Data Space within the Linked Open Data (LOD) Cloud
 <br>
 http://ceur-ws.org/Vol-2477/paper_3.pdf (agus mar PDF anseo)
 
@@ -90,7 +90,7 @@ https://ieeexplore.ieee.org/document/8047276 (7 mar pdf anseo)
 
 19. Biological applications of knowledge graph embedding models
 <br>
-https://academic.oup.com/bib/advance-article-abstract/doi/10.1093/bib/bbaa012/5739186 (7 mar pdf anseo)
+https://academic.oup.com/bib/advance-article-abstract/d oi/10.1093/bib/bbaa012/5739186 (7 mar pdf anseo)
 
 20. BioKEEN: a library for learning and evaluating biological knowledge graph embeddings
 <br>
@@ -120,8 +120,7 @@ https://arxiv.org/abs/1806.07297 (7 mar pdf anseo)
 <br>
 https://www.academia.edu/34713748/RDF_Dataset_Profiling_a_Survey_of_Features_Methods_Applications_and_Vocabularies (7 mar pdf anseo)
 
-27.
-Embedding Knowledge Graphs Attentive to Positional and Centrality Qualities
+27. Embedding Knowledge Graphs Attentive to Positional and Centrality Qualities
 <br>
 https://www.researchgate.net/publication/352645259_Embedding_Knowledge_Graphs_Attentive_to_Positional_and_Centrality_Qualities (7 mar pdf anseo)
 

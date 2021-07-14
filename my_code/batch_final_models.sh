@@ -110,16 +110,16 @@
 #     config/final_1_general.py \
 #     2 > hgnc_final.runlog
 
-./pbg_pipeline.sh hgnc \
-    final_2part_bioconf \
-    0 \
-    2 \
-    config/final_1_bioportal_rank.py \
-    2 > hgnc_final.runlog
+# ./pbg_pipeline.sh hgnc \
+#     final_2part_bioconf \
+#     0 \
+#     2 \
+#     config/final_1_bioportal_rank.py \
+#     2 > hgnc_final.runlog
 
-./pbg_pipeline.sh bioportal \
-    final_search0conf \
-    0 \
-    2 \
-    config/final.py \
-    3 > bioportal.runlog
+# ./pbg_pipeline.sh bioportal \
+#     final_search0conf \
+#     0 \
+#     2 \
+#     config/final.py \
+#     3 > bioportal.runlog
