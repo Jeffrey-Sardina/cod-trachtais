@@ -123,3 +123,12 @@
 #     2 \
 #     config/final.py \
 #     3 > bioportal.runlog
+
+#Failed on 4, 5 (ar epoch 23)
+export TORCH_USE_RTLD_GLOBAL=1
+./pbg_pipeline.sh goa \
+    final_4part_bioconf \
+    0 \
+    3 \
+    config/final_1_bioportal_rank.py \
+    6 > goa_final_1.runlog

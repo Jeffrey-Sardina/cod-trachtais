@@ -12,4 +12,5 @@ my_code/metric_analysis/centrality/
 my_code/metric_analysis/histograms/
 my_code/pytorch-biggraph-gpu/
 my_code/pytorch-biggraph-gpu-writepatch/
+my_code/pytorch-biggraph-gpu-ubuntu21/
 temp/

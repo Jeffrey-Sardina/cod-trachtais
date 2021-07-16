@@ -3,7 +3,8 @@
 ##Goal: do a search on hyperparameters (and model) space to try to find some ideal values
 #This code should be read-only wrt the data in ../copies/*
 
-source pytorch-biggraph-gpu/bin/activate
+#source pytorch-biggraph-gpu/bin/activate
+source pytorch-biggraph-gpu-ubuntu21/bin/activate
 
 DATA=$1
 DEL_OLD=$2

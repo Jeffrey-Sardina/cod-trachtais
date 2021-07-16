@@ -23,6 +23,47 @@ def load_data(evals_file, vars_to_limit, limit_types, limits):
             data = data[data[var] < val]
     return data
 
+def do_heatmap(data, z_var, x_var, y_var, vmin, vmax, title):
+    '''
+    z is response and will be represented by BW color
+    x,y are explanatory
+
+    Code adapted from open example code posted at: https://matplotlib.org/stable/gallery/images_contours_and_fields/image_annotated_heatmap.html
+    '''
+    #https://matplotlib.org/2.0.2/examples/pylab_examples/pcolor_demo.html
+    #https://www.python-graph-gallery.com/191-custom-axis-on-matplotlib-chart
+    x_items = data[x_var].astype(float)
+    y_items = data[y_var].astype(float)
+    x_items = x_items.drop_duplicates()
+    y_items = y_items.drop_duplicates()
+
+    #Create base heatmap matrix
+    heatmap_shape = (len(x_items), len(y_items))
+    heatmap_matrix = np.zeros(heatmap_shape)
+    for i, x in enumerate(x_items):
+        for j, y in enumerate(y_items):
+            z_row = data[(data[x_var]==x) & (data[y_var]==y)]
+            z = z_row[z_var]
+            heatmap_matrix[i, j] = z
+
+    #Cruthaigh íomhá
+    plt.pcolormesh(heatmap_matrix, cmap='Greys', vmin=vmin, vmax=vmax)
+
+    #Cuir téacs leis
+    plt.title(title)
+    plt.xlabel(x_var)
+    plt.ylabel(y_var)
+    x_tick_locations = [0.5 + a for a in np.arange(len(x_items))]
+    y_tick_locations = [0.5 + a for a in np.arange(len(y_items))]
+    plt.xticks(x_tick_locations, x_items, horizontalalignment='center')
+    plt.yticks(y_tick_locations, y_items, horizontalalignment='right')
+    
+    #Taispeáin barra na ndathanna
+    plt.colorbar()
+
+    #Taispeáin an rud ar fad
+    plt.show()
+
 def do_3dplot(data, z_var, x_var, y_var, logs, title):
     '''
     z is response
@@ -106,12 +147,19 @@ if __name__ == '__main__':
         y_var = y_var.replace('-log', '')
         logs.append(y_var)
 
+    if y_var == 'NB':
+        constraints = sys.argv[5:]
+    else:
+        make_heatmap = sys.argv[5] == '1'
+        vmin = float(sys.argv[6])
+        vmax = float(sys.argv[7])
+        constraints = sys.argv[8:]
+
     #lódáil eolas (le srianta, b'fhéidir)
-    constrains = sys.argv[5:]
     vars_to_limit = [] #ainm
     limit_types = [] #-eq, -ne, -gt, lt
     limits = [] #luach
-    for i, item in enumerate(constrains):
+    for i, item in enumerate(constraints):
         if i % 3 == 0:
             vars_to_limit.append(item)
         elif i % 3 == 1:
@@ -121,8 +169,11 @@ if __name__ == '__main__':
     data = load_data(evals_file, vars_to_limit, limit_types, limits)
 
     #cruthaigh graf
-    title = os.path.basename(evals_file) + '\n' + ' '.join(x for x in constrains)
+    title = os.path.basename(evals_file) + '\n' + ' '.join(x for x in constraints)
     if y_var == 'NB':
         do_2dplot(data, response_var, x_var, logs, title)
-    else:    
-        do_3dplot(data, response_var, x_var, y_var, logs, title)
+    else:
+        if make_heatmap:
+            do_heatmap(data, response_var, x_var, y_var, vmin, vmax, title)
+        else:
+            do_3dplot(data, response_var, x_var, y_var, logs, title)

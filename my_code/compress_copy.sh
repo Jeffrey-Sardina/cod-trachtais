@@ -1,6 +1,7 @@
 #!/bin/bash
 
-source pytorch-biggraph-gpu/bin/activate
+#source pytorch-biggraph-gpu/bin/activate
+source pytorch-biggraph-gpu-ubuntu21/bin/activate
 
 DATA=$1 
 DEL_OLD_TSV=$2

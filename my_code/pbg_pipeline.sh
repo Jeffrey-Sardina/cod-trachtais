@@ -12,7 +12,8 @@
 # $ 5 : comhad cumraíochta
 # $ 6 uimhir "partitions"
 
-source pytorch-biggraph-gpu/bin/activate
+#source pytorch-biggraph-gpu/bin/activate
+source pytorch-biggraph-gpu-ubuntu21/bin/activate
 
 # to run: ./pbg_pipeline.sh pharmgkb validated_1 1 2 config/search/final.py
 

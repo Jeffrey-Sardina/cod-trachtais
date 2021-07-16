@@ -89,7 +89,7 @@
 ## Kyoto Encyclopedia of Genes and Genomes (KEGG)
 - https://download.bio2rdf.org/files/release/3/kegg/kegg.html
 - Measc de 16 bhunachar, eolas ar bithchórais, géanóim, agus ceimice ina measc
-- Tá cuma ann go bhfuil sé bainteach le idirghníomhú dseachas an ailse go díreach. Seans go mbeadh sé níos fdearr an t-eolas seo a chur le bunachar eile freisin, mar GOA nó UniProt
+- Tá cuma ann go bhfuil sé bainteach le idirghníomhú seachas leis an ailse go díreach. Seans go mbeadh sé níos fdearr an t-eolas seo a chur le bunachar eile freisin, mar GOA nó UniProt
 
 ## The Life Science Resource Registry (LSR)
 - https://download.bio2rdf.org/files/release/3/lsr/lsr.html

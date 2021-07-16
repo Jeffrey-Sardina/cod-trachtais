@@ -7,7 +7,7 @@ then_2 = '4'
 folder = 'refseq'
 
 options = webdriver.ChromeOptions()
-prefs = {"download.default_directory" : "E:\\Tráchtas\\downloading\\" + folder + "\\"}
+prefs = {"download.default_directory" : "E:\\Thesis\\downloading\\" + folder + "\\"}
 options.add_experimental_option("prefs", prefs)
 options.binary_location = "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe"
 driver = webdriver.Chrome(chrome_options=options, executable_path="C:\\Program Files\\Google\\Chrome\\Application\\chromedriver.exe")
