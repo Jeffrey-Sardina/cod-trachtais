@@ -1,0 +1,9 @@
+2nd quartile,3rd quartile,90th percentile,Max to Triples Ratio,better_with_general,Dataset
+1,1,17,0.0552,1,DBSNP
+1,1,12,0.0659,1,DrugBank
+1,1,7,0.1129,1,OMIM
+1,1,8,0.0938,1,PharmGKB
+1,1,16,0.0704,0,GOA
+1,1,8,0.0975,0,HGNC
+1,2,8,0.0718,0,LSR
+2,6,15,0.0714,0,BioPortal

@@ -5,6 +5,19 @@ import pandas as pd
 import os
 import sys
 
+var_to_label = {
+    'lr': 'learning rate',
+    'reg': 'regularisation coefficient',
+    'auc': 'AUC',
+    'r1': 'r1',
+    'l2': 'L_2',
+    'dot': 'dot product',
+    'num_uniform_negs': 'Number of uniform negatives',
+    'num_batch_negs': 'Number of batch negatives',
+    'epochs': 'Number of epochs',
+    'dimensions': 'Embedding dimension'
+}
+
 def load_data(evals_file, vars_to_limit, limit_types, limits):
     '''
     Load the data, possibly with some value limits
@@ -23,7 +36,7 @@ def load_data(evals_file, vars_to_limit, limit_types, limits):
             data = data[data[var] < val]
     return data
 
-def do_heatmap(data, z_var, x_var, y_var, vmin, vmax, title):
+def do_heatmap(data, z_var, x_var, y_var, vmin, vmax, output_folder, title):
     '''
     z is response and will be represented by BW color
     x,y are explanatory
@@ -32,39 +45,42 @@ def do_heatmap(data, z_var, x_var, y_var, vmin, vmax, title):
     '''
     #https://matplotlib.org/2.0.2/examples/pylab_examples/pcolor_demo.html
     #https://www.python-graph-gallery.com/191-custom-axis-on-matplotlib-chart
-    x_items = data[x_var].astype(float)
-    y_items = data[y_var].astype(float)
+    x_items = data[x_var]#.astype(float)
+    y_items = data[y_var]#.astype(float)
     x_items = x_items.drop_duplicates()
     y_items = y_items.drop_duplicates()
 
     #Create base heatmap matrix
     heatmap_shape = (len(x_items), len(y_items))
-    heatmap_matrix = np.zeros(heatmap_shape)
-    for i, x in enumerate(x_items):
-        for j, y in enumerate(y_items):
+    heatmap_matrix = np.zeros(heatmap_shape).T
+    for row, x in enumerate(x_items):
+        for col, y in enumerate(y_items):
             z_row = data[(data[x_var]==x) & (data[y_var]==y)]
             z = z_row[z_var]
-            heatmap_matrix[i, j] = z
+            heatmap_matrix[col, row] = z
 
     #Cruthaigh íomhá
     plt.pcolormesh(heatmap_matrix, cmap='Greys', vmin=vmin, vmax=vmax)
 
     #Cuir téacs leis
-    plt.title(title)
-    plt.xlabel(x_var)
-    plt.ylabel(y_var)
+    #plt.title(title)
+    plt.xlabel(var_to_label[x_var], fontsize=13)
+    plt.ylabel(var_to_label[y_var], fontsize=13)
     x_tick_locations = [0.5 + a for a in np.arange(len(x_items))]
     y_tick_locations = [0.5 + a for a in np.arange(len(y_items))]
     plt.xticks(x_tick_locations, x_items, horizontalalignment='center')
     plt.yticks(y_tick_locations, y_items, horizontalalignment='right')
     
     #Taispeáin barra na ndathanna
-    plt.colorbar()
+    color_bar = plt.colorbar()
+    color_bar.set_label(var_to_label[z_var], rotation=0, fontsize=13)
 
     #Taispeáin an rud ar fad
-    plt.show()
+    file_name = '_'.join(title.split()) + '.png'
+    out_loc = os.path.join(output_folder, file_name)
+    plt.savefig(out_loc, format='png', dpi=300)
 
-def do_3dplot(data, z_var, x_var, y_var, logs, title):
+def do_3dplot(data, z_var, x_var, y_var, logs, output_folder, title):
     '''
     z is response
     x,y are explanatory
@@ -93,9 +109,12 @@ def do_3dplot(data, z_var, x_var, y_var, logs, title):
     ax.set_zlabel(z_var, rotation='horizontal')
 
     ax.set_title(title)
-    plt.show()
 
-def do_2dplot(data, y_var, x_var, logs, title):
+    file_name = '_'.join(title.split()) + '.png'
+    out_loc = os.path.join(output_folder, file_name)
+    plt.savefig(out_loc, format='png', dpi=300)
+
+def do_2dplot(data, y_var, x_var, logs, output_folder, title):
     '''
     y is response
     x is explanatory
@@ -118,7 +137,10 @@ def do_2dplot(data, y_var, x_var, logs, title):
     ax.set_xlabel(x_var)
     ax.set_ylabel(y_var)
     ax.set_title(title)
-    plt.show()
+
+    file_name = '_'.join(title.split()) + '.png'
+    out_loc = os.path.join(output_folder, file_name)
+    plt.savefig(out_loc, format='png', dpi=300)
 
 def try_float(val):
     try:
@@ -147,13 +169,15 @@ if __name__ == '__main__':
         y_var = y_var.replace('-log', '')
         logs.append(y_var)
 
+    output_folder = sys.argv[5]
+
     if y_var == 'NB':
-        constraints = sys.argv[5:]
+        constraints = sys.argv[6:]
     else:
-        make_heatmap = sys.argv[5] == '1'
-        vmin = float(sys.argv[6])
-        vmax = float(sys.argv[7])
-        constraints = sys.argv[8:]
+        make_heatmap = sys.argv[6] == '1'
+        vmin = float(sys.argv[7])
+        vmax = float(sys.argv[8])
+        constraints = sys.argv[9:]
 
     #lódáil eolas (le srianta, b'fhéidir)
     vars_to_limit = [] #ainm
@@ -171,9 +195,9 @@ if __name__ == '__main__':
     #cruthaigh graf
     title = os.path.basename(evals_file) + '\n' + ' '.join(x for x in constraints)
     if y_var == 'NB':
-        do_2dplot(data, response_var, x_var, logs, title)
+        do_2dplot(data, response_var, x_var, logs, output_folder, title)
     else:
         if make_heatmap:
-            do_heatmap(data, response_var, x_var, y_var, vmin, vmax, title)
+            do_heatmap(data, response_var, x_var, y_var, vmin, vmax, output_folder, title)
         else:
-            do_3dplot(data, response_var, x_var, y_var, logs, title)
+            do_3dplot(data, response_var, x_var, y_var, logs, output_folder, title)

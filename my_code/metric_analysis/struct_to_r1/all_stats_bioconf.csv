@@ -1,0 +1,6 @@
+1st quartile,2nd quartile,3rd quartile,90th percentile,Max to Triples Ratio,Ratio of Sinks to Triples,Ratio of Sources to Triples,Ratio of Repeats to Triples,r1,AUC,Dataset
+1,2,6,15,0.0714,0.1496,0.0482,0.0503,0.389432,0.809997,BioPortal
+1,1,1,16,0.0704,0.1814,0.0356,0.0358,0.309886,0.736205,GOA
+1,1,1,8,0.0975,0.4447,0.0975,0.0975,0.125664,0.662857,HGNC
+1,2,2,12,0.1358,0.3051,0.0967,0.0953,,,KEGG
+1,1,2,8,0.0718,0.4298,0.1011,0.101,0.187294,0.671645,LSR

@@ -1,0 +1,5 @@
+2nd quartile,3rd quartile,90th percentile,Max to Triples Ratio,r1,AUC,Dataset
+2,6,15,0.0714,0.389432,0.809997,BioPortal
+1,1,16,0.0704,0.309886,0.736205,GOA
+1,1,8,0.0975,0.125664,0.662857,HGNC
+1,2,8,0.0718,0.187294,0.671645,LSR

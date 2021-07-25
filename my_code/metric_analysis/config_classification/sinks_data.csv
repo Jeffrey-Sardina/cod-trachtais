@@ -1,0 +1,9 @@
+Ratio of Sinks to Triples,Ratio of Repeats to Triples,better_with_general,Dataset
+0.236,0.0436,1,DBSNP
+0.32,0.0614,1,DrugBank
+0.4291,0.1068,1,OMIM
+0.3952,0.0733,1,PharmGKB
+0.1814,0.0358,0,GOA
+0.4447,0.0975,0,HGNC
+0.4298,0.101,0,LSR
+0.1496,0.0503,0,BioPortal

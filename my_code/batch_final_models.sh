@@ -125,10 +125,19 @@
 #     3 > bioportal.runlog
 
 #Failed on 4, 5 (ar epoch 23)
+# export TORCH_USE_RTLD_GLOBAL=1
+# ./pbg_pipeline.sh goa \
+#     final_4part_bioconf \
+#     0 \
+#     3 \
+#     config/final_1_bioportal_rank.py \
+#     6 > goa_final_1.runlog
+
+#Failed on 2, 3
 export TORCH_USE_RTLD_GLOBAL=1
-./pbg_pipeline.sh goa \
-    final_4part_bioconf \
+./pbg_pipeline.sh kegg \
+    final_3part_bioconf \
     0 \
-    3 \
+    4 \
     config/final_1_bioportal_rank.py \
-    6 > goa_final_1.runlog
+    9 > kegg_final_1.runlog

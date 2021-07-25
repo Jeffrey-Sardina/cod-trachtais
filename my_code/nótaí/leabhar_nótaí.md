@@ -899,7 +899,7 @@ Doing an analysis of structure of subsets vs full data via inspection on metric_
 I think this is largely to be expected with randomness. I'll keep this in mind as I explore the final dataset evaluations; if they give results counter to what was expected from the validation rounds, this may be (at least part of) the answer.
 
 ## 18-06-2021
-Críochnaigh an dara babhta cuardaithe hipearpharaiméadar (cearch_1, it_3, round_2). Tá orm anois a fheiceáil céard é an rogha ceart dóibh, agus dul ar aghaidh ar an tríú babhta.
+Críochnaigh an dara babhta cuardaithe hipearpharaiméadar (search_1, it_3, round_2). Tá orm anois a fheiceáil céard é an rogha ceart dóibh, agus dul ar aghaidh ar an tríú babhta.
 
 Ón mbabhta seo, chonaic me:
 - 500 batch size best for dbsnp, drugbank, omim, pharmgkb Those tend to have their highest points (and several lower ones) at smaller numbers of batch negs and smaller numbers for uniform negs
@@ -987,3 +987,13 @@ This Wednesday I am set to stop running analysis and to start writing. There qar
 - bioportal using the final config from esearch round 0
 
 Having those 2 will likely be of great use to giving a more completed feeling to the overall thesis. Of the 2, the second is more important, and will (hopefully) take less time. Thus, I'll probably start writing without it, but I will run it for completion. The first one I may not run, or may save for later, since it is only a post-model-creation testing thing, and since other such tests exist and have given me interesting data.
+
+## 16-07-2021
+Found an error in the source and sink stats code that might ahve caused source and sink state to be reversed. As thus, disregrad all information in metric_analysis/trial1, trial 2, an dhistograms. These have been moved tho the trash folder. The error has been fixed.
+
+Note: please dbl check all other data collection files I wrote to ensure the results are correct! I think they have been ckecked once, but it seems some errors may have gotten though.
+
+The rest of the numbers (ie num sinks vs num sunks no dup) check out now; is for bioportal randsub 4000 in search 0 it 1:
+4062 triples => 8124 entities
+3329 (sources with dups) + 3329 (sinks with dups) + 2*733 (repeats) = 8124 entities
+Without dups, src and snk nums differ as expected. Note that that is the general "number of sinks" count that most ppl expect, and this should be noted as aI write the final thesis!

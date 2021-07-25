@@ -7,10 +7,12 @@ iterations_search_1/final_set/
 models/
 old/
 original/
+my_code/__pycache__/
 my_code/backup_points/
 my_code/metric_analysis/centrality/
 my_code/metric_analysis/histograms/
 my_code/pytorch-biggraph-gpu/
 my_code/pytorch-biggraph-gpu-writepatch/
 my_code/pytorch-biggraph-gpu-ubuntu21/
+trash/
 temp/
