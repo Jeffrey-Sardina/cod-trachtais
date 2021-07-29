@@ -133,11 +133,20 @@
 #     config/final_1_bioportal_rank.py \
 #     6 > goa_final_1.runlog
 
-#Failed on 2, 3
+# #Failed on 2, 3
+# export TORCH_USE_RTLD_GLOBAL=1
+# ./pbg_pipeline.sh kegg \
+#     final_3part_bioconf \
+#     0 \
+#     4 \
+#     config/final_1_bioportal_rank.py \
+#     9 > kegg_final_1.runlog
+
+#Failed on 4, 
 export TORCH_USE_RTLD_GLOBAL=1
 ./pbg_pipeline.sh kegg \
-    final_3part_bioconf \
+    final_general \
     0 \
-    4 \
-    config/final_1_bioportal_rank.py \
-    9 > kegg_final_1.runlog
+    2 \
+    config/final.py \
+    5 > kegg_final_1.runlog

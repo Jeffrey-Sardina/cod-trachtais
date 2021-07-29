@@ -14,8 +14,9 @@ This is a data storage directory for most data relating to the second search for
 ### In models/
 This is a working directory used during training. It contains the .evallog and trainlog files that are used a logs of the training process and the final evalution.
 
-### Other locations
-old/ contains old code that is not longer needed in any respect. original/ contains datasets downloaded from Bio2RDF, which should never be changed (only copies and then used). .vscode/ is VS Code metadata (irrelevant to the project).
+### In original/
+This contains all the original datasets dfownlaoded from Bio2RDF. Its contents should never be modifierd to a base version of all data always exists without the need to re-download.
+
 
 ## In my_code/
 ### Folders
@@ -27,13 +28,13 @@ There are several folders in my_code/, most of which are active working director
 - hyperparam_search_data/
     - Contains a few data files and analysis scipts aimed at understanding the results of hyperparwemter selection rounds. This was used for the CV of it_1 round1. Any new data added in should be moved to a clearly sepearate subfolder. 
 - metric_analysis/
-    - Contains ML analysis of how various graph structure metrics relate to AUC and r1 scroes used in CV. trial1/ is for an older trial using fewer metrics; trial2 uses many more metrics since trial1 failed to find any reliable relationships.
+    - Contains ML analysis of how various graph structure metrics relate to AUC and r1 scroes used in CV.
 - nótaí/
-    - Written thesis notes, cuid mhór ann i nGaeilge
+    - Written thesis notes, cuid mhór acu i nGaeilge
 - pytorch-biggraph-gpu/
     - venv containing a PBG dist for training
 - pytorch-biggraph-gpu-writepatch/
-    - venv containing a dist of PBG that can write data for affine operators. COuld proabably be used for t4raining, but I'll stick with the above for consistency. Training for the 2 should be identical anyway.
+    - venv containing a dist of PBG that can write data for affine operators. COuld proabably be used for training, but I'll stick with the above for consistency. Training for the 2 should be identical anyway.
 
 ### Scripts
 There as several master scripts, the rest of which are sub-routines that are called bu those master scripts. Depending on how large of a job I want to run, some of those sub-routintes may be run as their own routines as well, which muddles the definition of master vs sub- routines. However, in general there is a set mroe commonly used as master scripts, and a set more commonly used as subroutines.
