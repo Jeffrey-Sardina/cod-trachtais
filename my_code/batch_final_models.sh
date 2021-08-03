@@ -142,11 +142,52 @@
 #     config/final_1_bioportal_rank.py \
 #     9 > kegg_final_1.runlog
 
-#Failed on 4, 
+# #Failed on 4, 
+# export TORCH_USE_RTLD_GLOBAL=1
+# ./pbg_pipeline.sh kegg \
+#     final_general \
+#     0 \
+#     2 \
+#     config/final.py \
+#     5 > kegg_final_1.runlog
+
+# export TORCH_USE_RTLD_GLOBAL=1
+# ./pbg_pipeline.sh dbsnp \
+#     final_2part_bioconf_dbsnp \
+#     0 \
+#     2 \
+#     config/final_1_bioportal_rank.py \
+#     2 > dbsnp_final_1.runlog
+
+# export TORCH_USE_RTLD_GLOBAL=1
+# ./pbg_pipeline.sh drugbank \
+#     final_2part_bioconf_drugbank \
+#     0 \
+#     2 \
+#     config/final_1_bioportal_rank.py \
+#     2 > drugbank_final_1.runlog
+
+# export TORCH_USE_RTLD_GLOBAL=1
+# ./pbg_pipeline.sh omim \
+#     final_2part_bioconf_omim \
+#     0 \
+#     2 \
+#     config/final_1_bioportal_rank.py \
+#     2 > omim_final_1.runlog
+
+# export TORCH_USE_RTLD_GLOBAL=1
+# ./pbg_pipeline.sh pharmgkb \
+#     final_2part_bioconf_pharmgkb \
+#     0 \
+#     2 \
+#     config/final_1_bioportal_rank.py \
+#     2 > pharmgkb_final_1.runlog
+
+#Failed on 3, 4, 
 export TORCH_USE_RTLD_GLOBAL=1
-./pbg_pipeline.sh kegg \
-    final_general \
+./pbg_pipeline.sh bioportal \
+    final_general_bioportal \
     0 \
-    2 \
-    config/final.py \
-    5 > kegg_final_1.runlog
+    4 \
+    config/final_1_bioportal_rank.py \
+    5 > bioportal_final_1.runlog

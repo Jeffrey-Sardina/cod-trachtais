@@ -92,16 +92,16 @@ then
     fi
 fi
 
-#Céim 5
-if [[ $START -lt 6 ]]
-then
-    ./output_training_results.sh $DATA $CONFIG
-    if [[ $? -ne "0" ]]
-    then
-        echo 'output_training_results.sh error: stopping script'
-        exit 1
-    fi
-fi
+# #Céim 5
+# if [[ $START -lt 6 ]]
+# then
+#     ./output_training_results.sh $DATA $CONFIG
+#     if [[ $? -ne "0" ]]
+#     then
+#         echo 'output_training_results.sh error: stopping script'
+#         exit 1
+#     fi
+# fi
 
 RUNNING_TIME=$[ $(date +%s) - ${START_TIME} ]
 END_DATE="$(date)"
