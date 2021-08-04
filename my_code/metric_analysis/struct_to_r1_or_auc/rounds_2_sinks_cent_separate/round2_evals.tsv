@@ -1,0 +1,24 @@
+combined_r1_bioconf
+Lasso
+intercept: 0.2193
+0.0268	0.0105	0.0	-0.0497	-0.0
+r2: 0.8804
+
+combined_auc_bioconf
+Lasso
+intercept: 0.7039
+0.0224	-0.006	-0.0322	-0.0008
+r2: 0.934
+
+combined_r1_general
+Lasso
+intercept: 0.1526
+0.0406	-0.0692	-0.0322	-0.1248	0.0208
+r2: 0.9303
+
+combined_auc_general
+Lasso
+intercept: 0.718
+0.0308	0.0058	-0.0238	0.0
+r2: 0.8517
+

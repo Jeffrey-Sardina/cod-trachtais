@@ -1,0 +1,48 @@
+cent_r1_bioconf
+Lasso
+intercept: 0.2193
+0.029	0.0237	0.0373	-0.0
+r2: 0.8282
+
+cent_auc_bioconf
+Lasso
+intercept: 0.7039
+0.0	0.0238	0.0121	-0.0
+r2: 0.7663
+
+cent_r1_general
+Lasso
+intercept: 0.1526
+-0.0	0.0675	0.0199	-0.0115
+r2: 0.8129
+
+cent_auc_general
+Lasso
+intercept: 0.718
+0.0273	0.0009	0.0188	-0.0
+r2: 0.7807
+
+sink_r1_bioconf
+Lasso
+intercept: 0.2193
+-0.1359	0.0674
+r2: 0.9076
+
+sink_auc_bioconf
+Lasso
+intercept: 0.7039
+-0.0508	0.0139
+r2: 0.7735
+
+sink_r1_general
+Lasso
+intercept: 0.1526
+-0.1089	0.0375
+r2: 0.6278
+
+sink_auc_general
+Lasso
+intercept: 0.718
+-0.0782	0.0399
+r2: 0.8078
+

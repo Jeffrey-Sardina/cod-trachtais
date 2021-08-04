@@ -1,8 +1,6 @@
 # Úsáideann an cód seo eolas ó calc_graph_stats.sh
 # Caithfidh mé eolas ar r1 / auc a chur isteach ansan freisin
 
-#TODO: change folds go 5
-
 import sys
 import pandas as pd
 import numpy as np
@@ -38,7 +36,7 @@ def plot_alpha_cross_validation(alphas, mean_errors, std_errors, title, model_id
     plt.xlabel('alphas')
     plt.ylabel('Mean square error')
     plt.title(title)
-    plt.savefig('metric_analysis/struct_to_r1/' + model_id + '.png')
+    plt.savefig('metric_analysis/struct_to_r1_or_auc/' + model_id + '.png')
 
 def print_params(model, labels, title):
     print(title)
@@ -46,7 +44,7 @@ def print_params(model, labels, title):
     print('\t'.join(str(round(a, 4)) for a in model.coef_))
 
 def cross_val(X, y, model_id):
-    fold = 4 #CHANGE TO 5
+    fold = 5
     alphas = [1, 0.5, 1e-1, 1e-2, 1e-3]
     mean_errors, std_errors = cross_validate_alpha(alphas, fold, X, y)
     plot_alpha_cross_validation(alphas, mean_errors, std_errors, 'Lasso Cross-Val, k=' + str(fold), model_id)
@@ -87,7 +85,7 @@ def load_data(csv_file, target):
     return X_norm, y, labels
 
 if __name__ == '__main__':
-    #Le haghaidh eolas i metric_analysis/struct_to_r1
+    #Le haghaidh eolas i metric_analysis/struct_to_r1_or_auc
     #lódáil sonraí
     training_file = sys.argv[1]
     mode = sys.argv[2]
