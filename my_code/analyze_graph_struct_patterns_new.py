@@ -84,6 +84,14 @@ def load_data(csv_file, target):
 
     return X_norm, y, labels
 
+# def load_prediction_matrix(csv_file):
+#     data = pd.read_csv(csv_file, comment='#')
+#     X_norm = (data - data.mean()) / data.std()
+#     labels = X_norm.columns.values
+#     X_norm = X_norm.fillna(0).to_numpy()
+
+#     return X_norm, labels
+
 if __name__ == '__main__':
     #Le haghaidh eolas i metric_analysis/struct_to_r1_or_auc
     #lódáil sonraí
@@ -99,4 +107,15 @@ if __name__ == '__main__':
     elif mode == '2': #Eval on given dataset
         alpha = float(sys.argv[5])
         model = analyze(X, y, alpha, labels)
+    elif mode == '3': #Predict
+        alpha = float(sys.argv[5])
+        #X_pred, labels = load_prediction_matrix(sys.argv[6])
+        model = analyze(X, y, alpha, labels)
+        ypred = model.predict(X)
+        print('predictions:')
+        for i, pred in enumerate(ypred):
+            print(pred, '\t#', X[i])
+        print()
+        print()
+
     exit(0)
