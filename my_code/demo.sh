@@ -35,7 +35,7 @@ export TORCH_USE_RTLD_GLOBAL=1
     2 \
     config/final_1_bioportal_rank.py \
     1
-
+mv ../models/lsr ../demo/train_eval
 
 echo '=============Training completed============='
 echo ''
