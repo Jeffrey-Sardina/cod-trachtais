@@ -1,5 +1,6 @@
 .vscode/
 copies/
+demo/
 iterations_search_0/it_*/
 iterations_search_0/final_set/
 iterations_search_1/it_*/

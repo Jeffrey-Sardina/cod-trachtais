@@ -11,7 +11,7 @@ export NUM_PARTITIONS=$4
 export UUID=$5
 
 #Céim 2
-echo 'Ag réamh-phróiseáil na sonraí'
+echo 'Preparing the data'
 if [[ $DEL_OLD -eq "1" ]]
 then
     echo 'ag scriosadh seaneolas i pbg_split agus pbg_out'

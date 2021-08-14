@@ -33,7 +33,7 @@ export UUID=$2
 #Rabhaí agus earráidí
 if [[ -d "backup_points/${DATA}_${UUID}" && $START -lt 3 ]]
 then
-    echo "ERROR: UUID úsáidte cheana, roghnaigh ceann eile"
+    echo "ERROR: UUID used already, please use another"
     exit 1
 fi
 mkdir ../models/$DATA/
@@ -63,7 +63,7 @@ fi
 #Céim 3
 if [[ $START -lt 4 ]]
 then
-    echo 'ag rith algartaim leabaithe'
+    echo 'running embedding algorithm'
     torchbiggraph_train \
         $CONFIG \
         -p edge_paths=../copies/$DATA/pbg_split/imported/training_data > "../models/${DATA}/${UUID}.trainlog"
@@ -78,7 +78,7 @@ fi
 if [[ $START -lt 5 ]]
 then
     #TODO: athrú go testing?
-    echo 'ag fíorú na samhlach'
+    echo 'running evaluation'
     torchbiggraph_eval \
         $CONFIG \
         -p edge_paths=../copies/$DATA/pbg_split/imported/validation_data \
@@ -92,21 +92,21 @@ then
     fi
 fi
 
-#Céim 5
-if [[ $START -lt 6 ]]
-then
-    ./output_training_results.sh $DATA $CONFIG
-    if [[ $? -ne "0" ]]
-    then
-        echo 'output_training_results.sh error: stopping script'
-        exit 1
-    fi
-fi
+# #Céim 5
+# if [[ $START -lt 6 ]]
+# then
+#     ./output_training_results.sh $DATA $CONFIG
+#     if [[ $? -ne "0" ]]
+#     then
+#         echo 'output_training_results.sh error: stopping script'
+#         exit 1
+#     fi
+# fi
 
 RUNNING_TIME=$[ $(date +%s) - ${START_TIME} ]
 END_DATE="$(date)"
 
-echo "eolas deiridh"
+echo "Pipeline done; dump:"
 echo DATA $DATA
 echo UUID $UUID 
 echo DEL_OLD_TSV $DEL_OLD_TSV 

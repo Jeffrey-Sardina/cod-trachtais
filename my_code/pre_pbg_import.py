@@ -7,7 +7,7 @@ def deterministic_split(input_file, output_dir, test_prop, validation_prop):
     write_data(input_file, output_dir, test, validate)
 
 def random_split(input_file, output_dir, test_prop, validation_prop):
-    print('ag scríobh an eolais')
+    print('Writing training and validation data')
     training_data_file = os.path.join(output_dir, 'training_data.tsv')
     testing_data_file = os.path.join(output_dir, 'testing_data.tsv')
     validation_data_file = os.path.join(output_dir, 'validation_data.tsv')
@@ -37,7 +37,7 @@ def split(input_file, test_prop, validation_prop):
     bhfuil uimhir i gceann ar bith acu, is mar chuid de shonraí deimhnithe é
     sin.
     '''
-    print('ag fáil innéacsanna na dtacar')
+    print('Finding set indicies')
     n = get_num_lines(input_file)
     test_set_size = int(n * test_prop + 1)
     if validation_prop != 0:
@@ -53,7 +53,7 @@ def split(input_file, test_prop, validation_prop):
     return test, validate
 
 def write_data(input_file, output_dir, test, validate):
-    print('ag scríobh an eolais')
+    print('Writing training and validation data')
     training_data_file = os.path.join(output_dir, 'training_data.tsv')
     testing_data_file = os.path.join(output_dir, 'testing_data.tsv')
     validation_data_file = os.path.join(output_dir, 'validation_data.tsv')
